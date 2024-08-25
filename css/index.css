@@ -1,6 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@charset "UTF-8";
+ @font-face {
+     font-family: 'Sodo-Sans Bold';
+     src: url(font/SoDoSans-Bold.ttf);
+}
+ @font-face {
+     font-family: 'Sodo-Sans SemiBold';
+     src: url(font/SoDoSans-SemiBold.ttf);
+}
+ @font-face {
+     font-family: 'Sodo-Sans Regular';
+     src: url(font/SoDoSans-Regular.ttf);
+}
+ .primary-color {
+     background-color: #D4E9E2;
+}
+ .text-color {
+     color: #1E3932;
+}
+
+@media screen and (min-width: 1300px){
+    .pinerity_main, .header_pinerity {
+        margin: 0 60px;
+    }
+}
 *{
-  margin: 0;
+  margin: 0%;
+  font-family: "SoDo Sans SemiBold", Helvetica Neue, Helvetica, Arial, sans-serif;
+  scrollbar-width: thin;
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
@@ -23,11 +49,14 @@ nav .wrapper{
   align-items: center;
   justify-content: space-between;
 }
-.wrapper .logo a{
-  color: #f2f2f2;
-  font-size: 30px;
-  font-weight: 600;
-  text-decoration: none;
+nav .logo{
+  display: flex;
+  align-items: center;
+}
+.logo img{
+  width: 12%;
+  height: 12%;
+  border-radius: 50%;
 }
 .wrapper .nav-links{
   display: inline-flex;

@@ -1,15 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Pinerity</title>
+  <title>Pinerity - Cooperação e Solidariedade</title>
+  <link rel="icon" alt="icon" href="img/menulogo.png">
   <link rel="stylesheet" href="css/index.css">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+
 </head>
 <body>
   <nav>
     <div class="wrapper">
-      <div class="logo"><a href="#">Logo</a></div>
+      <div class="logo"><<a href="index.php"><img src="img/menulogo.png" alt="Logo Pinerity"></a></div>
       <input type="radio" name="slider" id="menu-btn">
       <input type="radio" name="slider" id="close-btn">
       <ul class="nav-links">
@@ -66,7 +71,7 @@
             </div>
           </div>
         </li>
-        <li><a href="#">Feedback</a></li>
+        <li><a href="#">Login</a></li>
       </ul>
       <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
     </div>
