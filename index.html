@@ -14,28 +14,31 @@
 <body>
   <nav>
     <div class="wrapper">
-      <div class="logo"><<a href="index.php"><img src="img/menulogo.png" alt="Logo Pinerity"></a></div>
+      <div class="logo"><a href="index.html"><img src="img/menulogo.png" alt="Logo Pinerity"></a></div>
       <input type="radio" name="slider" id="menu-btn">
       <input type="radio" name="slider" id="close-btn">
       <ul class="nav-links">
         <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="./pages/sobre.html">Sobre</a></li>
         <li>
-          <a href="#" class="desktop-item">Dropdown Menu</a>
+          <!-- inicio menu dropdown pequeno | receitas -->
+          <a href="#" class="desktop-item">Receitas de Baixo Custo</a>
           <input type="checkbox" id="showDrop">
-          <label for="showDrop" class="mobile-item">Dropdown Menu</label>
+          <label for="showDrop" class="mobile-item">Receitas de Baixo Custo</label>
           <ul class="drop-menu">
-            <li><a href="#">Drop menu 1</a></li>
-            <li><a href="#">Drop menu 2</a></li>
+            <li><a href="#">Sem Lactose</a></li>
+            <li><a href="#">Sem glúten</a></li>
             <li><a href="#">Drop menu 3</a></li>
             <li><a href="#">Drop menu 4</a></li>
           </ul>
+          <!-- final menu dropdown pequeno | receitas -->
         </li>
         <li>
-          <a href="#" class="desktop-item">Mega Menu</a>
+          <!-- inicio menu dropdown grande | centro de doação -->
+          <a href="#" class="desktop-item">Centro de Doação</a>
           <input type="checkbox" id="showMega">
-          <label for="showMega" class="mobile-item">Mega Menu</label>
+          <label for="showMega" class="mobile-item">Centro de Doação</label>
           <div class="mega-box">
             <div class="content">
               <div class="row">
@@ -70,16 +73,12 @@
               </div>
             </div>
           </div>
+          <!-- final menu dropdown grande | centro de doação-->
         </li>
-        <li><a href="#">Login</a></li>
+        <li><a href="./pages/login.php">Login</a></li>
       </ul>
       <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
     </div>
   </nav>
-  
-  <div class="body-text">
-    <div class="title">Responsive Dropdown and Mega Menu</div>
-    <div class="sub-title">using only HTML & CSS</div>
-  </div>
 </body>
 </html>
