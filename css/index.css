@@ -53,10 +53,11 @@ nav .logo{
   display: flex;
   align-items: center;
 }
-.logo img{
+.wrapper .logo img{
   width: 12%;
   height: 12%;
   border-radius: 50%;
+  margin-top: 25px;
 }
 .wrapper .nav-links{
   display: inline-flex;
