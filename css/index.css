@@ -35,7 +35,7 @@ nav{
   position: fixed;
   z-index: 99;
   width: 100%;
-  
+  margin-top: -4.5%;
   background: #242526;
 }
 nav .wrapper{
