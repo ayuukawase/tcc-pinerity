@@ -35,11 +35,11 @@ nav{
   position: fixed;
   z-index: 99;
   width: 100%;
-  margin-top: -2.3%;
+  margin-top: 0;
   background: #242526;
 }
 nav .wrapper{
-  position: relative;
+  position: fixed;
   max-width: 1300px;
   padding: 0px 30px;
   height: 70px;
@@ -287,25 +287,19 @@ nav .logo{
 nav input{
   display: none;
 }
+/*main-section
+.main-section{
+  margin-top: 17px;
+}
+/*carrossel
+#carouselExampleControls{
+  margin-top: 10%;
+}*/
+
+
+
 
 /* footer */
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
