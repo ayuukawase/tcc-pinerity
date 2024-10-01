@@ -287,115 +287,13 @@ nav .logo{
 nav input{
   display: none;
 }
-/*main-section
-.main-section{
-  margin-top: 17px;
-}
-/*carrossel
-#carouselExampleControls{
-  margin-top: 10%;
-}*/
 
 /* carrossel */
 
 
-/*
-#carrosel{
-  margin-top: 7%;
-  background-color: #00754a;
-}
-.carousel-inner img{
-  width: 100%;
-}
-.carousel-indicators button{
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background-color: rgba(0, 0, 0, 0.541);
-  box-sizing: content-box;
-  flex: 0 1 auto;
-  padding: 0;
-  margin-right: 3px;
-  margin-left: 3px;
-  text-indent: -999px;
-  cursor: pointer;
-  background-clip: padding-box;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  opacity: .5;
-  transition: opacity .6s ease;
-}
-.carousel-indicators .active {
-  background-color: rgba(255, 255, 255, 0.681);
-}
-.pinerity_main .carousel .carousel-control-prev, .carousel-control-next {
-  opacity: 1;
-}
-.product img {
-  max-width: 100%;
-  object-fit: contain;
-  height: 100%;
-}
-.product {
-  display: flex;
-}
-.product-left,
-.product-right {
-  max-width: 50%;
-  display: flex;
-  width: 50%;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  align-content: stretch;
-  flex-direction: column;
-}
-.product-right button{
-  margin-top: 40px;
-  background-color: #1e3932;
-  color: white;
-}
 
-.product-title {
-  width: 100%;
-  text-align: center;
-  color: white;
-}
-.product-container {
-  margin: 40px 0px 40px 0px;
-  display: flex;
-  
-}
-
-.product-button {
-  border: 1px solid white;
-  max-width: max-content;
-  padding: 5px 20px 5px 20px;
-  border-radius: 40px;
-  text-align: center;
-  margin: auto;
-  margin-bottom: 30px;
-}
-
-.product-button-white {
-  color: white;
-}
-
-.product-button-black {
-  color: black;
-  border-color: black;
-}
-
-.product-description {
-  text-align: center;
-  padding: 30px 60px 30px 60px;
-  font-size: 18px;
-}
-
-*/
 
 /* footer */
-
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 body{
