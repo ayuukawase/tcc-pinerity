@@ -24,7 +24,7 @@
     }
 }
 *{
-  margin: 0%;
+  margin: 0;
   font-family: "SoDo Sans SemiBold", Helvetica Neue, Helvetica, Arial, sans-serif;
   scrollbar-width: thin;
   padding: 0;
@@ -33,34 +33,45 @@
 }
 nav{
   position: fixed;
-  z-index: 99;
   width: 100%;
+  height: 70px;
+  float: left;
   margin-top: 0;
   background: #242526;
 }
 nav .wrapper{
-  position: fixed;
   max-width: 1300px;
-  padding: 0px 30px;
-  height: 70px;
-  line-height: 70px;
-  margin: auto;
+  height: 90px;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 1%;
+  margin-bottom: 2%;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
 }
 nav .logo{
   display: flex;
+  float: left;
   align-items: center;
+  width: 100%;
+  margin: 0;
 }
 .wrapper .logo img{
-  width: 12%;
-  height: 12%;
+  width: 10%;
+  height: 10%;
   border-radius: 50%;
-  margin-top: 25px;
+
+}
+.logo a{
+  margin: 0;
 }
 .wrapper .nav-links{
-  display: inline-flex;
+  display: flex;
+  width: 100%;
+  float: right;
+  margin: 0;
+  justify-content: space-around;
 }
 .nav-links li{
   list-style: none;
@@ -164,6 +175,19 @@ nav .logo{
   top: 10px;
 }
 
+/*teste*/
+
+section {
+  background-color: rgb(236, 163, 163);
+  float: left;
+  clear: left;
+  width: 70%;
+  height: 1000px;
+  margin-left: 30px;
+  margin-top: 20px;
+  border-radius: 20px;
+  font-size: x-large;
+}
 @media screen and (max-width: 970px) {
   .wrapper .btn{
     display: block;
@@ -301,7 +325,7 @@ body{
   font-family: 'Poppins', sans-serif;
 }
 *{
-  margin:0;
+  margin-bottom:0;
   padding:0;
   box-sizing: border-box;
 }
@@ -318,7 +342,9 @@ ul{
 }
 .footer{
   background-color: #24262b;
-    padding: 70px 0;
+  float: left;
+  width: 100%;
+  height: 255px;
 }
 .footer-col{
    width: 25%;
