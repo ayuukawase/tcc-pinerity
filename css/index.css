@@ -115,6 +115,16 @@ nav .logo{
   font-weight: 400;
   border-radius: 0px;
 }
+.wrapper a button{
+    color: #28a745;
+    background-color: transparent;
+    background-image: none;
+    border-color: #28a745;
+    border-radius: 10%;
+    font-size: 18px;
+    width: 100%;
+}
+
 .mega-box{
   position: absolute;
   left: 0;
