@@ -1,10 +1,12 @@
-* {
-    text-align: center;
-    font-family: "Josefin Slab", serif;
+*{
     margin: 0;
-}
-
-nav{
+    font-family: "SoDo Sans SemiBold", Helvetica Neue, Helvetica, Arial, sans-serif;
+    scrollbar-width: thin;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  nav{
     position: fixed;
     width: 100%;
     height: 70px;
@@ -14,7 +16,7 @@ nav{
     z-index: 1;
     background: #242526;
   }
-  nav .wrapper{ 
+  nav .wrapper{
     max-width: 1300px;
     height: 90px;
     margin-left: 5%;
@@ -160,180 +162,9 @@ nav{
     top: 10px;
   }
 
+  /** footer **/
 
-
-header{
-    background-color: #fff;
-    width: 100%;
-    height: 350px;
-}
-header h1 img{
-    width: 75%;
-    height: 300px;
-    margin-top: 0px;
-    border: none;
-}
-h1{
-    font-family: "Sacramento", cursive;
-}
-main{
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    width: 98%;
-    height: 1100px;
-    background-color: #fff;
-}
-main ul li{
-    text-align: left;
-}
-section{
-    margin-top: -10px;
-    background-color: #fff;
-    height: 1100px;
-    width: 96%;
-    margin: auto;
-}
-div{
-    margin-top: 5px;
-    margin-right: 5px;
-    width: 24%;
-    height: 300px;
-    float: left;
-    justify-content: center;
-    align-items: center;
-}
-.flip-card-front img{
-    width: 100%;
-    height:200px;
-}
-.flip-card {
-    background-color: transparent;
-    width: 24%;
-    height: 400px;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px;
-    margin-left: 5px;
-    margin-top: 20px;
-}
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-.flip-card-front, .flip-card-back {
-    margin-top: -5px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-.flip-card-front {
-    background-color: rgb(246, 232, 128);
-    color: black;
-    border: 1px solid #f1f1f1;
-}
-.flip-card-back {
-    background-color: #9bc7cb;
-    color: black;
-    font-size: xx-large;
-    transform: rotateY(180deg);
-    border: #f1f1f1 solid;
-}
-.flip-card-back h1 {
-    margin-top: 70px;
-}
-section p {
-    font-size: x-large;
-    margin: 20px;
-}
-.flip-card-front h2 {
-    margin-top: 30px;
-    text-decoration: underline;
-}
-#amendoimdoce {
-    margin-top: 80px;
-}
-#pacoca {
-    margin-top: 150px;
-}
-h3{
-    margin-top: 10px;
-}
-.comida{
-    width: 75%;
-    height: 300px;
-    margin-top: 8px;
-    border: black solid 1px;
-}
-button{
-    margin-top: 10px;
-    background-color: #fbfbfb;
-    width: 70%;
-    height: 50px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 150px;
-    font-size: x-large;
-}
-button:hover {
-    background-color:#ff6e39;
-    color: white;
-}
-.btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    width: 60px;
-    height: 70px;
-    background-color: rgb(239, 253, 113);
-    text-decoration: none;
-}
-.btn::after {
-    content: "Voltar ao topo ↑";
-    font-size: 15px;
-    font-weight: 800;
-    color: #000000;
-    transition: margin-top 250px;
-}
-.btn:hover::after {
-    margin-top:-8px;
-}
-footer p{
-    padding: 2px;
-    font-size: medium;
-}
-#autoria{
-    margin-top: 1px;
-    text-align: center;
-    clear: both;
-}
-.fontes{
-    float: left;
-    clear: left;
-}
-.fontes p{
-    text-align: justify;
-}
-.contato{
-    clear: right;
-    float: right;
-}
-h4{
-    padding: 5px;
-    text-align: center;
-}
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 body{
   line-height: 1.5;
   font-family: 'Poppins', sans-serif;

@@ -23,7 +23,7 @@ CREATE TABLE Benificiario
     folha_resumo    varchar(10),
     cpf             varchar(11),
     telefone        varchar(11),
-    genero          varchar (10), -- modificar depois
+    genero          varchar(10), -- modificar depois
     email           varchar(50),
     senha           varchar(50),
     primary key(id)

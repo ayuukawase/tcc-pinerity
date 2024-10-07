@@ -13,7 +13,7 @@
       <h2>Login</h2>
         <div class="input-field">
         <input type="text" required>
-        <label>Coloque com seu e-mail</label>
+        <label>Coloque com seu NISS</label>
       </div>
       <div class="input-field">
         <input type="password" required>
