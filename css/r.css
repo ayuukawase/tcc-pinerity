@@ -1,0 +1,430 @@
+* {
+    text-align: center;
+    font-family: "Josefin Slab", serif;
+    margin: 0;
+}
+
+nav{
+    position: fixed;
+    width: 100%;
+    height: 70px;
+    float: left;
+    top: 0;
+    top: 0px;
+    z-index: 1;
+    background: #242526;
+  }
+  nav .wrapper{
+    max-width: 1300px;
+    height: 90px;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    margin-bottom: 2%;
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+  }
+  nav .logo{
+    display: flex;
+    float: left;
+    align-items: center;
+    width: 100%;
+    margin: 0;
+  }
+  .wrapper .logo img{
+    width: 10%;
+    height: 10%;
+    border-radius: 50%;
+  
+  }
+  .logo a{
+    margin: 0;
+  }
+  .wrapper .nav-links{
+    display: flex;
+    width: 100%;
+    float: right;
+    margin: 0;
+    justify-content: space-around;
+  }
+  .nav-links li{
+    list-style: none;
+  }
+  .nav-links li a{
+    color: #f2f2f2;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 9px 15px;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  .nav-links li a:hover{
+    background: #3A3B3C;
+  }
+  .nav-links .mobile-item{
+    display: none;
+  }
+  .nav-links .drop-menu{
+    position: absolute;
+    background: #242526;
+    width: 180px;
+    line-height: 45px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+  }
+  .nav-links li:hover .drop-menu,
+  .nav-links li:hover .mega-box{
+    transition: all 0.3s ease;
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+  }
+  .drop-menu li a{
+    width: 100%;
+    display: block;
+    padding: 0 0 0 15px;
+    font-weight: 400;
+    border-radius: 0px;
+  }
+  .wrapper a button{
+      color: #28a745;
+      background-color: transparent;
+      background-image: none;
+      border-color: #28a745;
+      border-radius: 10%;
+      font-size: 18px;
+      width: 100%;
+  }
+  
+  .mega-box{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 0 30px;
+    top: 85px;
+    opacity: 0;
+    visibility: hidden;
+  }
+  .mega-box .content{
+    background: #242526;
+    padding: 25px 20px;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    box-shadow: 0 6px 10px rgba(0,0,0,0.15);
+  }
+  .mega-box .content .row{
+    width: calc(25% - 30px);
+    line-height: 45px;
+  }
+  .content .row img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  .content .row header{
+    color: #f2f2f2;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .content .row .mega-links{
+    margin-left: -40px;
+    border-left: 1px solid rgba(255,255,255,0.09);
+  }
+  .row .mega-links li{
+    padding: 0 20px;
+  }
+  .row .mega-links li a{
+    padding: 0px;
+    padding: 0 20px;
+    color: #d9d9d9;
+    font-size: 17px;
+    display: block;
+  }
+  .row .mega-links li a:hover{
+    color: #f2f2f2;
+  }
+  .wrapper .btn{
+    color: #fff;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+  }
+  .wrapper .btn.close-btn{
+    position: absolute;
+    right: 30px;
+    top: 10px;
+  }
+
+
+
+header{
+    background-color: #fff;
+    width: 100%;
+    height: 350px;
+}
+header h1 img{
+    width: 75%;
+    height: 300px;
+    margin-top: 0px;
+    border: none;
+}
+h1{
+    font-family: "Sacramento", cursive;
+}
+main{
+    align-content: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 98%;
+    height: 1100px;
+    background-color: #fff;
+}
+main ul li{
+    text-align: left;
+}
+section{
+    margin-top: -10px;
+    background-color: #fff;
+    height: 1100px;
+    width: 96%;
+    margin: auto;
+}
+div{
+    margin-top: 5px;
+    margin-right: 5px;
+    width: 24%;
+    height: 300px;
+    float: left;
+    justify-content: center;
+    align-items: center;
+}
+.flip-card-front img{
+    width: 100%;
+    height:200px;
+}
+.flip-card {
+    background-color: transparent;
+    width: 24%;
+    height: 400px;
+    border: 1px solid #f1f1f1;
+    perspective: 1000px;
+    margin-left: 5px;
+    margin-top: 20px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    margin-top: -5px;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+.flip-card-front {
+    background-color: rgb(246, 232, 128);
+    color: black;
+    border: 1px solid #f1f1f1;
+}
+.flip-card-back {
+    background-color: #9bc7cb;
+    color: black;
+    font-size: xx-large;
+    transform: rotateY(180deg);
+    border: #f1f1f1 solid;
+}
+.flip-card-back h1 {
+    margin-top: 70px;
+}
+section p {
+    font-size: x-large;
+    margin: 20px;
+}
+.flip-card-front h2 {
+    margin-top: 30px;
+    text-decoration: underline;
+}
+#amendoimdoce {
+    margin-top: 80px;
+}
+#pacoca {
+    margin-top: 150px;
+}
+h3{
+    margin-top: 10px;
+}
+.comida{
+    width: 75%;
+    height: 300px;
+    margin-top: 8px;
+    border: black solid 1px;
+}
+button{
+    margin-top: 10px;
+    background-color: #fbfbfb;
+    width: 70%;
+    height: 50px;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-top: 150px;
+    font-size: x-large;
+}
+button:hover {
+    background-color:#ff6e39;
+    color: white;
+}
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 60px;
+    height: 70px;
+    background-color: rgb(239, 253, 113);
+    text-decoration: none;
+}
+.btn::after {
+    content: "Voltar ao topo ↑";
+    font-size: 15px;
+    font-weight: 800;
+    color: #000000;
+    transition: margin-top 250px;
+}
+.btn:hover::after {
+    margin-top:-8px;
+}
+footer p{
+    padding: 2px;
+    font-size: medium;
+}
+#autoria{
+    margin-top: 1px;
+    text-align: center;
+    clear: both;
+}
+.fontes{
+    float: left;
+    clear: left;
+}
+.fontes p{
+    text-align: justify;
+}
+.contato{
+    clear: right;
+    float: right;
+}
+h4{
+    padding: 5px;
+    text-align: center;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body{
+  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+}
+*{
+  margin-bottom:0;
+  padding:0;
+  box-sizing: border-box;
+}
+.container{
+  max-width: 1170px;
+  margin:auto;
+}
+.row{
+  display: flex;
+  flex-wrap: wrap;
+}
+ul{
+  list-style: none;
+}
+.footer{
+  background-color: #24262b;
+  float: left;
+  width: 100%;
+  height: 255px;
+}
+.footer-col{
+   width: 25%;
+   padding: 0 15px;
+}
+.footer-col h4{
+  font-size: 18px;
+  color: #ffffff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+  position: relative;
+}
+.footer-col h4::before{
+  content: '';
+  position: absolute;
+  left:0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+.footer-col ul li:not(:last-child){
+  margin-bottom: 10px;
+}
+.footer-col ul li a{
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbbbbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+.footer-col ul li a:hover{
+  color: #ffffff;
+  padding-left: 8px;
+}
+.footer-col .social-links a{
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255,255,255,0.2);
+  margin:0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #ffffff;
+  transition: all 0.5s ease;
+}
+.footer-col .social-links a:hover{
+  color: #24262b;
+  background-color: #ffffff;
+}
+
+/*responsive*/
+@media(max-width: 767px){
+  .footer-col{
+    width: 50%;
+    margin-bottom: 30px;
+}
+}
+@media(max-width: 574px){
+  .footer-col{
+    width: 100%;
+}
+}

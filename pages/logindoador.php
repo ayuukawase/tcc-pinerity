@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulário de Login</title>
+  <title>Login</title>
   <link rel="stylesheet" href="../css/login.css">
 </head>
 <body>
@@ -13,22 +13,22 @@
       <h2>Login</h2>
         <div class="input-field">
         <input type="text" required>
-        <label>Enter your email</label>
+        <label>Coloque com seu e-mail</label>
       </div>
       <div class="input-field">
         <input type="password" required>
-        <label>Enter your password</label>
+        <label>Coloque sua senha</label>
       </div>
       <div class="forget">
         <label for="remember">
           <input type="checkbox" id="remember">
-          <p>Remember me</p>
+          <p>Lembre-se de mim</p>
         </label>
-        <a href="#">Forgot password?</a>
+        <a href="#">Esqueceu a senha?</a>
       </div>
-      <button type="submit">Log In</button>
+      <button type="submit">Entrar</button>
       <div class="register">
-        <p>Don't have an account? <a href="#">Register</a></p>
+        <p>Não tem uma conta? <a href="#">Cadastrar</a></p>
       </div>
     </form>
   </div>
