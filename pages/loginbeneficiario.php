@@ -13,7 +13,7 @@
       <h2>Login</h2>
         <div class="input-field">
         <input type="text" required>
-        <label>Coloque com seu CPF</label>
+        <label>Coloque com seu NIS</label>
       </div>
       <div class="input-field">
         <input type="password" required>

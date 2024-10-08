@@ -11,27 +11,26 @@
      font-family: 'Sodo-Sans Regular';
      src: url(font/SoDoSans-Regular.ttf);
 }
- .primary-color {
-     background-color: #D4E9E2;
+.primary-color {
+  background-color: #D4E9E2;
 }
- .text-color {
-     color: #1E3932;
+.text-color {
+  color: #1E3932;
 }
-
 @media screen and (min-width: 1300px){
-    .pinerity_main, .header_pinerity {
-        margin: 0 60px;
-    }
+  .pinerity_main, .header_pinerity {
+      margin: 0 60px;
+  }
 }
 *{
-  margin: 0;
-  font-family: "SoDo Sans SemiBold", Helvetica Neue, Helvetica, Arial, sans-serif;
-  scrollbar-width: thin;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-/*começo menu*/
+    margin: 0;
+    font-family: "SoDo Sans SemiBold", Helvetica Neue, Helvetica, Arial, sans-serif;
+    scrollbar-width: thin;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  /*começo menu*/
 nav{
   position: fixed;
   width: 100%;
@@ -186,8 +185,6 @@ nav .logo{
   right: 30px;
   top: 10px;
 }
-/*fim menu*/
-
 @media screen and (max-width: 970px) {
   .wrapper .btn{
     display: block;
@@ -311,12 +308,12 @@ nav .logo{
 nav input{
   display: none;
 }
-
+/*fim menu*/
 main{
   float: left;
   width: 100%;
 }
-/*teste*/
+
 section {
   background-color: #e5ffcf;
   float: left;
@@ -324,12 +321,11 @@ section {
   width: 70%;
   height: 1000px;
   margin-left: 30px;
-  margin-top: 20px;
+  margin-top: 100px;
+  margin-bottom: 50px;
   border-radius: 20px;
   font-size: x-large;
 }
-
-
 
 /* footer */
 
@@ -363,6 +359,7 @@ ul{
 .footer-col{
    width: 25%;
    padding: 0 15px;
+   margin-top: 20px;
 }
 .footer-col h4{
   font-size: 18px;
