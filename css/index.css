@@ -186,8 +186,6 @@ nav .logo{
   right: 30px;
   top: 10px;
 }
-/*fim menu*/
-
 @media screen and (max-width: 970px) {
   .wrapper .btn{
     display: block;
@@ -311,6 +309,7 @@ nav .logo{
 nav input{
   display: none;
 }
+/*fim menu*/
 /*teste*/
 
 main{
@@ -326,6 +325,7 @@ section {
   height: 1000px;
   margin-left: 30px;
   margin-top: 20px;
+  margin-bottom: 20px;
   border-radius: 20px;
   font-size: x-large;
 }
