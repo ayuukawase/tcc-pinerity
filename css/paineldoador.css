@@ -3,13 +3,13 @@
 
 :root {
   font-size: 16px;
-  --cor-primaria: #28a745;
-  --cor-secundaria-1: #db2777;
-  --cor-secundaria-2: #fb7185;
+  --cor-primaria: #198131;
+  --cor-secundaria-1: #2d914e;
+  --cor-secundaria-2: #46df79;
   --cor-fonte: #000;
   --cor-fonte-fraca: #444;
   --cor-fonte-alt: #fff;
-  --bg: #f0f9ff;
+  --bg: #f4f4f5;
   --bg-card: #fff;
   --sombra: rgba(0, 0, 0, 0.1);
 }
@@ -67,7 +67,7 @@ button:hover {
   background-color: var(--cor-secundaria-1);
   border: 1px solid var(--cor-secundaria-1);
 }
-
+/*header*/
 header {
   margin: 16px;
   display: grid;
@@ -142,7 +142,8 @@ header .saudacao {
   grid-template-columns: repeat(3, 1fr);
   gap: 16px;
 }
-
+/*fim do header*/
+/*menu*/
 aside {
   background: var(--cor-primaria);
   color: var(--cor-fonte-alt);
@@ -152,6 +153,18 @@ aside {
   flex-direction: column;
   gap: 32px;
   padding: 24px 0;
+}
+aside .logo {
+  display: flex;
+  justify-content: center;
+  font-size: min(1.5rem, 44px);
+  gap: 8px;
+  align-items: center;
+  padding: 8px;
+}
+
+aside .logo i {
+  font-size: calc(min(1.5rem, 44px) + 12px);
 }
 
 aside .menu {
@@ -185,6 +198,7 @@ aside .menu .selecionado {
 aside .menu .selecionado * {
   color: var(--cor-fonte);
 }
+/*fim do menu*/
 
 header,
 .card,
