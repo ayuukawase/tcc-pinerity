@@ -102,14 +102,6 @@ header .busca {
   align-items: center;
 }
 
-header .busca .perfil {
-  display: flex;
-  gap: 8px;
-  align-items: center;
-  font-size: 1.1rem;
-  margin-left: auto;
-}
-
 header img {
   height: 42px;
   width: auto;
@@ -131,7 +123,7 @@ header .saudacao {
 
 .saudacao .perfil img {
   grid-row: span 2;
-  height: 58px;
+  height: 65px;
 }
 
 .saudacao .perfil span {
