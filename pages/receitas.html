@@ -6,6 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Receitas</title>
+    <!--logo da guia-->
+    <link rel="icon" alt="icon" href="../img/menulogo.png">
+    <!--css-->
     <link rel="stylesheet" href="../css/receitas.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,81 +17,81 @@
   <link href="https://fonts.googleapis.com/css2?family=Crete+Round:ital@0;1&family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> 
+  
 
 </head>
 
 <body>
+  <header><!--cabeçario-->
     <nav><!--menu-->
-        <div class="wrapper">
-          <div class="logo"><a href="index.html"><img src="img/menulogo.png" alt="Logo Pinerity"></a></div>
-          <input type="radio" name="slider" id="menu-btn">
-          <input type="radio" name="slider" id="close-btn">
-          <ul class="nav-links">
-            <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
-            <li><a href="index.html">Home</a></li>
-            <li>
-              <!-- inicio menu dropdown pequeno | centro de doação -->
-              <a href="#" class="desktop-item">Centro de Doação</a>
-              <input type="checkbox" id="showDrop">
-              <label for="showDrop" class="mobile-item">Centro de Doação</label>
-              <ul class="drop-menu">
-                <li><a href="#">ONGs</a></li>
-                <li><a href="#">Órgãos do Governo</a></li>
-                <li><a href="#">Drop menu 3</a></li>
-                <li><a href="#">Drop menu 4</a></li>
-              </ul>
-              <!-- final menu dropdown pequeno | centro de doação -->
-            </li>
-            <li>
-              <!-- inicio menu dropdown grande | receitas -->
-              <a href="#" class="desktop-item">Mais...</a>
-              <input type="checkbox" id="showMega">
-              <label for="showMega" class="mobile-item">Mais...</label>
-              <div class="mega-box">
-                <div class="content">
-                  <div class="row">
-                    <img src="https://fadzrinmadu.github.io/hosted-assets/responsive-mega-menu-and-dropdown-menu-using-only-html-and-css/img.jpg" alt="">
-                  </div>
-                  <div class="row">
-                    <header>Receitas</header>
-                    <ul class="mega-links">
-                      <li><a href="../pages/receitas.html">Geral</a></li>
-                      <li><a href="#">Sem glúten</a></li>
-                      <li><a href="#">Sem lactose</a></li>
-                      <li><a href="#">...</a></li>
-                    </ul>
-                  </div>
-                  <div class="row">
-                    <header>Comer pagando pouco</header>
-                    <ul class="mega-links">
-                      <li><a href="#">...</a></li>
-                      <li><a href="#">...</a></li>
-                      <li><a href="#">...</a></li>
-                      <li><a href="#">...</a></li>
-                    </ul>
-                  </div>
-                  <div class="row">
-                    <header>Security services</header>
-                    <ul class="mega-links">
-                      <li><a href="#">Site Seal</a></li>
-                      <li><a href="#">VPS Hosting</a></li>
-                      <li><a href="#">Privacy Seal</a></li>
-                      <li><a href="#">Website design</a></li>
-                    </ul>
-                  </div>
+      <div class="wrapper">
+        <div class="logo"><a href="../index.html"><img src="../img/menulogo.png" alt="Logo Pinerity"></a></div>
+        <input type="radio" name="slider" id="menu-btn">
+        <input type="radio" name="slider" id="close-btn">
+        <ul class="nav-links">
+          <label for="close-btn" class="btn close-btn"><i class="fas fa-times"></i></label>
+          <li><a href="../index.html">Home</a></li>
+          <li>
+            <!-- inicio menu dropdown pequeno | centro de doação -->
+            <a href="#" class="desktop-item">Centro de Doação</a>
+            <input type="checkbox" id="showDrop">
+            <label for="showDrop" class="mobile-item">Centro de Doação</label>
+            <ul class="drop-menu">
+              <li><a href="#">ONGs</a></li>
+              <li><a href="#">Órgãos do Governo</a></li>
+              <li><a href="#">Drop menu 3</a></li>
+              <li><a href="#">Drop menu 4</a></li>
+            </ul>
+            <!-- final menu dropdown pequeno | centro de doação -->
+          </li>
+          <li>
+            <!-- inicio menu dropdown grande | receitas -->
+            <a href="#" class="desktop-item">Mais...</a>
+            <input type="checkbox" id="showMega">
+            <label for="showMega" class="mobile-item">Mais...</label>
+            <div class="mega-box">
+              <div class="content">
+                <div class="row">
+                  <img src="https://fadzrinmadu.github.io/hosted-assets/responsive-mega-menu-and-dropdown-menu-using-only-html-and-css/img.jpg" alt="">
+                </div>
+                <div class="row">
+                  <header>Receitas</header>
+                  <ul class="mega-links">
+                    <li><a href="receitas.html">Geral</a></li>
+                    <li><a href="#">Sem glúten</a></li>
+                    <li><a href="#">Sem lactose</a></li>
+                    <li><a href="#">Custom logo</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>Comer pagando pouco</header>
+                  <ul class="mega-links">
+                    <li><a href="#">Mapa</a></li>
+                    <li><a href="#">Business Email</a></li>
+                    <li><a href="#">Mobile Email</a></li>
+                    <li><a href="#">Web Marketing</a></li>
+                  </ul>
+                </div>
+                <div class="row">
+                  <header>Security services</header>
+                  <ul class="mega-links">
+                    <li><a href="#">Site Seal</a></li>
+                    <li><a href="#">VPS Hosting</a></li>
+                    <li><a href="#">Privacy Seal</a></li>
+                    <li><a href="#">Website design</a></li>
+                  </ul>
                 </div>
               </div>
-              <!-- final menu dropdown grande | receitas -->
-            </li>
-            <li><a href="../pages/sobre.html">Sobre</a></li>
-            <li><a href="./pages/login.php"><button>Login</button></a></li>
-          </ul>
-          <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
-        </div>
-      </nav> <!-- final do menu -->
-
-    <header>
-    </header>
+            </div>
+            <!-- final menu dropdown grande | receitas -->
+          </li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="opcoeslogin.html"><button>Login</button></a></li>
+        </ul>
+        <label for="menu-btn" class="btn menu-btn"><i class="fas fa-bars"></i></label>
+      </div>
+    </nav><!-- final menu -->
+  </header>
     <main>
         <section><br>
           <p>comidas comidas</p>
@@ -97,7 +100,7 @@
             <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
-                    <img class="comida" src="#" alt="food">
+                    <img class="comida" src="../img/carinha.jpg" alt="food">
                     <h2>a</h2>
                     <p>⏳ Preparo: 20 min</p>
                     <p>🍴 12 porções</p>
@@ -111,7 +114,7 @@
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
-                    <img class="comida" src="../img/canjica.jpg" alt="food">
+                    <img class="comida" src="../img/carinha.jpg" alt="food">
                     <h2>a</h2>
                     <p>⏳ Preparo: 40 min</p>
                     <p>🍴 10 porções</p>
@@ -125,7 +128,7 @@
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
-                    <img class="comida" src="" alt="food">
+                    <img class="comida" src="../img/carinha.jpg" alt="food">
                     <h2>a</h2>
                     <p>⏳ Preparo: 20 min</p>
                     <p>🍴 10 porções</p>
@@ -139,7 +142,7 @@
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
-                    <img class="comida" src="#" alt="food">
+                    <img class="comida" src="../img/carinha.jpg" alt="food">
                     <h2>a</h2>
                     <p>⏳ Preparo: 25 min</p>
                     <p>🍴 4 porções</p>
@@ -153,7 +156,7 @@
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
-                    <img class="comida" src="#" alt="food">
+                    <img class="comida" src="../img/carinha.jpg" alt="food">
                     <h2>a</h2>
                     <p>⏳ Preparo: 20 min</p>
                     <p>🍴 30 porções</p>
@@ -167,7 +170,7 @@
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
-                    <img class="comida" src="../img/pédemoleque.jpg" alt="food">
+                    <img class="comida" src="../img/carinha.jpg" alt="food">
                     <h2>a</h2>
                     <p>⏳ Preparo: 25 min</p>
                     <p>🍴 30 porções</p>
@@ -181,7 +184,7 @@
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
-                    <img class="comida" src="../img/pinhão.jpg" alt="food">
+                    <img class="comida" src="../img/carinha.jpg" alt="food">
                     <h2>a</h2>
                     <p>⏳ Preparo: 40 min</p>
                     <p>🍴 8 porções</p>
@@ -195,7 +198,7 @@
               <div class="flip-card">
                 <div class="flip-card-inner">
                   <div class="flip-card-front">
-                    <img class="comida" src=".#" alt="food">
+                    <img class="comida" src="../img/carinha.jpg" alt="food">
                     <h2>a</h2>
                     <p>⏳ Preparo: 20 min</p>
                     <p>🍴 12 porções</p>
@@ -207,50 +210,50 @@
                 </div>
               </div>
         </section>
-        <a href="#t" class="btn"></a>
+        <a href="#i" class="btn"></a>
     </main>
+    <!--início footer-->
     <footer class="footer">
-        <div class="container">
-         <div class="row">
-           <div class="footer-col">
-             <h4>company</h4>
-             <ul>
-               <li><a href="#">about us</a></li>
-               <li><a href="#">our services</a></li>
-               <li><a href="#">privacy policy</a></li>
-               <li><a href="#">affiliate program</a></li>
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>get help</h4>
-             <ul>
-               <li><a href="#">FAQ</a></li>
-               <li><a href="#">shipping</a></li>
-               <li><a href="#">returns</a></li>
-               <li><a href="#">order status</a></li>
-               <li><a href="#">payment options</a></li>
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>online shop</h4>
-             <ul>
-               <li><a href="#">watch</a></li>
-               <li><a href="#">bag</a></li>
-               <li><a href="#">shoes</a></li>
-               <li><a href="#">dress</a></li>
-             </ul>
-           </div>
-           <div class="footer-col">
-             <h4>Siga-nos nas redes sociais</h4>
-             <div class="social-links">
-               <a href="#"><i class="fab fa-facebook-f"></i></a>
-               <a href="#"><i class="fab fa-twitter"></i></a>
-               <a href="#"><i class="fab fa-instagram"></i></a>
-               <a href="#"><i class="fab fa-linkedin-in"></i></a>
-             </div>
-           </div>
-         </div>
+      <div class="container">
+       <div class="row">
+        <div class="footer-col">
+          <h4>Sobre nós</h4>
+          <ul>
+            <li><a href="#">Quem somos</a></li>
+            <li><a href="#">Objetivo</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">...</a></li>
+          </ul>
         </div>
-     </footer>
+        <div class="footer-col">
+          <h4>get help</h4>
+          <ul>
+            <li><a href="#">...</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">...</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contato</h4>
+          <ul>
+           <li><a href="mailto:pinerity@gmail.com">pinerity@gmail.com</a></li>
+           <li><a href="tel:+5511999999999">Telefone: (11) 99999-9999</a></li>
+            <li><a href="#">...</a></li>
+            <li><a href="#">...</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Siga-nos nas redes sociais</h4>
+          <div class="social-links">
+            <a href="https://www.instagram.com/pinerity.oficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/pinerity/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+       </div>
+      </div>
+   </footer>
+   <!--fim footer-->
 </body>
 </html>

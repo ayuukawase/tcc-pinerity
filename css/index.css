@@ -310,13 +310,15 @@ nav input{
   display: none;
 }
 /*fim menu*/
-/*teste*/
+/*conteúdo*/
 
 main{
   float: left;
   width: 100%;
+  cursor: wait; /*hahaha*/
 }
 
+/*teste*/
 section {
   background-color: #e5ffcf;
   float: left;
@@ -335,8 +337,38 @@ section {
   margin-top: 17px;
 }
 
+.back-button:hover {
+  background-color:#5eac3a;
+  color: white;
+}
+.back-button {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  border-radius: 10px;
+  width: 80px;
+  height: 40px;
+  background-color: #73cc4a;
+  text-decoration: none;
+  cursor: pointer;
+}
+.back-button::after {
+  content: "Voltar ao início ↑";
+  font-size: 13px;
+  font-weight: 600;
+  color: #000000;
+  transition: margin-top 250px;
+}
+.back-button:hover::after {
+  margin-top:-8px;
+}
 
-
+/*fim de conteúdo*/
 /* footer */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -410,17 +442,20 @@ ul{
   display: inline-block;
   height: 40px;
   width: 40px;
-  background-color: rgba(255,255,255,0.2);
   margin:0 10px 10px 0;
+  padding-top: 6px;
   text-align: center;
-  line-height: 40px;
   border-radius: 50%;
+  line-height: 40px;
   color: #ffffff;
   transition: all 0.5s ease;
 }
 .footer-col .social-links a:hover{
   color: #24262b;
   background-color: #ffffff;
+}
+.footer-col .social-links svg{
+  top: 100px;
 }
 
 /*responsive*/
