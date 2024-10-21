@@ -9,9 +9,9 @@ USE Pinerity;
 
 CREATE TABLE Benificio
 (
-    id              int auto_increment,
-    nome            varchar(50),
-    estado          varchar(2),
+    id              INT AUTO_INCREMENT,
+    nome            VARCHAR(),
+    estado          VARCHAR(),
     PRIMARY KEY(id)
 );
 
@@ -20,24 +20,43 @@ CREATE TABLE Benificiario
     id              int auto_increment,
     NIS             int,
     nome            varchar(50),
-    folha_resumo    varchar(10),
+    folha_resumo    varchar(10), -- modificar depois
+    rendafamiliar   float,
+    cep             int,
+    num             int,
+    n_integrantes   int,
     cpf             varchar(11),
-    telefone        varchar(11),
-    genero          varchar(10), -- modificar depois
+    telefone        varchar(11), 
     email           varchar(50),
     senha           varchar(50),
     primary key(id)
 );
 
-CREATE TABLE Doador
+CREATE TABLE Doadorfisico
 (
     id              int auto_increment,
+    cpf             int,
+    nome            varchar (50),
+    dt_nasc         varchar (15),
     telefone        varchar(11),
     endereco        varchar (100),
     numero          varchar (4),
     cep             char (9),
     email           varchar (50),
-    primary key(id)
+    primary key(cpf)
+);
+CREATE TABLE Doadorjuridica
+(
+    id              int auto_increment,
+    cnpj            int,
+    nomeEmpresarial varchar(100),
+    nomeFantasia    varchar(100),
+    telefone        varchar(11),
+    endereco        varchar (100),
+    numero          varchar (4),
+    cep             char (9),
+    email           varchar (50),
+    primary key(cnpj)
 );
 
 CREATE TABLE CestaBasica
@@ -50,8 +69,8 @@ CREATE TABLE CestaBasica
 CREATE TABLE EmpresaDistribuicao
 (
     cnpj                        int,
-    nomeEmpresarial             varchar(100),
-    nomeFantasia                varchar (50),
+    nome_empresarial             varchar(100),
+    nome_fantasia                varchar (50),
     cep                         char (9),
     numero                      varchar (4),
     telefone                    varchar (11),
@@ -65,24 +84,7 @@ CREATE TABLE Pedido
 (
     id                  int auto_increment,
     numeroCestas        varchar (2),
-    tipoEntrega         boolean,
+    tipo_entrega         boolean,
     destinatario        varchar (100),
     primary key (id)
-);
-
-CREATE TABLE PessoaFisica
-(
-    cpf         int,
-    genero      varchar (10), --modificar depois 
-    nome        varchar (50),
-    nascimento  varchar (15),
-    primary key(cpf)
-);
-
-CREATE TABLE PessoaJuridica
-(
-    cnpj            int,
-    nomeEmpresarial varchar(100),
-    nomeFantasia    varchar(100),
-    primary key(cnpj)
 );
