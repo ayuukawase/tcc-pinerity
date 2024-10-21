@@ -69,9 +69,9 @@ CREATE TABLE CestaBasica
 CREATE TABLE EmpresaDistribuicao
 (
     cnpj                        int,
-    nome_empresarial             varchar(100),
-    nome_fantasia                varchar (50),
-    cep                         char (9),
+    nome_empresarial            varchar(100),
+    nome_fantasia               varchar (50),
+    cep                         varchar (9),
     numero                      varchar (4),
     telefone                    varchar (11),
     estoque                     varchar (500),
