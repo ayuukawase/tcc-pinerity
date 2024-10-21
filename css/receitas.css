@@ -309,141 +309,58 @@ nav .logo{
 nav input{
   display: none;
 }
-/*fim de menu*/
-main{
-    align-content: center;
-    margin-left: auto;
-    margin-right: auto;
-    float: left;
-    width: 100%;
-    height: 1100px;
-    background-color: #fff;
+/*fim menu*/
+/*conteúdo*/
+
+/*teste*/
+section {
+  background-color: #e5ffcf;
+  float: left;
+  clear: left;
+  width: 70%;
+  height: 1000px;
+  margin-left: 30px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  font-size: x-large;
 }
-main ul li{
-    text-align: left;
+
+
+.back-button:hover {
+  background-color:#5eac3a;
+  color: white;
 }
-section{
-    margin-top: -10px;
-    background-color: #fff;
-    height: 1100px;
-    width: 96%;
-    margin: auto;
+.back-button {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  border-radius: 10px;
+  width: 80px;
+  height: 40px;
+  background-color: #73cc4a;
+  text-decoration: none;
+  cursor: pointer;
 }
-div{
-    margin-top: 5px;
-    margin-right: 5px;
-    width: 24%;
-    height: 300px;
-    float: left;
-    justify-content: center;
-    align-items: center;
+.back-button::after {
+  content: "Voltar ao início ↑";
+  font-size: 13px;
+  font-weight: 600;
+  color: #000000;
+  transition: margin-top 250px;
 }
-.flip-card-front img{
-    width: 100%;
-    height:200px;
+.back-button:hover::after {
+  margin-top:-8px;
 }
-.flip-card {
-    background-color: transparent;
-    width: 24%;
-    height: 400px;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px;
-    margin-left: 5px;
-    margin-top: 20px;
-}
-.flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-}
-.flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-}
-.flip-card-front, .flip-card-back {
-    margin-top: -5px;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-}
-.flip-card-front {
-    background-color: rgb(69, 233, 91);
-    color: black;
-    border: 1px solid #f1f1f1;
-}
-.flip-card-back {
-    background-color: #aa61d4;
-    color: black;
-    font-size: xx-large;
-    transform: rotateY(180deg);
-    border: #f1f1f1 solid;
-}
-.flip-card-back h1 {
-    margin-top: 70px;
-}
-section p {
-    font-size: x-large;
-    margin: 20px;
-}
-.flip-card-front h2 {
-    margin-top: 30px;
-    text-decoration: underline;
-}
-#amendoimdoce {
-    margin-top: 80px;
-}
-#pacoca {
-    margin-top: 150px;
-}
-h3{
-    margin-top: 10px;
-}
-.comida{
-    width: 75%;
-    height: 300px;
-    margin-top: 8px;
-    border: black solid 1px;
-}
-button{
-    margin-top: 10px;
-    background-color: #fbfbfb;
-    width: 70%;
-    height: 50px;
-    border-radius: 20px;
-    cursor: pointer;
-    margin-top: 150px;
-    font-size: x-large;
-}
-button:hover {
-    background-color:#ff6e39;
-    color: white;
-}
-.btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    width: 60px;
-    height: 70px;
-    background-color: rgb(239, 253, 113);
-    text-decoration: none;
-}
-.btn::after {
-    content: "Voltar ao topo ↑";
-    font-size: 15px;
-    font-weight: 800;
-    color: #000000;
-    transition: margin-top 250px;
-}
-.btn:hover::after {
-    margin-top:-8px;
-}
+
+/*fim de conteúdo*/
+/* footer */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 body{
   line-height: 1.5;
@@ -515,17 +432,20 @@ ul{
   display: inline-block;
   height: 40px;
   width: 40px;
-  background-color: rgba(255,255,255,0.2);
   margin:0 10px 10px 0;
+  padding-top: 6px;
   text-align: center;
-  line-height: 40px;
   border-radius: 50%;
+  line-height: 40px;
   color: #ffffff;
   transition: all 0.5s ease;
 }
 .footer-col .social-links a:hover{
   color: #24262b;
   background-color: #ffffff;
+}
+.footer-col .social-links svg{
+  top: 100px;
 }
 
 /*responsive*/
