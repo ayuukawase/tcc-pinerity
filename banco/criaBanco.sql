@@ -43,6 +43,7 @@ CREATE TABLE Doadorfisico
     numero          varchar (4),
     cep             char (9),
     email           varchar (50),
+    senha           varchar(50),
     primary key(cpf)
 );
 CREATE TABLE Doadorjuridica
@@ -56,6 +57,7 @@ CREATE TABLE Doadorjuridica
     numero          varchar (4),
     cep             char (9),
     email           varchar (50),
+    senha           varchar(50),
     primary key(cnpj)
 );
 
@@ -74,9 +76,9 @@ CREATE TABLE EmpresaDistribuicao
     cep                         varchar (9),
     numero                      varchar (4),
     telefone                    varchar (11),
-    estoque                     varchar (500),
     descricaoItensEstoque       varchar(500),
     email                       varchar (50),
+    senha                       varchar(50),
     primary key(cnpj)
 );
 
