@@ -27,7 +27,7 @@
             ];
 
             insere(
-                'usuario',
+                'Beneficiario',
                 $dados
             );
 
@@ -47,7 +47,7 @@
             ];
 
             atualiza(
-                'usuario',
+                'Beneficiario',
                 $dados,
                 $criterio
             );
@@ -59,7 +59,7 @@
                 ['NIS', '=', $NIS],
                 ['AND', 'ativo', '=', 1]
             ];
-            $retorno = buscar(
+            $retorno = buscar(//descobrir o que faz
                 'usuario',
                 ['id', 'nome', 'email', 'senha', 'adm'],
                 $criterio
@@ -67,7 +67,7 @@
 
             if(count($retorno)> 0){
                 if(crypt($senha,$salt) == $retorno[0]['senha']){
-                    $_SESSION['login']['usuario'] = $retorno[0];
+                    $_SESSION['login']['Beneficiario'] = $retorno[0];
                     if(!empty($_SESSION['url_retorno'])){
                         header('Location: '. $_SESSION['url_retorno']);
                         $_SESSION['url_retorno'] = '';
@@ -95,15 +95,12 @@
             ];
 
             atualiza(
-                'usuario',
+                'Beneficiario',
                 $dados,
                 $criterio
             );
-
-            header('Location: ../usuarios.php');
             exit;
             break;
             
     }
-    header('Location: ../index.php');
 ?>

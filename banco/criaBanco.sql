@@ -7,12 +7,19 @@ CREATE DATABASE IF NOT EXISTS Pinerity;
 -- Seleciona o banco de dados
 USE Pinerity;
 
-CREATE TABLE Benificio
+CREATE TABLE Benificio --arrumar
 (
     id              INT AUTO_INCREMENT,
-    nome            VARCHAR(),
-    estado          VARCHAR(),
-    PRIMARY KEY(id)
+    qtd_cestas      int,
+    pedido_id       VARCHAR(50)
+    beneficiario_id int,
+    PRIMARY KEY(id),
+    KEY fk_beneficio_beneficiario_idx (beneficiario_id),
+    CONSTRAINT fk_beneficio_beneficiario
+        FOREIGN KEY (beneficiario_id) REFERENCES beneficiario(id)
+    KEY fk_beneficio_pedido_idx (usuario_id),
+    CONSTRAINT fk_post_usuario
+        FOREIGN KEY (usuario_id) REFERENCES usuario(id)
 );
 
 CREATE TABLE Benificiario
@@ -32,7 +39,7 @@ CREATE TABLE Benificiario
     primary key(id)
 );
 
-CREATE TABLE Doadorfisico
+CREATE TABLE DoadorFisico
 (
     id              int auto_increment,
     cpf             int,
@@ -46,7 +53,7 @@ CREATE TABLE Doadorfisico
     senha           varchar(50),
     primary key(cpf)
 );
-CREATE TABLE Doadorjuridica
+CREATE TABLE DoadorJuridico
 (
     id              int auto_increment,
     cnpj            int,
@@ -61,10 +68,16 @@ CREATE TABLE Doadorjuridica
     primary key(cnpj)
 );
 
-CREATE TABLE CestaBasica
+CREATE TABLE CestaBasica_df
 (
-    id              int auto_increment,
-    descricao       varchar (200),
+    id                    int auto_increment,
+    descricao_itens       varchar (200),
+    primary key(id)
+);
+CREATE TABLE CestaBasica_dj
+(
+    id                    int auto_increment,
+    descricao_itens       varchar (200),
     primary key(id)
 );
 
