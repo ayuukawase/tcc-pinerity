@@ -7,22 +7,19 @@ CREATE DATABASE IF NOT EXISTS Pinerity;
 -- Seleciona o banco de dados
 USE Pinerity;
 
-CREATE TABLE Benificio --arrumar
+CREATE TABLE benificio --arrumar
 (
     id              INT AUTO_INCREMENT,
     qtd_cestas      int,
-    pedido_id       VARCHAR(50)
-    beneficiario_id int,
+    pedido_id       int,
     PRIMARY KEY(id),
     KEY fk_beneficio_beneficiario_idx (beneficiario_id),
-    CONSTRAINT fk_beneficio_beneficiario
-        FOREIGN KEY (beneficiario_id) REFERENCES beneficiario(id)
+    CONSTRAINT fk_beneficio_beneficiario FOREIGN KEY (beneficiario_id) REFERENCES beneficiario(id),
     KEY fk_beneficio_pedido_idx (usuario_id),
-    CONSTRAINT fk_post_usuario
-        FOREIGN KEY (usuario_id) REFERENCES usuario(id)
+    CONSTRAINT fk_post_usuario FOREIGN KEY (usuario_id) REFERENCES usuario(id)
 );
 
-CREATE TABLE Benificiario
+CREATE TABLE benificiario
 (
     id              int auto_increment,
     NIS             int,
@@ -39,7 +36,7 @@ CREATE TABLE Benificiario
     primary key(id)
 );
 
-CREATE TABLE DoadorFisico
+CREATE TABLE doadorfisico
 (
     id              int auto_increment,
     cpf             int,
@@ -53,7 +50,7 @@ CREATE TABLE DoadorFisico
     senha           varchar(50),
     primary key(cpf)
 );
-CREATE TABLE DoadorJuridico
+CREATE TABLE doadorjuridico
 (
     id              int auto_increment,
     cnpj            int,
@@ -68,20 +65,23 @@ CREATE TABLE DoadorJuridico
     primary key(cnpj)
 );
 
-CREATE TABLE CestaBasica_df
+CREATE TABLE cestabasicadf
 (
     id                    int auto_increment,
     descricao_itens       varchar (200),
-    primary key(id)
+    doadorfisico_id       int,
+    primary key(id),
+    KEY fk_cestabasicadf_doadorfisico_idx (doadorfisico_id),
+    CONSTRAINT fk_cestabasicadf_doadorfisico FOREIGN KEY (doadorfisico_id) REFERENCES doadorfisico(id),
 );
-CREATE TABLE CestaBasica_dj
+CREATE TABLE cestabasicadj
 (
     id                    int auto_increment,
     descricao_itens       varchar (200),
     primary key(id)
 );
 
-CREATE TABLE EmpresaDistribuicao
+CREATE TABLE empresadistribuicao
 (
     cnpj                        int,
     nome_empresarial            varchar(100),
@@ -95,11 +95,11 @@ CREATE TABLE EmpresaDistribuicao
     primary key(cnpj)
 );
 
-CREATE TABLE Pedido
+CREATE TABLE pedido
 (
     id                  int auto_increment,
     numeroCestas        varchar (2),
-    tipo_entrega         boolean,
-    destinatario        varchar (100),
+    tipoentrega         boolean,
+    beneficiario_id     int,
     primary key (id)
 );
