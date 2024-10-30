@@ -30,7 +30,7 @@
                     }
                 ?>
                 <h2>Usuário</h2>
-                <form method="post" action="core/beneficiario_repositorio.php">
+                <form method="post" action="../core/doadorfisico_repositorio.php">
                     <input type="hidden" name="acao" value="<?php echo empty($id) ? 'insert' : 'update' ?>">
                     <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
                     <div class="form-group">
@@ -38,12 +38,12 @@
                         <input class="form-control" type="text" require="required" id="nome" name="nome" value="<?php echo $entidade['nome'] ?? '' ?>">
                     </div>
                     <div class="form-group">
-                        <label for="NIS">NIS</label>
-                        <input class="form-control" type="text" require="required" id="NIS" name="NIS" value="<?php echo $entidade['NIS'] ?? '' ?>">
-                    </div>
-                    <div class="form-group">
                         <label for="cpf">CPF</label>
                         <input class="form-control" type="text" require="required" id="cpf" name="cpf" pattern="\[0-9]{3}\.\[0-9]{3}\.\[0-9]{3}-\[0-9]{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" value="<?php echo $entidade['cpf'] ?? '' ?>">
+                    </div>
+                    <div class="form-group">
+                        <label for="dt_nasc">Data de Nascimento</label>
+                        <input class="form-control" type="date" require="required" id="dt_nasc" name="dt_nasc" value="<?php echo $entidade['dt_nasc'] ?? '' ?>">
                     </div>
                     <div class="form-group">
                         <label for="telefone">Telefone</label>

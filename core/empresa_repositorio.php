@@ -17,9 +17,9 @@
     switch($acao){
         case 'insert':
             $dados = [
-                'cnpj'                  => $cnpj,
-                'nome_empresarial'      => $nome_empresarial,
                 'nome_fantasia'         => $nome_fantasia,
+                'nome_empresarial'      => $nome_empresarial,
+                'cnpj'                  => $cnpj,
                 'email'                 => $email,
                 'telefone'              => $telefone,
                 'cep'                   => $cep,

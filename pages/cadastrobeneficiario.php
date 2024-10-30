@@ -30,7 +30,7 @@
                     }
                 ?>
                 <h2>Usuário</h2>
-                <form method="post" action="core/beneficiario_repositorio.php">
+                <form method="post" action="../core/beneficiario_repositorio.php">
                     <input type="hidden" name="acao" value="<?php echo empty($id) ? 'insert' : 'update' ?>">
                     <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
                     <div class="form-group">

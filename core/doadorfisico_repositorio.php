@@ -18,17 +18,17 @@
         case 'insert':
             $dados = [
                 'nome'          => $nome,
+                'cpf'           => $cpf,
                 'dt_nasc'       => $dt_nasc,
                 'telefone'      => $telefone,
                 'email'         => $email,
-                'cpf'           => $cpf,
                 'cep'           => $cep,
-                'num'           => $num,
+                'numero'        => $numero,
                 'senha'         => crypt($senha, $salt)
             ];
 
             insere(
-                'DoadorFisico',
+                'doadorfisico',
                 $dados
             );
 
@@ -38,7 +38,7 @@
             $id = (int)$id;
             $dados = [
                 'telefone'      => $telefone,
-                'CEP'           => $cep,
+                'cep'           => $cep,
                 'num'           => $num,
             ];
 
@@ -47,7 +47,7 @@
             ];
 
             atualiza(
-                'DoadorFisico',
+                'doadorfisico',
                 $dados,
                 $criterio
             );
@@ -67,7 +67,7 @@
 
             if(count($retorno)> 0){
                 if(crypt($senha,$salt) == $retorno[0]['senha']){
-                    $_SESSION['login']['DoadorFisico'] = $retorno[0];
+                    $_SESSION['login']['doadorfisico'] = $retorno[0];
                     if(!empty($_SESSION['url_retorno'])){
                         header('Location: '. $_SESSION['url_retorno']);
                         $_SESSION['url_retorno'] = '';
@@ -95,7 +95,7 @@
             ];
 
             atualiza(
-                'DoadorFisico',
+                'doadorfisico',
                 $dados,
                 $criterio
             );

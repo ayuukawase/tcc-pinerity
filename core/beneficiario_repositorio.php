@@ -23,6 +23,7 @@
                 'telefone'      => $telefone,
                 'email'         => $email,
                 'cep'           => $cep,
+                'numero'        => $numero,
                 'folha_resumo'  => $folha_resumo,
                 'n_integrantes' => $n_integrantes,
                 'senha'         => crypt($senha, $salt)
