@@ -21,8 +21,8 @@
                 'NIS'           => $NIS,
                 'cpf'           => $cpf,
                 'telefone'      => $telefone,
-                'cep'           => $cep,
                 'email'         => $email,
+                'cep'           => $cep,
                 'folha_resumo'  => $folha_resumo,
                 'n_integrantes' => $n_integrantes,
                 'senha'         => crypt($senha, $salt)
