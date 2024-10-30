@@ -13,10 +13,8 @@ CREATE TABLE benificio --arrumar
     qtd_cestas      int,
     pedido_id       int,
     PRIMARY KEY(id),
-    KEY fk_beneficio_beneficiario_idx (beneficiario_id),
-    CONSTRAINT fk_beneficio_beneficiario FOREIGN KEY (beneficiario_id) REFERENCES beneficiario(id),
-    KEY fk_beneficio_pedido_idx (usuario_id),
-    CONSTRAINT fk_post_usuario FOREIGN KEY (usuario_id) REFERENCES usuario(id)
+    KEY fk_beneficio_pedido_idx (pedido_id),
+    CONSTRAINT fk_beneficio_pedido FOREIGN KEY (pedido_id) REFERENCES pedido(id)
 );
 
 CREATE TABLE benificiario
@@ -26,8 +24,9 @@ CREATE TABLE benificiario
     nome            varchar(50),
     folha_resumo    varchar(10), -- modificar depois
     rendafamiliar   float,
-    cep             int,
-    num             int,
+    endereco        varchar (100),
+    numero          varchar (4),
+    cep             float (10),
     n_integrantes   int,
     cpf             varchar(11),
     telefone        varchar(11), 
@@ -45,7 +44,7 @@ CREATE TABLE doadorfisico
     telefone        varchar(11),
     endereco        varchar (100),
     numero          varchar (4),
-    cep             char (9),
+    cep             float (10),
     email           varchar (50),
     senha           varchar(50),
     primary key(cpf)
@@ -59,7 +58,7 @@ CREATE TABLE doadorjuridico
     telefone        varchar(11),
     endereco        varchar (100),
     numero          varchar (4),
-    cep             char (9),
+    cep             float (10),
     email           varchar (50),
     senha           varchar(50),
     primary key(cnpj)
@@ -72,13 +71,16 @@ CREATE TABLE cestabasicadf
     doadorfisico_id       int,
     primary key(id),
     KEY fk_cestabasicadf_doadorfisico_idx (doadorfisico_id),
-    CONSTRAINT fk_cestabasicadf_doadorfisico FOREIGN KEY (doadorfisico_id) REFERENCES doadorfisico(id),
+    CONSTRAINT fk_cestabasicadf_doadorfisico FOREIGN KEY (doadorfisico_id) REFERENCES doadorfisico(id)
 );
 CREATE TABLE cestabasicadj
 (
     id                    int auto_increment,
     descricao_itens       varchar (200),
-    primary key(id)
+    doadorjuridico_id       int,
+    primary key(id),
+    KEY fk_cestabasicadj_doadorjuridico_idx (doadorjuridico_id),
+    CONSTRAINT fk_cestabasicadj_doadorjuridico FOREIGN KEY (doadorjuridico_id) REFERENCES doadorjuridico(id)
 );
 
 CREATE TABLE empresadistribuicao
@@ -86,8 +88,9 @@ CREATE TABLE empresadistribuicao
     cnpj                        int,
     nome_empresarial            varchar(100),
     nome_fantasia               varchar (50),
-    cep                         varchar (9),
+    endereco                    varchar (100),
     numero                      varchar (4),
+    cep                         float (10),
     telefone                    varchar (11),
     descricaoItensEstoque       varchar(500),
     email                       varchar (50),
@@ -101,5 +104,7 @@ CREATE TABLE pedido
     numeroCestas        varchar (2),
     tipoentrega         boolean,
     beneficiario_id     int,
-    primary key (id)
+    primary key (id),
+    KEY fk_pedido_beneficiario_idx (beneficiario_id),
+    CONSTRAINT fk_pedido_beneficiario FOREIGN KEY (beneficiario_id) REFERENCES beneficiario(id)
 );
