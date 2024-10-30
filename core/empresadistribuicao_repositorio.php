@@ -24,12 +24,12 @@
                 'telefone'              => $telefone,
                 'cep'                   => $cep,
                 'numero'                => $numero,
-                'descricaoItensEstoque' => $descricaoItensEstoque,
+                'descricao_itens_estoque' => $descricaoItensEstoque,
                 'senha'             => crypt($senha, $salt)
             ];
 
             insere(
-                'usuario',
+                'empresadistribuicao',
                 $dados
             );
 
@@ -41,7 +41,6 @@
                 'telefone'      => $telefone,
                 'CEP'           => $cep,
                 'num'           => $num,
-                'n_integrantes'  => $n_integrantes
             ];
 
             $criterio = [
@@ -49,7 +48,7 @@
             ];
 
             atualiza(
-                'usuario',
+                'empresadistribuicao',
                 $dados,
                 $criterio
             );
@@ -58,18 +57,18 @@
 
         case 'login':
             $criterio = [
-                ['NIS', '=', $NIS],
+                ['cnpj', '=', $cnpj],
                 ['AND', 'ativo', '=', 1]
             ];
-            $retorno = buscar(
+            /*$retorno = buscar(
                 'usuario',
                 ['id', 'nome', 'email', 'senha', 'adm'],
                 $criterio
-            );
+            );*/
 
             if(count($retorno)> 0){
                 if(crypt($senha,$salt) == $retorno[0]['senha']){
-                    $_SESSION['login']['usuario'] = $retorno[0];
+                    $_SESSION['login']['empresadistribuicao'] = $retorno[0];
                     if(!empty($_SESSION['url_retorno'])){
                         header('Location: '. $_SESSION['url_retorno']);
                         $_SESSION['url_retorno'] = '';
@@ -97,15 +96,12 @@
             ];
 
             atualiza(
-                'usuario',
+                'empresadistribuicao',
                 $dados,
                 $criterio
             );
-
-            header('Location: ../usuarios.php');
             exit;
             break;
             
     }
-    header('Location: ../index.php');
 ?>

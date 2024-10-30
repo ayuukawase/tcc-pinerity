@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Usuário | projeto para Web com PHP</title>
+    <title>Cadastro do doador físico</title>
 </head>
 <body>
     <div class="container">
@@ -15,13 +15,13 @@
                     require_once '../core/mysql.php';
 
                     if(isset($_SESSION['login'])){
-                        $id = (int)$_SESSION['login']['beneficiario']['id'];
+                        $id = (int)$_SESSION['login']['doadorfisico']['id'];
 
                         $criterio = [
                             ['id', '=', $id]
                         ];
                         $retorno = buscar(
-                            'beneficiario',
+                            'doadorfisico',
                             ['id', 'nome', 'email'],
                             $criterio
                         );
@@ -30,7 +30,7 @@
                     }
                 ?>
                 <h2>Usuário</h2>
-                <form method="post" action="../core/doadorfisico_repositorio.php">
+                <form method="post" action="core/doadorfisico_repositorio.php">
                     <input type="hidden" name="acao" value="<?php echo empty($id) ? 'insert' : 'update' ?>">
                     <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
                     <div class="form-group">
@@ -39,7 +39,7 @@
                     </div>
                     <div class="form-group">
                         <label for="cpf">CPF</label>
-                        <input class="form-control" type="text" require="required" id="cpf" name="cpf" pattern="\[0-9]{3}\.\[0-9]{3}\.\[0-9]{3}-\[0-9]{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" value="<?php echo $entidade['cpf'] ?? '' ?>">
+                        <input class="form-control" type="text" require="required" id="cpf" name="cpf" pattern="\d{3}\.\d{3}\.\d{3}-\d{2}" title="Digite um CPF no formato: xxx.xxx.xxx-xx" value="<?php echo $entidade['cpf'] ?? '' ?>">
                     </div>
                     <div class="form-group">
                         <label for="dt_nasc">Data de Nascimento</label>
@@ -51,19 +51,15 @@
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>
-                        <input class="form-control" type="text" require="required" id="email" name="email" value="<?php echo $entidade['email'] ?? '' ?>">
+                        <input class="form-control" type="email" require="required" id="email" name="email" value="<?php echo $entidade['email'] ?? '' ?>">
                     </div>
                     <div class="form-group">
                         <label for="cep">CEP</label>
-                        <input class="form-control" type="text" require="required" id="cep" name="cep" pattern="[0-9]{5}-[0-9]{3}" required value="<?php echo $entidade['cep'] ?? '' ?>">
-                    </div>
-                    <div class="form-group"><!--arrumar no banco-->
-                        <label for="folha_resumo">Folha Resumo</label>
-                        <input class="form-control" type="file" require="required" id="folha_resumo" name="folha_resumo" value="<?php echo $entidade['folha_resumo'] ?? '' ?>">
+                        <input class="form-control" type="text" require="required" id="cep" name="cep" pattern="[0-9]{5}-[0-9]{3}" title="Digite um CEP no formato: xxxxx-xx" value="<?php echo $entidade['cep'] ?? '' ?>">
                     </div>
                     <div class="form-group">
-                        <label for="n_integrantes">Número de pessoas na residência</label>
-                        <input class="form-control" type="number" require="required" id="n_integrantes" name="n_integrantes" value="<?php echo $entidade['n_integrantes'] ?? '' ?>">
+                        <label for="numero">Número da casa/apartamento</label>
+                        <input class="form-control" type="number" require="required" id="numero" name="numero" value="<?php echo $entidade['numero'] ?? '' ?>">
                     </div>
                     <?php if(!isset($_SESSION['login'])): ?>
                     <div class="form-group">

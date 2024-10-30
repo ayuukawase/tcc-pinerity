@@ -9,15 +9,16 @@
 </head>
 <body>
   <div class="wrapper">
-    <form action="#">
+    <form method="post" action="../core/doadorfisico_repositorio.php">
+    <input type="hidden" name="acao" value="login">
       <h2>Login</h2>
         <div class="input-field">
-        <input type="text" required>
-        <label>Coloque com seu CPF</label>
+        <input type="text" require="required" id="cpf" name="cpf">
+        <label for="cpf">Coloque com seu CPF</label>
       </div>
       <div class="input-field">
-        <input type="password" required>
-        <label>Coloque sua senha</label>
+        <input type="password" type="password" require="required" id="senha" name="senha">
+        <label for="senha">Coloque sua senha</label>
       </div>
       <div class="forget">
         <label for="remember">
@@ -28,7 +29,7 @@
       </div>
       <button type="submit">Entrar</button>
       <div class="register">
-        <p>Não tem uma conta? <a href="#">Cadastrar</a></p>
+        <p>Não tem uma conta? <a href="cadastrodoadorfisico.php">Cadastrar</a></p>
       </div>
     </form>
   </div>

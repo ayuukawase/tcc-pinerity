@@ -92,7 +92,7 @@ CREATE TABLE empresadistribuicao
     numero                      varchar (4),
     cep                         float (10),
     telefone                    varchar (11),
-    descricaoItensEstoque       varchar(500),
+    descricao_itens_estoque       varchar(500),
     email                       varchar (50),
     senha                       varchar(50),
     primary key(cnpj)

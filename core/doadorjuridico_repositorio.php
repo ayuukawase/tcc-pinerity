@@ -28,7 +28,7 @@
             ];
 
             insere(
-                'DoadorJuridico',
+                'doadorjuridico',
                 $dados
             );
 
@@ -38,7 +38,7 @@
             $id = (int)$id;
             $dados = [
                 'telefone'      => $telefone,
-                'CEP'           => $cep,
+                'cep'           => $cep,
                 'num'           => $num,
             ];
 
@@ -47,7 +47,7 @@
             ];
 
             atualiza(
-                'DoadorJuridico',
+                'doadorjuridico',
                 $dados,
                 $criterio
             );
@@ -67,7 +67,7 @@
 
             if(count($retorno)> 0){
                 if(crypt($senha,$salt) == $retorno[0]['senha']){
-                    $_SESSION['login']['DoadorJuridico'] = $retorno[0];
+                    $_SESSION['login']['doadorjuridico'] = $retorno[0];
                     if(!empty($_SESSION['url_retorno'])){
                         header('Location: '. $_SESSION['url_retorno']);
                         $_SESSION['url_retorno'] = '';
@@ -95,7 +95,7 @@
             ];
 
             atualiza(
-                'DoadorJuridico',
+                'doadorjuridico',
                 $dados,
                 $criterio
             );
