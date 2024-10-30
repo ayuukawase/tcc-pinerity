@@ -17,17 +17,19 @@
     switch($acao){
         case 'insert':
             $dados = [
-                'NIS'           => $NIS,
                 'nome'          => $nome,
+                'NIS'           => $NIS,
                 'cpf'           => $cpf,
                 'telefone'      => $telefone,
+                'cep'           => $cep,
                 'email'         => $email,
                 'folha_resumo'  => $folha_resumo,
+                'n_integrantes' => $n_integrantes,
                 'senha'         => crypt($senha, $salt)
             ];
 
             insere(
-                'Beneficiario',
+                'beneficiario',
                 $dados
             );
 
@@ -47,7 +49,7 @@
             ];
 
             atualiza(
-                'Beneficiario',
+                'beneficiario',
                 $dados,
                 $criterio
             );
@@ -60,14 +62,14 @@
                 ['AND', 'ativo', '=', 1]
             ];
             $retorno = buscar(//descobrir o que faz
-                'usuario',
+                'beneficiario',
                 ['id', 'nome', 'email', 'senha', 'adm'],
                 $criterio
             );
 
             if(count($retorno)> 0){
                 if(crypt($senha,$salt) == $retorno[0]['senha']){
-                    $_SESSION['login']['Beneficiario'] = $retorno[0];
+                    $_SESSION['login']['beneficiario'] = $retorno[0];
                     if(!empty($_SESSION['url_retorno'])){
                         header('Location: '. $_SESSION['url_retorno']);
                         $_SESSION['url_retorno'] = '';
@@ -82,7 +84,7 @@
             session_destroy();
             break;
 
-        case 'status':
+        /*case 'status':
             $id = (int)$id;
             $valor = (int)$valor;
 
@@ -98,7 +100,7 @@
                 'Beneficiario',
                 $dados,
                 $criterio
-            );
+            );*/
             exit;
             break;
             
