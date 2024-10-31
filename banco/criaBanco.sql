@@ -28,7 +28,7 @@ CREATE TABLE benificiario
     numero          varchar (4),
     cep             float (10),
     n_integrantes   int,
-    cpf             varchar(11),
+    cpf             int,
     telefone        varchar(11), 
     email           varchar(50),
     senha           varchar(50),

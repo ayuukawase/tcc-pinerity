@@ -43,7 +43,7 @@
                     </div>
                     <div class="form-group">
                         <label for="cnpj">CNPJ</label><!--arrumar-->
-                        <input class="form-control" type="text" require="required" id="cnpj" name="cnpj" pattern="\d{2}\.\d{3}\.\d{3}\/\d{4}\-\d{2}" title="Digite um CNPJ no formato: xx.xxx.xxx/xxxx-xx" value="<?php echo $entidade['cnpj'] ?? '' ?>">
+                        <input class="form-control" type="number" require="required" id="cnpj" name="cnpj" title="Digite seu CNPJ sem pontuação, barra ou traço" value="<?php echo $entidade['cnpj'] ?? '' ?>">
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>

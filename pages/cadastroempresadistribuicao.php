@@ -42,8 +42,8 @@
                         <input class="form-control" type="text" require="required" id="nome_empresarial" name="nome_empresarial" value="<?php echo $entidade['nome_empresarial'] ?? '' ?>">
                     </div>
                     <div class="form-group">
-                        <label for="cnpj">CNPJ</label><!--arrumar-->
-                        <input class="form-control" type="text" require="required" id="cnpj" name="cnpj" pattern="\d{2}\.\d{3}\.\d{3}\.\/\d{4}-\d{2}" title="Digite um CNPJ no formato: xx.xxx.xxx/xxxx-xx" value="<?php echo $entidade['cnpj'] ?? '' ?>">
+                        <label for="cnpj">CNPJ</label>
+                        <input class="form-control" type="number" require="required" id="cnpj" name="cnpj" title="Digite seu CPF sem pontuação ou traço" value="<?php echo $entidade['cnpj'] ?? '' ?>">
                     </div>
                     <div class="form-group">
                         <label for="email">E-mail</label>

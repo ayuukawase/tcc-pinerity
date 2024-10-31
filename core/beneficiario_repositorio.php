@@ -40,9 +40,6 @@
             $id = (int)$id;
             $dados = [
                 'telefone'      => $telefone,
-                'CEP'           => $cep,
-                'num'           => $num,
-                'n_integrantes'  => $n_integrantes
             ];
 
             $criterio = [
@@ -106,4 +103,5 @@
             break;
             
     }
+    header('Location: ../pages/painelbeneficiario.html');
 ?>

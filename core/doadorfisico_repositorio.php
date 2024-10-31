@@ -104,4 +104,5 @@
             break;
             
     }
+    header('Location: ../pages/paineldoador.html');
 ?>
