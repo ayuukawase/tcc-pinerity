@@ -317,20 +317,6 @@ main{
   width: 100%;
 }
 
-/*teste*/
-section {
-  background-color: #e5ffcf;
-  float: left;
-  clear: left;
-  width: 70%;
-  height: 1000px;
-  margin-left: 30px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  border-radius: 20px;
-  font-size: x-large;
-}
-
 /* carrossel */
 #myCarousel{
   margin-top: 17px;
@@ -366,6 +352,61 @@ section {
 .back-button:hover::after {
   margin-top:-8px;
 }
+/* Start Section 1 */
+
+.section-1{
+  height: 20%;
+}
+.section-1 .col-12 h3 {
+  font-size: 24px;
+}
+.section-1 .col-12 p {
+  font-size: 14px;
+  padding: 15px 50px 0;
+  margin-bottom: 35px;
+}
+@media screen and (min-width: 768px) {
+  .section-1 .col-12 p {
+      font-size: 18px;
+ }
+}
+.section-1 .col-12 button:hover {
+  background-color: rgba(199, 199, 199, 0.399);
+}
+/* End Section 1 */
+/* Start Section 2 */
+
+.section-2 .col-12 p {
+  font-size: 14px;
+  padding: 15px 40px 0;
+}
+@media screen and (min-width: 768px) {
+  .section-2 .col-12 p {
+      font-size: 19px;
+      line-height: 31.5px;
+ }
+}
+/* End Section 2 */
+
+/* Start Section 3 */
+
+.section-3 .col-12 h3 {
+  padding: 0 80px;
+}
+.section-3 .col-12 p {
+  padding: 15px 50px;
+  font-size: 14px;
+}
+@media screen and (min-width: 768px) {
+  .section-3 .col-12 h3 {
+      padding: 0 40px;
+ }
+  .section-3 .col-12 p {
+      font-size: 18px;
+      line-height: 31.5px;
+ }
+}
+/* End Section 3 */
 
 /*fim de conteúdo*/
 /* footer */

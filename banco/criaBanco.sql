@@ -69,18 +69,24 @@ CREATE TABLE cestabasicadf
     id                    int auto_increment,
     descricao_itens       varchar (200),
     doadorfisico_id       int,
+    empresa_id            int,
     primary key(id),
     KEY fk_cestabasicadf_doadorfisico_idx (doadorfisico_id),
-    CONSTRAINT fk_cestabasicadf_doadorfisico FOREIGN KEY (doadorfisico_id) REFERENCES doadorfisico(id)
+    CONSTRAINT fk_cestabasicadf_doadorfisico FOREIGN KEY (doadorfisico_id) REFERENCES doadorfisico(id),
+    KEY fk_cestabasicadf_empresa_idx (empresa_id),
+    CONSTRAINT fk_cestabasicadf_empresa FOREIGN KEY (empresa_id) REFERENCES empresa(id)
 );
 CREATE TABLE cestabasicadj
 (
     id                    int auto_increment,
     descricao_itens       varchar (200),
-    doadorjuridico_id       int,
+    doadorjuridico_id     int,
+    empresa_id            int,
     primary key(id),
     KEY fk_cestabasicadj_doadorjuridico_idx (doadorjuridico_id),
-    CONSTRAINT fk_cestabasicadj_doadorjuridico FOREIGN KEY (doadorjuridico_id) REFERENCES doadorjuridico(id)
+    CONSTRAINT fk_cestabasicadj_doadorjuridico FOREIGN KEY (doadorjuridico_id) REFERENCES doadorjuridico(id),
+    KEY fk_cestabasicadj_empresa_idx (empresa_id),
+    CONSTRAINT fk_cestabasicadj_empresa FOREIGN KEY (empresa_id) REFERENCES empresa(id)
 );
 
 CREATE TABLE empresadistribuicao
@@ -92,7 +98,6 @@ CREATE TABLE empresadistribuicao
     numero                      varchar (4),
     cep                         float (10),
     telefone                    varchar (11),
-    descricao_itens_estoque       varchar(500),
     email                       varchar (50),
     senha                       varchar(50),
     primary key(cnpj)
@@ -107,4 +112,14 @@ CREATE TABLE pedido
     primary key (id),
     KEY fk_pedido_beneficiario_idx (beneficiario_id),
     CONSTRAINT fk_pedido_beneficiario FOREIGN KEY (beneficiario_id) REFERENCES beneficiario(id)
+);
+CREATE TABLE estoque
+(
+    id                  int auto_increment,
+    cestasrecebidas     int,--tem que referenciar registro_cestas
+    cestasentregues     int,--tem que referenciar registro_pedidos
+    cestasestoque       int,
+    primary key (id),
+    KEY fk_cestabasicadf_empresa_idx (empresa_id),
+    CONSTRAINT fk_cestabasicadf_empresa FOREIGN KEY (empresa_id) REFERENCES empresa(id)
 );
