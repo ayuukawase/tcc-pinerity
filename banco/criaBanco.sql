@@ -119,7 +119,8 @@ CREATE TABLE estoque
     cestasrecebidas     int not null,--tem que referenciar registro_cestas
     cestasentregues     int not null,--tem que referenciar registro_pedidos
     cestasestoque       int not null,
+    empresa_id          int not null,
     primary key (id),
-    KEY fk_cestabasicadf_empresa_idx (empresa_id),
-    CONSTRAINT fk_cestabasicadf_empresa FOREIGN KEY (empresa_id) REFERENCES empresa(id)
+    KEY fk_estoque_empresa_idx (empresa_id),
+    CONSTRAINT fk_estoque_empresa FOREIGN KEY (empresa_id) REFERENCES empresa(id)
 );

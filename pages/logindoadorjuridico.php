@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="../css/login.css">
+  <link rel="icon" alt="icon" href="../img/menulogo.png">
 </head>
 <body>
   <div class="wrapper">
@@ -28,7 +29,7 @@
       </div>
       <button type="submit">Entrar</button>
       <div class="register">
-        <p>Não tem uma conta? <a href="#">Cadastrar</a></p>
+        <p>Não tem uma conta? <a href="cadastrodoadorjuridico.php">Cadastrar</a></p>
       </div>
     </form>
   </div>
