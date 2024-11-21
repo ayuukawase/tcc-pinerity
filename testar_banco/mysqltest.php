@@ -1,27 +1,24 @@
 <?php
-    require_once '../includes/funcoes.php';
     require_once '../core/conexao_mysql.php';
     require_once '../core/sql.php';
     require_once '../core/mysql.php';
 
     //é o teste mostrado na tela
-    insert_teste('João', 'joao@ifsp.edu.br', '123456');
-    buscar_teste();
-    insert_teste(38, 'murilo', 'silva@mail.com');
+    insert_teste('Nicoli', '12345678910', '(18) 98809-6264', 'niii@ifsp.edu.br', '12345-678', '1393', '', '13', '1393');
     buscar_teste();
 
     //teste da inserção no banco de dados
-    function insert_teste($nome, $email, $senha) : void
+    function insert_teste($nome, $NIS, $cpf, $telefone, $email, $cep, $numero, $folha_resumo, $n_integrantes, $senha) : void
     {
-        $dados = ['nome' => $nome, 'email' => $email, 'senha' => $senha];
-        insere('usuario', $dados);
+        $dados = ['nome' => $nome, 'NIS' => $NIS, 'cpf' => $cpf, 'telefone' => $telefone, 'email' => $email, 'cep' => $cep, 'numero' => $numero, 'folha_resumo' => $folha_resumo, 'n_integrantes' => $n_integrantes, 'senha' => $senha];
+        insere('beneficiario', $dados);
     }
 
     //teste do select no banco de dados
     function buscar_teste() : void 
     {
-        $usuarios = buscar('usuario', ['id', 'nome', 'email'], [],'');
-        print_r($usuarios);
+        $beneficiario = buscar('beneficiario', [$nome, $NIS, $cpf, $telefone, $email, $cep, $numero, $folha_resumo, $n_integrantes, $senha], [],'');
+        print_r($beneficiario);
     }
 
     //teste do update no banco de dados

@@ -1,6 +1,6 @@
 <?php
     //insere
-    function  insere(string $entidade, array $dados) : bool
+    function insere(string $entidade, array $dados) : bool
     {
         $retorno = false;
 
@@ -12,6 +12,7 @@
 
         $instrucao = insert($entidade, $coringa);
 
+        echo $instrucao;
         $conexao = conecta();
 
         //prepara para conectar com o sql
@@ -20,6 +21,8 @@
         eval('mysqli_stmt_bind_param($stmt, \''.implode('', $tipo). '\', $'.implode(', $', array_keys($dados)) . ');');
 
         mysqli_stmt_execute($stmt);
+
+        $retorno = (boolean) mysqli_stmt_affected_rows($stmt);
 
         $_SESSION['errors'] = mysqli_stmt_error_list($stmt);
 

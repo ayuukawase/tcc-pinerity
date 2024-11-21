@@ -1,11 +1,11 @@
 -- Deleta o banco de dados caso exista
-DROP DATABASE IF EXISTS Pinerity;
+DROP DATABASE IF EXISTS pinerity;
 
 -- Cria banco de dados caso não exista
-CREATE DATABASE IF NOT EXISTS Pinerity;
+CREATE DATABASE IF NOT EXISTS pinerity;
 
 -- Seleciona o banco de dados
-USE Pinerity;
+USE pinerity;
 
 CREATE TABLE benificio --arrumar
 (

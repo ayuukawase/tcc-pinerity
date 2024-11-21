@@ -39,7 +39,7 @@
         case 'update':
             $id = (int)$id;
             $dados = [
-                'telefone'      => $telefone,
+                'telefone'      => $telefone
             ];
 
             $criterio = [
@@ -59,7 +59,7 @@
                 ['NIS', '=', $NIS],
                 ['AND', 'ativo', '=', 1]
             ];
-            $retorno = buscar(//descobrir o que faz
+            $retorno = buscar(//arrumar
                 'beneficiario',
                 ['id', 'nome', 'email', 'senha', 'adm'],
                 $criterio
@@ -82,7 +82,7 @@
             session_destroy();
             break;
 
-        /*case 'status':
+        case 'status':
             $id = (int)$id;
             $valor = (int)$valor;
 
@@ -98,7 +98,7 @@
                 'Beneficiario',
                 $dados,
                 $criterio
-            );*/
+            );
             exit;
             break;
             
