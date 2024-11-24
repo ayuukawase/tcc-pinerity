@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
                         ];
                         $retorno = buscar(
                             'beneficiario',
-                            ['id', 'nome', 'email'],
+                            ['id', 'nome', 'NIS', 'cpf', 'telefone', 'email', 'cep', 'numero', 'folha_resumo', 'n_integrantes'],
                             $criterio
                         );
 
@@ -32,8 +32,8 @@
                     }
                 ?>
                 <form method="post" action="../core/beneficiario_repositorio.php">
-                <input type="hidden" name="acao" value="<?php echo empty($id) ? 'insert' : 'update' ?>">
-                <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
+                    <input type="hidden" name="acao" value="<?php echo empty($id) ? 'insert' : 'update' ?>">
+                    <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
                     <h2>Cadastro</h2>
                     <div class="input-field">
                         <input class="form-control" type="text" require="required" id="nome" name="nome" value="<?php echo $entidade['nome'] ?? '' ?>">

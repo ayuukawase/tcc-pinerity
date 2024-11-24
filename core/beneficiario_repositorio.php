@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once '../includes/funcoes.php';
     require_once 'conexao_mysql.php';
     require_once 'sql.php';
     require_once 'mysql.php';
@@ -56,12 +57,11 @@
 
         case 'login':
             $criterio = [
-                ['NIS', '=', $NIS],
-                ['AND', 'ativo', '=', 1]
+                ['NIS', '=', $NIS]
             ];
-            $retorno = buscar(//arrumar
+            $retorno = buscar(
                 'beneficiario',
-                ['id', 'nome', 'email', 'senha', 'adm'],
+                ['id', 'nome', 'NIS', 'cpf', 'telefone', 'email', 'cep', 'numero', 'folha_resumo', 'n_integrantes'],
                 $criterio
             );
 
@@ -80,26 +80,6 @@
         
         case 'logout':
             session_destroy();
-            break;
-
-        case 'status':
-            $id = (int)$id;
-            $valor = (int)$valor;
-
-            $dados = [
-                'ativo' => $valor
-            ];
-
-            $criterio = [
-                ['id', '=', $id]
-            ];
-
-            atualiza(
-                'Beneficiario',
-                $dados,
-                $criterio
-            );
-            exit;
             break;
             
     }
