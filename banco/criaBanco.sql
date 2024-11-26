@@ -7,19 +7,9 @@ CREATE DATABASE IF NOT EXISTS pinerity;
 -- Seleciona o banco de dados
 USE pinerity;
 
-CREATE TABLE benificio
+CREATE TABLE beneficiario
 (
-    id              INT AUTO_INCREMENT,
-    qtd_cestas      INT,
-    pedido_id       INT,
-    PRIMARY KEY(id),
-    KEY fk_beneficio_pedido_idx (pedido_id),
-    CONSTRAINT fk_beneficio_pedido FOREIGN KEY (pedido_id) REFERENCES pedido(id)
-);
-
-CREATE TABLE benificiario
-(
-    id              INT auto_increment not null,
+    id              INT unsigned auto_increment not null,
     NIS             INT not null,
     nome            varchar(50) not null,
     folha_resumo    varchar(10) not null, -- modificar depois
@@ -33,6 +23,27 @@ CREATE TABLE benificiario
     email           varchar(50) not null,
     senha           varchar(50),
     primary key(id)
+) ENGINE InnoDB;
+
+CREATE TABLE pedido
+(
+	id 						int auto_increment not null,
+    numerocestas 			int not null,
+    tipoentrega 			boolean not null,
+    beneficiario_id 		int unsigned not null,
+    primary key (id),
+    key fk_pedido_beneficiario_idx (beneficiario_id),
+    constraint fk_pedido_beneficiario foreign key (beneficiario_id) references beneficiario(id)
+) engine InnoDB;
+
+CREATE TABLE beneficio
+(
+    id              INT AUTO_INCREMENT,
+    qtd_cestas      INT,
+    pedido_id       INT not null,
+    PRIMARY KEY(id),
+    KEY fk_beneficio_pedido_idx (pedido_id),
+    CONSTRAINT fk_beneficio_pedido FOREIGN KEY (pedido_id) REFERENCES pedido(id)
 );
 
 CREATE TABLE doadorfisico
@@ -47,7 +58,7 @@ CREATE TABLE doadorfisico
     cep             float (8) not null,
     email           varchar (50) not null,
     senha           varchar(50),
-    primary key(cpf)
+    primary key(id)
 );
 CREATE TABLE doadorjuridico
 (
@@ -61,32 +72,32 @@ CREATE TABLE doadorjuridico
     cep             float(8) not null,
     email           varchar(50) not null,
     senha           varchar(50),
-    primary key(cnpj)
+    primary key(id)
 );
 
 CREATE TABLE cestabasicadf
 (
-    id                    INT auto_increment not null,
-    descricao_itens       varchar (200) not null,
-    doadorfisico_id       INT not null,
-    empresa_id            INT not null,
+    id                    				INT auto_increment not null,
+    descricao_itens       				varchar (200) not null,
+    doadorfisico_id	    				INT not null,
+    empresadistribuicao_cnpj	            INT not null,
     primary key(id),
     KEY fk_cestabasicadf_doadorfisico_idx (doadorfisico_id),
     CONSTRAINT fk_cestabasicadf_doadorfisico FOREIGN KEY (doadorfisico_id) REFERENCES doadorfisico(id),
-    KEY fk_cestabasicadf_empresa_idx (empresa_id),
-    CONSTRAINT fk_cestabasicadf_empresa FOREIGN KEY (empresa_id) REFERENCES empresa(id)
+    KEY fk_cestabasicadf_empresadistribuicao_idx (empresadistribuicao_cnpj),
+    CONSTRAINT fk_cestabasicadf_empresadistribuicao FOREIGN KEY (empresadistribuicao_cnpj) REFERENCES empresadistribuicao(cnpj)
 );
 CREATE TABLE cestabasicadj
 (
-    id                    INT auto_increment not null,
-    descricao_itens       varchar (500) not null,
-    doadorjuridico_id     INT not null,
-    empresa_id            INT not null,
+    id                    				INT auto_increment not null,
+    descricao_itens       				varchar (500) not null,
+    doadorjuridico_id     				INT not null,
+    empresadistribuiucao_id             INT not null,
     primary key(id),
     KEY fk_cestabasicadj_doadorjuridico_idx (doadorjuridico_id),
     CONSTRAINT fk_cestabasicadj_doadorjuridico FOREIGN KEY (doadorjuridico_id) REFERENCES doadorjuridico(id),
-    KEY fk_cestabasicadj_empresa_idx (empresa_id),
-    CONSTRAINT fk_cestabasicadj_empresa FOREIGN KEY (empresa_id) REFERENCES empresa(id)
+    KEY fk_cestabasicadj_empresadistribuicao_idx (empresadistribuicao_id),
+    CONSTRAINT fk_cestabasicadj_empresadistribuicao FOREIGN KEY (empresadistribuica_id) REFERENCES empresadistribuicao(id)
 );
 
 CREATE TABLE empresadistribuicao
@@ -103,21 +114,11 @@ CREATE TABLE empresadistribuicao
     primary key(cnpj)
 );
 
-CREATE TABLE pedido
-(
-    id                  INT auto_increment not null,
-    numeroCestas        INT not null,
-    tipoentrega         boolean not null,
-    beneficiario_id     INT not null,
-    primary key (id),
-    KEY fk_pedido_beneficiario_idx (beneficiario_id),
-    CONSTRAINT fk_pedido_beneficiario FOREIGN KEY (beneficiario_id) REFERENCES beneficiario(id)
-);
 CREATE TABLE estoque
 (
     id                  INT auto_increment not null,
-    cestasrecebidas     INT not null,--tem que referenciar registro_cestas
-    cestasentregues     INT not null,--tem que referenciar registro_pedidos
+    cestasrecebidas     INT not null, -- tem que referenciar registro_cestas
+    cestasentregues     INT not null, -- tem que referenciar registro_pedidos
     cestasestoque       INT not null,
     empresa_id          INT not null,
     primary key (id),
