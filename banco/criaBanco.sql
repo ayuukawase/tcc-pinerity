@@ -31,12 +31,14 @@ CREATE TABLE beneficiario
 CREATE TABLE pedido
 (
 	id 						int auto_increment not null,
+	id_distribuidora int not null,
     numerocestas 			int not null,
     tipoentrega 			boolean not null,
     beneficiario_id 		int unsigned not null,
     primary key (id),
-    key fk_pedido_beneficiario_idx (beneficiario_id),
-    constraint fk_pedido_beneficiario foreign key (beneficiario_id) references beneficiario(id)
+   -- key fk_pedido_beneficiario_idx (beneficiario_id),
+   --// constraint fk_pedido_beneficiario foreign key (beneficiario_id) references beneficiario(id)
+	 foreign key(id_distribuidora) references empresadistribuicao(cnpj)
 ) engine InnoDB;
 
 CREATE TABLE beneficio
