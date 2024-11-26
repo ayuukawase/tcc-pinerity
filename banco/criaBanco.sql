@@ -10,6 +10,8 @@ USE pinerity;
 CREATE TABLE beneficiario
 (
     id              INT unsigned auto_increment not null,
+    id_beneficio int not null,
+
     NIS             INT not null,
     nome            varchar(50) not null,
     folha_resumo    varchar(10) not null, -- modificar depois
@@ -22,7 +24,8 @@ CREATE TABLE beneficiario
     telefone        varchar(11) not null, 
     email           varchar(50) not null,
     senha           varchar(50),
-    primary key(id)
+    primary key(id),
+    foreign key(id_beneficio) references beneficio(id)	
 ) ENGINE InnoDB;
 
 CREATE TABLE pedido
