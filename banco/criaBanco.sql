@@ -89,10 +89,7 @@ CREATE TABLE cestabasicadf
     doadorfisico_id	    				INT not null,
     empresadistribuicao_cnpj	            INT not null,
     primary key(id),
-    KEY fk_cestabasicadf_doadorfisico_idx (doadorfisico_id),
-    CONSTRAINT fk_cestabasicadf_doadorfisico FOREIGN KEY (doadorfisico_id) REFERENCES doadorfisico(id),
-    KEY fk_cestabasicadf_empresadistribuicao_idx (empresadistribuicao_cnpj),
-    CONSTRAINT fk_cestabasicadf_empresadistribuicao FOREIGN KEY (empresadistribuicao_cnpj) REFERENCES empresadistribuicao(cnpj)
+    FOREIGN KEY (empresadistribuicao_cnpj) REFERENCES empresadistribuicao(cnpj)
 );
 CREATE TABLE cestabasicadj
 (
