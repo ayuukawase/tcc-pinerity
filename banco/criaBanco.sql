@@ -50,11 +50,11 @@ CREATE TABLE beneficio
     KEY fk_beneficio_pedido_idx (pedido_id)
     
 );
-
-CREATE TABLE doadorfisico
+CREATE TABLE doador
 (
     id              INT auto_increment not null,
-    cpf             INT unique not null,
+	 cpf             INT unique ,
+	cnpj            INT unique ,
     nome            varchar (50) not null,
     dt_nasc         varchar (15) not null,
     telefone        varchar(11) not null,
@@ -63,21 +63,23 @@ CREATE TABLE doadorfisico
     cep             float (8) not null,
     email           varchar (50) not null,
     senha           varchar(50),
+foreign key(cpf) references doadorfisico(cpf),
+foreign key(cnpj) references doadorjuridico(cnpj),
     primary key(id)
+);
+CREATE TABLE doadorfisico
+(
+  
+    cpf             INT unique not null,
+    
+    primary key(    cpf             )
 );
 CREATE TABLE doadorjuridico
 (
-    id              INT auto_increment not null,
-    cnpj            INT unique not null,
+      cnpj            INT unique not null,
     nomeEmpresarial varchar(100) not null,
     nomeFantasia    varchar(100) not null,
-    telefone        varchar(11) not null,
-    endereco        varchar(100) not null,
-    numero          varchar(4) not null,
-    cep             float(8) not null,
-    email           varchar(50) not null,
-    senha           varchar(50),
-    primary key(id)
+    primary key(cnpj)
 );
 
 CREATE TABLE cestabasicadf
@@ -119,7 +121,7 @@ CREATE TABLE empresadistribuicao
     primary key(cnpj)
 );
 
-CREATE TABLE estoque
+CREATE TABLE estoque -- rever esta tabela relacionamento errado
 (
     id                  INT auto_increment not null,
     cestasrecebidas     INT not null, -- tem que referenciar registro_cestas
