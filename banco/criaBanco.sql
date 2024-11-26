@@ -140,3 +140,13 @@ CREATE TABLE beneficio_empresa
     FOREIGN KEY (id) REFERENCES beneficio(id),
     FOREIGN KEY (cnpj) REFERENCES empresadistribuicao(cnpj)
 );
+CREATE TABLE cesta_doador
+(
+    id_cesta                  INT not null,
+   id_doador                  INT not null,
+   mensagem_emprocessos     varchar(50),
+    
+    primary key (id_cesta,id_doador),
+    FOREIGN KEY (id_cesta) REFERENCES cesta_basica(id),
+    FOREIGN KEY (id_doador) REFERENCES doador(id)
+);
