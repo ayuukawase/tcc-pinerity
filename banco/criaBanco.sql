@@ -130,3 +130,14 @@ CREATE TABLE estoque
     KEY fk_estoque_empresa_idx (empresa_id),
     CONSTRAINT fk_estoque_empresa FOREIGN KEY (empresa_id) REFERENCES empresa(id)
 );
+
+CREATE TABLE beneficio_empresa
+(
+    id                  INT auto_increment not null,
+    cnpj                        INT unique not null,
+    mensagem_emprocessos     varchar(50),
+    
+    primary key (id,cnpj),
+    FOREIGN KEY (id) REFERENCES beneficio(id),
+    FOREIGN KEY (cnpj) REFERENCES empresadistribuicao(cnpj)
+);
