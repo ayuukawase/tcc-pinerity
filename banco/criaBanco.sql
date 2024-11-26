@@ -45,8 +45,8 @@ CREATE TABLE beneficio
     qtd_cestas      INT,
     pedido_id       INT not null,
     PRIMARY KEY(id),
-    KEY fk_beneficio_pedido_idx (pedido_id),
-    CONSTRAINT fk_beneficio_pedido FOREIGN KEY (pedido_id) REFERENCES pedido(id)
+    KEY fk_beneficio_pedido_idx (pedido_id)
+    
 );
 
 CREATE TABLE doadorfisico
