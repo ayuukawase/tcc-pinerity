@@ -37,7 +37,7 @@ CREATE TABLE pedido
     beneficiario_id 		int unsigned not null,
     primary key (id),
    -- key fk_pedido_beneficiario_idx (beneficiario_id),
-   --// constraint fk_pedido_beneficiario foreign key (beneficiario_id) references beneficiario(id)
+   --constraint fk_pedido_beneficiario foreign key (beneficiario_id) references beneficiario(id)
 	 foreign key(id_distribuidora) references empresadistribuicao(cnpj)
 ) engine InnoDB;
 
@@ -47,7 +47,7 @@ CREATE TABLE beneficio
     qtd_cestas      INT,
     pedido_id       INT not null,
     PRIMARY KEY(id),
-    KEY fk_beneficio_pedido_idx (pedido_id)
+    foreign key(pedido_id) references pedido(id)
     
 );
 CREATE TABLE doador
