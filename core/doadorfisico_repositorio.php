@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once '../includes/funcoes.php';
     require_once 'conexao_mysql.php';
     require_once 'sql.php';
     require_once 'mysql.php';
@@ -16,23 +17,34 @@
     //verificar no banco de dados se funcionou
     switch($acao){
         case 'insert':
-            $dados = [
-                'nome'          => $nome,
+            $dadosfisico = [
                 'cpf'           => $cpf,
+            ];
+
+            insere(
+                'doadorfisico',
+                $dadosfisico
+            );
+
+            
+            $dadosdoador = [
+                'nome'          => $nome,
                 'dt_nasc'       => $dt_nasc,
                 'telefone'      => $telefone,
                 'email'         => $email,
                 'cep'           => $cep,
                 'numero'        => $numero,
-                'senha'         => crypt($senha, $salt)
+                'senha'         => crypt($senha, $salt)  
             ];
 
             insere(
-                'doadorfisico',
-                $dados
+                'doador',
+                $dadosdoador
             );
 
             break;
+
+       
         
         case 'update':
             $id = (int)$id;

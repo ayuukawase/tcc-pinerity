@@ -17,6 +17,18 @@
     switch($acao){
         case 'insert':
             $dados = [
+                'cnpj'              => $cnpj,
+            ];
+
+            insere(
+                'doadorjuridico',
+                $dados
+            );
+
+            break;
+
+        case 'insertjuridico':
+            $dados = [
                 'nome_fantasia'     => $nome_fantasia,
                 'nome_empresarial'  => $nome_empresarial,
                 'cnpj'              => $cnpj,
@@ -28,12 +40,12 @@
             ];
 
             insere(
-                'doadorjuridico',
+                'doador',
                 $dados
             );
 
             break;
-        
+
         case 'update':
             $id = (int)$id;
             $dados = [

@@ -8,8 +8,10 @@
     <link rel="icon" alt="icon" href="../img/menulogo.png">
 </head>
 <body>
-    <div class="container">
-            <div class="col-md-10" style="padding-top: 50px;">
+    <div class="wrapper">
+    <form method="post" action="../core/empresadistribuicao_repositorio.php">
+    <input type="hidden" name="acao" value="login">
+            <div>
                 <?php
                     require_once '../includes/funcoes.php';
                     require_once '../core/conexao_mysql.php';
@@ -24,42 +26,43 @@
                         ];
                         $retorno = buscar(
                             'empresadistribuicao',
-                            ['id', 'nome', 'email'],
+                            ['nome_fantasia', 'nome_empresarial', 'cnpj', 'email', 'telefone', 'cep', 'numero', 'descricao_itens_estoque'],
                             $criterio
                         );
 
                         $entidade = $retorno[0];
                     }
                 ?>
-                <h2>Empresa de distribuição</h2>
+
                 <form method="post" action="../core/empresadistribuicao_repositorio.php">
                     <input type="hidden" name="acao" value="<?php echo empty($id) ? 'insert' : 'update' ?>">
                     <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
-                    <div class="form-group">
+                    <h2>Cadastro da empresa de distribuição</h2>
+                    <div class="input-field">
                         <input class="form-control" type="text" require="required" id="nome_fantasia" name="nome_fantasia" value="<?php echo $entidade['nome_fantasia'] ?? '' ?>">
                         <label for="nome_fantasia">Nome fantasia da empresa/Nome popular</label>
                     </div>
-                    <div class="form-group">
+                    <div class="input-field">
                         <input class="form-control" type="text" require="required" id="nome_empresarial" name="nome_empresarial" value="<?php echo $entidade['nome_empresarial'] ?? '' ?>">
                         <label for="nome_empresarial">Nome empresarial da empresa/Nome oficial</label>
                     </div>
-                    <div class="form-group">
+                    <div class="input-field">
                         <input class="form-control" type="number" require="required" id="cnpj" name="cnpj" title="Digite seu CPF sem pontuação ou traço" value="<?php echo $entidade['cnpj'] ?? '' ?>">
                         <label for="cnpj">CNPJ</label>
                     </div>
-                    <div class="form-group">
+                    <div class="input-field">
                         <input class="form-control" type="email" require="required" id="email" name="email" value="<?php echo $entidade['email'] ?? '' ?>">
                         <label for="email">E-mail</label>
                     </div>
-                    <div class="form-group">
+                    <div class="input-field">
                         <input class="form-control" type="tel" require="required" id="telefone" name="telefone" pattern="(\([0-9]{2}\))\s([0-9]{5})-([0-9]{4})" title="Digite um telefone no formato: (xx) xxxxx-xxxx" value="<?php echo $entidade['telefone'] ?? '' ?>">
                         <label for="telefone">Telefone</label>
                     </div>
-                    <div class="form-group">
+                    <div class="input-field">
                         <input class="form-control" type="text" require="required" id="cep" name="cep" pattern="[0-9]{5}-[0-9]{3}" title="Digite um CEP no formato: xxxxx-xx" value="<?php echo $entidade['cep'] ?? '' ?>">
                         <label for="cep">CEP</label>
                     </div>
-                    <div class="form-group">
+                    <div class="input-field">
                         <input class="form-control" type="number" require="required" id="numero" name="numero" value="<?php echo $entidade['numero'] ?? '' ?>">
                         <label for="numero">Número da empresa</label>
                     </div>
@@ -68,13 +71,16 @@
                         <label for="descricao_itens_estoque">Descrição dos itens que estão em estoque</label>
                     </div>
                     <?php if(!isset($_SESSION['login'])): ?>
-                    <div class="form-group">
+                    <div class="input-field">
                         <input class="form-control" type="password" require="required" id="senha" name="senha">
                         <label for="senha">Senha</label>
                     </div>
                     <?php endif;?>
                     <div class="text-right">
-                        <button class="btn btn-sucess" type="submit">Salvar</button>
+                        <button type="submit">Cadastrar</button>
+                    </div>
+                    <div class="register">
+                        <p>Já tem uma conta? <a href="logindoadorfisico.php">Entrar</a></p>
                     </div>
                 </form>
             </div>

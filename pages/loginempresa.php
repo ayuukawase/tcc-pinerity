@@ -28,7 +28,7 @@
       </div>
       <button type="submit">Entrar</button>
       <div class="register">
-        <p>Não tem uma conta? <a href="#">Cadastrar</a></p>
+        <p>Não tem uma conta? <a href="cadastroempresadistribuicao.php">Cadastrar</a></p>
       </div>
     </form>
   </div>

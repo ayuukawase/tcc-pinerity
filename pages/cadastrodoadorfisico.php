@@ -26,7 +26,7 @@
                         ];
                         $retorno = buscar(
                             'doadorfisico',
-                            ['id', 'nome', 'email'],
+                            ['nome', 'dt_nasc', 'telefone', 'email', 'cep', 'numero'],
                             $criterio
                         );
 
