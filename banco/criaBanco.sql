@@ -28,12 +28,13 @@ CREATE TABLE beneficio
     pedido_id       INT not null,
     PRIMARY KEY(id),
     KEY fk_beneficio_pedido_idx (pedido_id)
+    
 );
 
 CREATE TABLE beneficiario
 (
     id              INT unsigned auto_increment not null,
-    id_beneficio int not null,
+    id_beneficio    INT null,
 
     NIS             INT not null,
     nome            varchar(50) not null,
