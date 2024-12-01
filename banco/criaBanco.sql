@@ -38,7 +38,7 @@ CREATE TABLE beneficiario
 
     NIS             INT not null,
     nome            varchar(50) not null,
-    folha_resumo    varchar(10) not null, -- modificar depois
+    folha_resumo    Blob not null,
     rendafamiliar   float not null,
     endereco        varchar(100) not null,
     numero          INT not null,

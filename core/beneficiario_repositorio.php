@@ -61,7 +61,7 @@
             ];
             $retorno = buscar(
                 'beneficiario',
-                ['id', 'nome', 'NIS', 'cpf', 'telefone', 'email', 'cep', 'numero', 'folha_resumo', 'n_integrantes'],
+                ['id', 'nome', 'NIS'],
                 $criterio
             );
 
