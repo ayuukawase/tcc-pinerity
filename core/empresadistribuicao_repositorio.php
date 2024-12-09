@@ -1,5 +1,6 @@
 <?php
     session_start();
+    require_once '../includes/funcoes.php';
     require_once 'conexao_mysql.php';
     require_once 'sql.php';
     require_once 'mysql.php';
@@ -24,8 +25,8 @@
                 'telefone'              => $telefone,
                 'cep'                   => $cep,
                 'numero'                => $numero,
-                'descricao_itens_estoque' => $descricaoItensEstoque,
-                'senha'             => crypt($senha, $salt)
+                'descricaoitensestoque' => $descricaoitensestoque,
+                'senha'                 => crypt($senha, $salt)
             ];
 
             insere(
@@ -36,15 +37,16 @@
             break;
         
         case 'update':
-            $id = (int)$id;
+            $cnpj = (int)$cnpj;
             $dados = [
                 'telefone'      => $telefone,
-                'CEP'           => $cep,
+                'cep'           => $cep,
                 'num'           => $num,
+                'descricaoitensestoque' => $descricaoitensestoque
             ];
 
             $criterio = [
-                ['id', '=', $id]
+                ['cnpj', '=', $cnpj]
             ];
 
             atualiza(
@@ -82,27 +84,7 @@
         case 'logout':
             session_destroy();
             break;
-
-        case 'status':
-            $id = (int)$id;
-            $valor = (int)$valor;
-
-            $dados = [
-                'ativo' => $valor
-            ];
-
-            $criterio = [
-                ['id', '=', $id]
-            ];
-
-            atualiza(
-                'empresadistribuicao',
-                $dados,
-                $criterio
-            );
-            exit;
-            break;
-            
+    
     }
     header('Location: ../pages/painelempresadistribuicao.html');
 ?>

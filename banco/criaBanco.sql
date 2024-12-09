@@ -9,14 +9,15 @@ USE pinerity;
 
 CREATE TABLE empresadistribuicao
 (
-    cnpj                        INT unique not null,
+    cnpj                        INT not null,
     nome_empresarial            varchar(100) not null,
     nome_fantasia               varchar (50) not null,
     endereco                    varchar (100) not null,
-    numero                      varchar (10) not null,
     cep                         float (8) not null,
+    numero                      varchar (10) not null,
     telefone                    varchar (11) not null,
     email                       varchar (50) not null,
+    descricaoitensestoque       varchar (500) not null,
     senha                       varchar(50),
     primary key(cnpj)
 );
@@ -54,11 +55,11 @@ CREATE TABLE beneficiario
 
 CREATE TABLE pedido
 (
-	id 						int auto_increment not null,
-	id_distribuidora		int not null,
-    numerocestas 			int not null,
+	id 						INT auto_increment not null,
+	id_distribuidora		INT not null,
+    numerocestas 			INT not null,
     tipoentrega 			boolean not null,
-    beneficiario_id 		int unsigned not null,
+    beneficiario_id 		INT unsigned not null,
     primary key (id),
 	foreign key(id_distribuidora) references empresadistribuicao(cnpj)
 ) engine InnoDB;

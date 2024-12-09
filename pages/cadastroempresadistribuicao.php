@@ -47,7 +47,7 @@
                         <label for="nome_empresarial">Nome empresarial da empresa/Nome oficial</label>
                     </div>
                     <div class="input-field">
-                        <input class="form-control" type="number" require="required" id="cnpj" name="cnpj" title="Digite seu CPF sem pontuação ou traço" value="<?php echo $entidade['cnpj'] ?? '' ?>">
+                        <input class="form-control" type="number" require="required" id="cnpj" name="cnpj" title="Digite seu CNPJ sem pontuação ou traço xxxxxxxxxxxxxx" value="<?php echo $entidade['cnpj'] ?? '' ?>">
                         <label for="cnpj">CNPJ</label>
                     </div>
                     <div class="input-field">
