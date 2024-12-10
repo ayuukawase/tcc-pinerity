@@ -8,7 +8,7 @@
     <title>Painel do beneficiário</title>
     <link rel="icon" alt="icon" href="../img/menulogo.png">
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/painel.css" />
+    <link rel="stylesheet" href="../css/painelbeneficiario.css" />
 
   </head>
   <body>
@@ -87,83 +87,7 @@
         </footer>
       </aside>
       <main>
-        <section class="projetos">
-          <h2>Projetos das ONGs</h2>
-          <div>
-            <div class="card">
-              <div class="barra"></div>
-              <div class="conteudo">
-                <h3>Projeto de Natal</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic
-                  qui magni libero sunt quisquam quia!
-                </p>
-                <div class="acoes">
-                  <button title="Favoritar"><i class="bi bi-star"></i></button>
-                  <button title="Visualizar"><i class="bi bi-eye"></i></button>
-                  <button title="Compartilhar">
-                    <i class="bi bi-share"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="barra"></div>
-              <div class="conteudo">
-                <h3>Projeto de páscoa</h3>
-                <p>
-                  Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                  Eveniet adipisci incidunt nulla. Dolorem repellat error alias
-                  corporis cupiditate, dolorum natus iusto eveniet aliquid
-                  temporibus nam quaerat.
-                </p>
-                <div class="acoes">
-                  <button title="Favoritar"><i class="bi bi-star"></i></button>
-                  <button title="Visualizar"><i class="bi bi-eye"></i></button>
-                  <button title="Compartilhar">
-                    <i class="bi bi-share"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="barra"></div>
-              <div class="conteudo">
-                <h3>Projeto de Ano Novo</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea
-                  culpa unde non voluptas ut!
-                </p>
-                <div class="acoes">
-                  <button title="Favoritar"><i class="bi bi-star"></i></button>
-                  <button title="Visualizar"><i class="bi bi-eye"></i></button>
-                  <button title="Compartilhar">
-                    <i class="bi bi-share"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="barra"></div>
-              <div class="conteudo">
-                <h3>Projeto inverno</h3>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse
-                  reiciendis quam quis vitae amet, numquam expedita, in ratione,
-                  repellendus facilis ea architecto!
-                </p>
-                <div class="acoes">
-                  <button title="Favoritar"><i class="bi bi-star"></i></button>
-                  <button title="Visualizar"><i class="bi bi-eye"></i></button>
-                  <button title="Compartilhar">
-                    <i class="bi bi-share"></i>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <section class="anuncios">
+      <section class="anuncios">
           <h2>Anúncios</h2>
           <div class="card">
             <div>
