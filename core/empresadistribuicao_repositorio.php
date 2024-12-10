@@ -37,7 +37,7 @@
             break;
         
         case 'update':
-            $cnpj = (int)$cnpj;
+            $id = (int)$id;
             $dados = [
                 'telefone'      => $telefone,
                 'cep'           => $cep,
@@ -46,7 +46,7 @@
             ];
 
             $criterio = [
-                ['cnpj', '=', $cnpj]
+                ['id', '=', $id]
             ];
 
             atualiza(
@@ -59,7 +59,7 @@
 
         case 'login':
             $criterio = [
-                ['cnpj', '=', $cnpj],
+                ['id', '=', $id],
                 ['AND', 'ativo', '=', 1]
             ];
             /*$retorno = buscar(

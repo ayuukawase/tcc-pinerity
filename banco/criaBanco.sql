@@ -9,17 +9,18 @@ USE pinerity;
 
 CREATE TABLE empresadistribuicao
 (
+    id                          INT auto_increment,
     cnpj                        INT not null,
     nome_empresarial            varchar(100) not null,
     nome_fantasia               varchar (50) not null,
     endereco                    varchar (100) not null,
-    cep                         float (8) not null,
+    cep                         varchar (9) not null,
     numero                      varchar (10) not null,
     telefone                    varchar (11) not null,
     email                       varchar (50) not null,
     descricaoitensestoque       varchar (500) not null,
     senha                       varchar(50),
-    primary key(cnpj)
+    primary key(id)
 );
 
 CREATE TABLE beneficio
@@ -61,7 +62,7 @@ CREATE TABLE pedido
     tipoentrega 			boolean not null,
     beneficiario_id 		INT unsigned not null,
     primary key (id),
-	foreign key(id_distribuidora) references empresadistribuicao(cnpj)
+	foreign key(id_distribuidora) references empresadistribuicao(id)
 ) engine InnoDB;
 
 CREATE TABLE beneficio_empresa
@@ -72,7 +73,7 @@ CREATE TABLE beneficio_empresa
     
     primary key (id,cnpj),
     FOREIGN KEY (id) REFERENCES beneficio(id),
-    FOREIGN KEY (cnpj) REFERENCES empresadistribuicao(cnpj)
+    FOREIGN KEY (cnpj) REFERENCES empresadistribuicao(id)
 );
 
 CREATE TABLE doadorfisico
@@ -112,9 +113,9 @@ CREATE TABLE cestabasica
     id                    					INT auto_increment not null,
     descricao_itens       					varchar (200) not null,
     doadorfisico_id	    					INT not null,
-    empresadistribuicao_cnpj	            INT not null,
+    empresadistribuicao_id	            INT not null,
     primary key(id),
-    FOREIGN KEY (empresadistribuicao_cnpj) REFERENCES empresadistribuicao(cnpj)
+    FOREIGN KEY (empresadistribuicao_id) REFERENCES empresadistribuicao(id)
 );
 
 CREATE TABLE cesta_doador
