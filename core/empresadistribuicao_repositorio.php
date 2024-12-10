@@ -86,5 +86,5 @@
             break;
     
     }
-    header('Location: ../pages/painelempresadistribuicao.html');
+    header('Location: ../pages/painelempresa.html');
 ?>

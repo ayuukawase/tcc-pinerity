@@ -67,8 +67,8 @@
                         <label for="numero">Número da empresa</label>
                     </div>
                     <div class="form-group">
-                        <label for="descricao_itens_estoque">Descrição dos itens que estão em estoque</label>
-                        <textarea require="required" id="descricao_itens_estoque" name="descricao_itens_estoque" placeholder="Digite os itens no estoque" minlength="20" value="<?php echo $entidade['descricao_itens_estoque'] ?? '' ?>"></textarea>
+                        <label for="descricaoitensestoque">Descrição dos itens que estão em estoque</label>
+                        <textarea require="required" id="descricaoitensestoque" name="descricaoitensestoque" placeholder="Digite os itens no estoque" minlength="20" value="<?php echo $entidade['descricaoitensestoque'] ?? '' ?>"></textarea>
                     </div>
                     <?php if(!isset($_SESSION['login'])): ?>
                     <div class="input-field">

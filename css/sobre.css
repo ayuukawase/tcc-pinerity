@@ -327,6 +327,68 @@ section {
   font-size: x-large;
 }
 
+/* conteudo */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+.receita-card {
+  width: 80%;
+  margin: auto;
+  padding: 20px;
+}
+h1 {
+  text-align: center;
+  color: #333;
+}
+.category {
+  margin-top: 20px;
+}
+.category-title {
+  font-size: 1.5em;
+  color: #ff6600;
+  border-bottom: 2px solid #ff6600;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+.recipe {
+  display: flex;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-bottom: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+.recipe-info {
+  max-width: 70%;
+}
+.recipe-title {
+  font-size: 1.2em;
+  color: #333;
+}
+.recipe-description {
+  color: #666;
+  font-size: 0.9em;
+}
+.recipe-button {
+  background-color: #ff6600;
+  color: #fff;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+}
+.recipe-button:hover {
+  background-color: #e65c00;
+}
+/* fim conteudo */
+
+
+
 /* footer */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
