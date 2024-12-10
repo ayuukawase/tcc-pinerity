@@ -37,7 +37,6 @@ CREATE TABLE beneficiario
 (
     id              INT unsigned auto_increment not null,
     id_beneficio    INT null,
-
     NIS             INT not null,
     nome            varchar(50) not null,
     folha_resumo    Blob not null,
@@ -67,9 +66,9 @@ CREATE TABLE pedido
 
 CREATE TABLE beneficio_empresa
 (
-    id                  INT auto_increment not null,
+    id                          INT auto_increment not null,
     cnpj                        INT unique not null,
-    mensagem_emprocessos     varchar(50),
+    mensagem_emprocessos        varchar(50),
     
     primary key (id,cnpj),
     FOREIGN KEY (id) REFERENCES beneficio(id),
@@ -95,12 +94,10 @@ CREATE TABLE doador
     id              INT auto_increment not null,
 	cpf             INT unique ,
 	cnpj            INT unique ,
-    nome            varchar (50) not null,
-    dt_nasc         varchar (15) not null,
     telefone        varchar(11) not null,
     endereco        varchar (100) not null,
     numero          varchar (10) not null,
-    cep             float (8) not null,
+    cep             varchar (9) not null,
     email           varchar (50) not null,
     senha           varchar(50),
 	foreign key(cpf) references doadorfisico(cpf),
@@ -113,7 +110,7 @@ CREATE TABLE cestabasica
     id                    					INT auto_increment not null,
     descricao_itens       					varchar (200) not null,
     doadorfisico_id	    					INT not null,
-    empresadistribuicao_id	            INT not null,
+    empresadistribuicao_id	                INT not null,
     primary key(id),
     FOREIGN KEY (empresadistribuicao_id) REFERENCES empresadistribuicao(id)
 );
@@ -126,4 +123,15 @@ CREATE TABLE cesta_doador
     primary key (id_cesta,id_doador),
     FOREIGN KEY (id_cesta) REFERENCES cestabasica(id),
     FOREIGN KEY (id_doador) REFERENCES doador(id)
+);
+CREATE TABLE usuario
+(
+    id              INT NOT NULL AUTO_INCREMENT,
+    nome            varchar(50) NOT NULL,
+    email           varchar(255) NOT NULL,
+    senha           varchar(50) NOT NULL,
+    data_criacao    datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    ativo           tinyint NOT NULL DEFAULT '0',
+    adm             tinyint NOT NULL DEFAULT '0',
+    PRIMARY KEY(id)
 );
