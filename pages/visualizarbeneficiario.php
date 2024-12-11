@@ -8,7 +8,7 @@
     <title>Painel do beneficiário</title>
     <link rel="icon" alt="icon" href="../img/menulogo.png">
     <!-- CSS -->
-    <link rel="stylesheet" href="../css/painelbeneficiario.css" />
+    <link rel="stylesheet" href="../css/painel.css" />
 
   </head>
   <body>
@@ -88,38 +88,59 @@
       </aside>
       <main>
       <section class="anuncios">
-          <h2>Anúncios</h2>
-          <div class="card">
-            <div>
-              <h4>Manutenção do site</h4>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Esse
-                recusandae assumenda alias dolores?
-              </p>
+
+        <div class="row" style="min-height: 500px;">
+          <div class="col-md-10" style="padding-top: 50px;">
+            <h2>Usuário</h2>
+            <?php
+              require_once '../includes/funcoes.php';
+              require_once '../core/conexao_mysql.php';
+              require_once '../core/sql.php';
+              require_once '../core/mysql.php';
+
+              foreach($_GET as $indice => $dado){
+                $$indice = limparDados($dado);
+              }
+
+              $criterio = [];
+
+              if(!empty($busca)){
+                $criterio[] = ['nome', 'like', "%{$busca}%"];
+              }
+
+              $result = buscar(
+                'beneficiario',
+                [
+                  'id',
+                  'nome',
+                  'NIS',
+                  'cpf'
+                ],
+                $criterio,
+                'nome ASC'
+              );
+            ?>
+            <table>
+              <thead>
+                <tr>
+                  <td>Nome</td>
+                  <td>NIS</td>
+                  <td>cpf</td>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><?php echo $entidade['nome']?></td>
+                  <td><?php echo $entidade['NIS']?></td>
+                  <td><?php echo $entidade['cpf']?></td>
+                </tr>
+                          
+              </tbody>
+            </table>
             </div>
-            <div>
-              <h4>Dia do compartilhamento</h4>
-              <p>
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                Placeat suscipit ad omnis.
-              </p>
-            </div>
-            <div>
-              <h4>Política de privacidade atualizada</h4>
-              <p>
-                Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-                Dignissimos, minus voluptatem fugit adipisci facere nulla
-                officia.
-              </p>
-            </div>
-          </div>
+        </div>
         </section>
       </main>
     </div>
-
-    <script>
-      const footer = document.getElementById("texto-footer");
-      footer.innerText = `Pinerity, ${new Date().getFullYear()}`;
-    </script>
   </body>
 </html>
