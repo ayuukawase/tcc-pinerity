@@ -361,7 +361,7 @@ main{
   height: 20%;
 }
 .section-1 .col-12 h3 {
-  font-size: 38px;
+  font-size: 24px;
 }
 .section-1 .col-12 p {
   font-size: 14px;
@@ -385,7 +385,7 @@ main{
 }
 @media screen and (min-width: 768px) {
   .section-2 .col-12 p {
-      font-size: 19px;
+      font-size: 18px;
       line-height: 31.5px;
  }
 }
@@ -398,14 +398,14 @@ main{
 }
 .section-3 .col-12 p {
   padding: 15px 50px;
-  font-size: 38px;
+  font-size: 14px;
 }
 @media screen and (min-width: 768px) {
   .section-3 .col-12 h3 {
       padding: 0 40px;
  }
   .section-3 .col-12 p {
-      font-size: 38px;
+      font-size: 18px;
       line-height: 31.5px;
  }
 }
