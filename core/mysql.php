@@ -104,7 +104,7 @@
             $expressao[count ($expressao) -1] = '?';
             $coringa_criterio[] = $expressao;
         
-            $nome_campo = (count($xpressao) < 4) ? $expressao[0] : $expressao[1];
+            $nome_campo = (count($expressao) < 4) ? $expressao[0] : $expressao[1];
 
             $campos_criterio[] = $nome_campo;
 

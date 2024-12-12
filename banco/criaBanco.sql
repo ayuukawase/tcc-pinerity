@@ -36,14 +36,14 @@ CREATE TABLE beneficiario
 (
     id              INT auto_increment not null,
     id_beneficio    INT null,
-    NIS             varchar(20) not null,
+    NIS             varchar(11) not null,
     nome            varchar(50) not null,
     folha_resumo    Blob not null,
     rendafamiliar   float not null,
     numero          INT not null,
     cep             varchar(9) not null,
     n_integrantes   INT check(n_integrantes > 0),
-    cpf             varchar(20) not null,
+    cpf             varchar(11) not null,
     telefone        varchar(11) not null, 
     email           varchar(50) not null,
     senha           varchar(50),
@@ -65,7 +65,7 @@ CREATE TABLE pedido
 CREATE TABLE beneficio_empresa
 (
     id                          INT auto_increment not null,
-    cnpj                        INT unique not null,
+    cnpj                        varchar(14) unique not null,
     mensagem_emprocessos        varchar(50),
     
     primary key (id,cnpj),
@@ -75,13 +75,13 @@ CREATE TABLE beneficio_empresa
 
 CREATE TABLE doadorfisico
 (
-    cpf             INT unique not null,
+    cpf             varchar(11) unique not null,
     primary key(cpf)
 );
 
 CREATE TABLE doadorjuridico
 (
-	cnpj            	INT unique not null,
+	cnpj            	varchar(14) unique not null,
     nomeEmpresarial 	varchar(100) not null,
     nomeFantasia    	varchar(100) not null,
     primary key(cnpj)
@@ -90,8 +90,8 @@ CREATE TABLE doadorjuridico
 CREATE TABLE doador
 (
     id              INT auto_increment not null,
-	cpf             INT unique ,
-	cnpj            INT unique ,
+	cpf             varchar(11) unique ,
+	cnpj            varchar(14) unique ,
     telefone        varchar(11) not null,
     numero          varchar (10) not null,
     cep             varchar (9) not null,
