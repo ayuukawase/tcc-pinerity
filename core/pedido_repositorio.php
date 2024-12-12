@@ -19,31 +19,17 @@ $id = (int)$id;
 switch($acao){
     case 'insert':
         $dados = [
-            'tipoentrega'   => $tipoentrega
+            'numerocestas'      => $numerocestas,
+            'tipoentrega'       => $tipoentrega,
+            'id_distribuidora'  => $id_distribuidora,
             'beneficiario_id'   => $_SESSION['login']['beneficiario']['id']
         ];
 
         insere(
-            'pedido',
+            'beneficio',
             $dados
         );
 
-        break;
-
-    case 'update':
-        $dados = [
-            'tipoentrega'   => $tipoentrega
-            'beneficiario_id'   => $_SESSION['login']['beneficiario']['id']
-        ];
-
-        $criterio = [
-            ['id', '=', $id]
-        ];
-        atualiza(
-            'pedido',
-            $dados,
-            $criterio
-        );
         break;
 
     case 'delete':
@@ -52,10 +38,10 @@ switch($acao){
         ];
 
         deleta(
-            'pedido',
+            'beneficio',
             $criterio
         );
         break;
 }
-
+header('Location: ../pages/painelbeneficiario.html');
 ?>

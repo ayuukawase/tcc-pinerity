@@ -9,15 +9,12 @@
 </head>
 <body>
   <div class="wrapper">
-    <form action="#">
+    <form method="post" action="../core/empresadistribuicao_repositorio.php">
+    <input type="hidden" name="acao" value="login">
       <h2>Login</h2>
         <div class="input-field">
-        <input type="text" required>
+        <input class="form-control" type="number" require="required" id="cnpj" name="cnpj">
         <label>Coloque com seu CNPJ</label>
-      </div>
-      <div class="input-field">
-        <input type="password" required>
-        <label>Coloque sua senha</label>
       </div>
       <div class="forget">
         <label for="remember">

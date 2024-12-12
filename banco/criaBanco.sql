@@ -1,4 +1,4 @@
--- Deleta o banco de dados caso exista
+    -- Deleta o banco de dados caso exista
 DROP DATABASE IF EXISTS pinerity;
 
 -- Cria banco de dados caso não exista
@@ -56,21 +56,23 @@ CREATE TABLE pedido
 	id 						INT auto_increment not null,
 	id_distribuidora		INT not null,
     numerocestas 			INT not null,
-    tipoentrega 			boolean not null,
-    beneficiario_id 		INT unsigned not null,
+    tipoentrega 			ENUM('retirar', 'entregar') not null,
+    beneficiario_id 		INT not null,
     primary key (id),
-	foreign key(id_distribuidora) references empresadistribuicao(id)
-) engine InnoDB;
+	foreign key(id_distribuidora) references empresadistribuicao(id),
+    foreign key(beneficiario_id) references beneficiario(id)
+);
 
 CREATE TABLE beneficio_empresa
 (
     id                          INT auto_increment not null,
-    cnpj                        varchar(14) unique not null,
+    beneficio_id                INT not null,
+    empresa_id                  INT not null,
     mensagem_emprocessos        varchar(50),
     
-    primary key (id,cnpj),
-    FOREIGN KEY (id) REFERENCES beneficio(id),
-    FOREIGN KEY (cnpj) REFERENCES empresadistribuicao(id)
+    primary key (id),
+    FOREIGN KEY (beneficio_id) REFERENCES beneficio(id),
+    FOREIGN KEY (empresa_id) REFERENCES empresadistribuicao(id)
 );
 
 CREATE TABLE doadorfisico
