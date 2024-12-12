@@ -10,7 +10,7 @@ USE pinerity;
 CREATE TABLE empresadistribuicao
 (
     id                          INT auto_increment,
-    cnpj                        INT not null,
+    cnpj                        varchar (14) not null,
     nome_empresarial            varchar(100) not null,
     nome_fantasia               varchar (50) not null,
     cep                         varchar (9) not null,
@@ -34,16 +34,16 @@ CREATE TABLE beneficio
 
 CREATE TABLE beneficiario
 (
-    id              INT unsigned auto_increment not null,
+    id              INT auto_increment not null,
     id_beneficio    INT null,
-    NIS             INT not null,
+    NIS             varchar(20) not null,
     nome            varchar(50) not null,
     folha_resumo    Blob not null,
     rendafamiliar   float not null,
     numero          INT not null,
     cep             varchar(9) not null,
     n_integrantes   INT check(n_integrantes > 0),
-    cpf             INT not null,
+    cpf             varchar(20) not null,
     telefone        varchar(11) not null, 
     email           varchar(50) not null,
     senha           varchar(50),

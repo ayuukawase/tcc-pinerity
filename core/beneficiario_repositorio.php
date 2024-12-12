@@ -55,6 +55,17 @@
 
             break;
 
+        case 'delete':
+            $criterio = [
+                ['id', '=', $id]
+            ];
+        
+            deleta(
+                'beneficiario',
+                $criterio
+            );
+            break;
+
         case 'login':
             $criterio = [
                 ['NIS', '=', $NIS]

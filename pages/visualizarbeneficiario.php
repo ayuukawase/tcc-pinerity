@@ -97,18 +97,14 @@
               require_once '../core/conexao_mysql.php';
               require_once '../core/sql.php';
               require_once '../core/mysql.php';
-
+        
               foreach($_GET as $indice => $dado){
                 $$indice = limparDados($dado);
               }
 
-              $criterio = [];
+              $criterio[] = ['beneficiario'];
 
-              if(!empty($busca)){
-                $criterio[] = ['nome', 'like', "%{$busca}%"];
-              }
-
-              $result = buscar(
+              $result = selecionar(
                 'beneficiario',
                 [
                   'id',
@@ -123,6 +119,7 @@
             <table>
               <thead>
                 <tr>
+                  <td>Id</td>
                   <td>Nome</td>
                   <td>NIS</td>
                   <td>cpf</td>
@@ -130,11 +127,11 @@
               </thead>
               <tbody>
                 <tr>
+                  <td><?php echo $entidade['id']?></td>
                   <td><?php echo $entidade['nome']?></td>
                   <td><?php echo $entidade['NIS']?></td>
                   <td><?php echo $entidade['cpf']?></td>
-                </tr>
-                          
+                </tr>         
               </tbody>
             </table>
             </div>

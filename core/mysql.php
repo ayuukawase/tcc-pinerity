@@ -140,7 +140,7 @@
     }
 
     //buscar
-    function buscar(string $entidade, array $campos = ['*'], array $criterio = [], string $ordem = null) :  array 
+    function selecionar(string $entidade, array $campos = ['*'], array $criterio = [], string $ordem = null) :  array 
     {
         $retorno = false;
         $coringa_criterio = [];
@@ -153,10 +153,6 @@
             $coringa_criterio[] = $expressao;
 
             $nome_campo = (count($expressao) < 4) ? $expressao[0] : $expressao[1];
-
-            if(isset($$nome_campo)) {
-                $nome_campo = $nome_campo . '_' . rand();
-            }
 
             $campos_criterio[] = $nome_campo;
             
@@ -180,19 +176,13 @@
 
         mysqli_stmt_execute($stmt);
 
-        if($result = mysqli_stmt_get_result($stmt)) {
-            $retorno = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
-            mysqli_free_result($result);
-        }
+        $retorno = (boolean) mysqli_stmt_affected_rows($stmt);
 
         $_SESSION['errors'] = mysqli_stmt_error_list($stmt);
 
         mysqli_stmt_close($stmt);
 
         desconecta($conexao);
-
-        $retorno = $retorno;
 
         return $retorno;
     }

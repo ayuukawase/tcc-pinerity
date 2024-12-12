@@ -17,7 +17,6 @@
  .text-color {
      color: #1E3932;
 }
-
 @media screen and (min-width: 1300px){
     .pinerity_main, .header_pinerity {
         margin: 0 60px;
@@ -63,7 +62,6 @@ nav .logo{
   width: 10%;
   height: 10%;
   border-radius: 50%;
-
 }
 .logo a{
   margin: 0;
@@ -126,7 +124,6 @@ nav .logo{
     font-size: 18px;
     width: 100%;
 }
-
 .mega-box{
   position: absolute;
   left: 0;
@@ -311,8 +308,6 @@ nav input{
 }
 /*fim menu*/
 /*conteúdo*/
-
-/*teste*/
 section {
   background-color: #e5ffcf;
   float: left;
@@ -325,8 +320,6 @@ section {
   border-radius: 20px;
   font-size: x-large;
 }
-
-
 .back-button:hover {
   background-color:#5eac3a;
   color: white;
@@ -360,8 +353,7 @@ section {
 
 /*fim de conteúdo*/
 
-/* inicio body - receitas */
-
+/* inicio body - conteudo */
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -387,7 +379,7 @@ h1 {
   padding-bottom: 5px;
   margin-bottom: 10px;
 }
-.recipe {
+.recipe { /* provavelmente desnecesario */
   display: flex;
   justify-content: space-between;
   background-color: #fff;
@@ -396,33 +388,18 @@ h1 {
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-.recipe-info {
+.conteudo-info {
   max-width: 70%;
 }
-.recipe-title {
+.conteudo-title {
   font-size: 1.2em;
   color: #333;
 }
-.recipe-description {
+.conteudo-description {
   color: #666;
   font-size: 0.9em;
 }
-.recipe-button {
-  background-color: #ff6600;
-  color: #fff;
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  align-self: center;
-}
-.recipe-button:hover {
-  background-color: #e65c00;
-}
-
 /* final body - receitas */
-
-
 /* footer */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
