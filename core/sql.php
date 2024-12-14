@@ -37,12 +37,10 @@
         $instrucao = "DELETE {$entidade}";
 
         if(!empty($criterio)){
-            $instrucao .= ' WHERE ';
+            
+            $instrucao .= " WHERE {$criterio}";
 
-            foreach($criterio as $expressao){
-                $instrucao .= ' ' . implode(' ', $expressao);
             }
-        }
 
         return $instrucao;
     }
