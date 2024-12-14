@@ -27,8 +27,11 @@
         <div class="saudacao">
           <div class="perfil">
             <img src="../img/testebeneficiario.jpeg" alt="Sua foto de perfil" />
-            <span>Olá,</span>
-            <p>Wassup</p>
+            <?php if(isset($_SESSION['login'])): ?>
+              <div class = "card-body text-right">
+                Olá, <?php echo $_SESSION['login']['beneficiario']['nome']?>!
+              </div>
+            <?php endif ?>
           </div>
           <div class="acoes">
             <button>Novo pedido</button>

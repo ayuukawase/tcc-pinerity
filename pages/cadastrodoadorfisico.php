@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="wrapper">
-    <form method="post" action="../core/doadorfisico_repositorio.php">
+    <form method="post" action="../core/doadorfisicocadastrp_repositorio.php">
     <input type="hidden" name="acao" value="login">
             <div>
                 <?php

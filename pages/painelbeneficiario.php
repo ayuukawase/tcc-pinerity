@@ -58,10 +58,10 @@ session_start();
             <a href="visualizarbeneficiario.php"><i class="bi bi-eye"></i>Visualizar perfil</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-pencil-square"></i>Atualizar perfil</a>
+            <a href="atualizarbeneficiario.php"><i class="bi bi-pencil-square"></i>Atualizar perfil</a>
           </li>
           <li>
-            <a href="../core/beneficiario_repositorio.php?acao=delete"><i class="bi bi-x-lg"></i>Deletar perfil</a>
+            <a href="../core/beneficiario_repositorio.php?acao=delete&id=<?php echo $entidade['id'] ?>"><i class="bi bi-x-lg"></i>Deletar perfil</a>
           </li>
         </ul>
         <ul class="menu">
