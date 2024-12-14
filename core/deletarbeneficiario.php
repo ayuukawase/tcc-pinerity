@@ -1,22 +1,31 @@
-<?php
-    session_start();
-    require_once 'conexao_mysql.php';
+<!DOCTYPE html>
+<html lang="en">
 
-  // Get the id of the account to be deleted
-  $id = $_POST['id'];
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+</head>
 
-  // Define the criteria for the deletion
-  $criterio = [
-    ['id', '=', $id]
-  ];
+<body>
+    <section>
+        <div class="principal">
+            <h1>Deletar cidade</h1>
+            <?php
+            require_once 'conexao_mysql.php'; 
+            $id = $_GET['id'];
+            $sql = "DELETE FROM beneficiario WHERE id = $id";
+            $result = mysqli_query($conexao, $sql);
+            if ($result)
+                echo "<h2>Dados deletados!</h2>";
+            else {
+                echo "<h2>Erro ao deletar!</h2>";
+                echo "<h2>" . mysqli_error($conexao) . "</h2>";
+            }
+            ?>
+        </div>
+    </section>
+</body>
 
-  // Delete the account
-  deleta('beneficiario', $criterio);
-
-  // Close the database connection
-  mysqli_close($con);
-
-  // Redirect the user to a confirmation page
-  header('Location: ../index.html');
-  exit;
-?>
+</html>

@@ -34,17 +34,6 @@
 
             break;
 
-        case 'delete':
-            $criterio = [
-                ['id', '=', $id]
-            ];
-        
-            deleta(
-                'beneficiario',
-                $criterio
-            );
-            break;
-
         case 'login':
             $criterio = [
                 ['NIS', '=', $NIS]
@@ -67,10 +56,30 @@
             }
             
             break;
-        
-        case 'logout':
-            session_destroy();
-            break;
+
+            case 'delete':
+                $id = isset($_POST['id']) ? $_POST['id'] : null; 
+                if ($id) 
+                { 
+                    $criterio = [ ['id', '=', $id] ]; 
+                    deleta('beneficiario', $criterio); 
+                } 
+                else 
+                { 
+                    echo 'ID não fornecido.'; 
+                } 
+                break;
+                /*$id = $_GET['id'];
+                
+                $criterio = [
+                    ['id', '=', $id]
+                ];
+            
+                deleta(
+                    'beneficiario',
+                    $criterio
+                );*/
+                break;
             
     }
     header('Location: ../pages/painelbeneficiario.php');

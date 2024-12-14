@@ -61,7 +61,12 @@ session_start();
             <a href="atualizarbeneficiario.php"><i class="bi bi-pencil-square"></i>Atualizar perfil</a>
           </li>
           <li>
+<<<<<<< HEAD
             <a href="../core/beneficiario_repositorio.php?acao=delete&id=<?php echo $entidade['id'] ?>"><i class="bi bi-x-lg"></i>Deletar perfil</a>
+=======
+          <a href="../core/beneficiario_repositorio.php?acao=delete"><i class="bi bi-x-lg"></i>Deletar perfil</a>
+            <!--<a href="../core/deletarbeneficiario.php?id=' . $row['id'] . '"><i class="bi bi-x-lg"></i>Deletar perfil</a>-->
+>>>>>>> b93257a37b4970a9c99964f35199be6950eb9d3d
           </li>
         </ul>
         <ul class="menu">
@@ -69,7 +74,7 @@ session_start();
             <a href="sobre.html"><i class="bi bi-info-circle"></i>Ajuda</a>
           </li>
           <li>
-            <a href="../core/beneficiario_repositorio.php?acao=logout"><i class="bi bi-box-arrow-right"></i>Sair</a>
+            <a href="../core/beneficiariocadastro_repositorio.php?acao=logout"><i class="bi bi-box-arrow-right"></i>Sair</a>
           </li>
         </ul>
         <footer>

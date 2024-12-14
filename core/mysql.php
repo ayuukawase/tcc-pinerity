@@ -92,18 +92,18 @@
     }
 
     //deleta
-    function deleta (string $entidade, array $criterio = []) : bool
+    function deleta(string $entidade, array $criterio = []): bool
     {
         $retorno = false;
         $coringa_criterio = [];
 
-        foreach ($criterio as $expressao){
-            $dado = $expressao[count($expressao)-1];
+        foreach ($criterio as $expressao) {
+            $dado = $expressao[count($expressao) - 1];
 
-            $tipo[] = gettype($dado) [0];
-            $expressao[count ($expressao) -1] = '?';
+            $tipo[] = gettype($dado)[0];
+            $expressao[count($expressao) - 1] = '?';
             $coringa_criterio[] = $expressao;
-        
+
             $nome_campo = (count($expressao) < 4) ? $expressao[0] : $expressao[1];
 
             $campos_criterio[] = $nome_campo;
@@ -117,9 +117,9 @@
 
         $stmt = mysqli_prepare($conexao, $instrucao);
 
-        if(isset($tipo)){
+        if (isset($tipo)) {
             $comando = 'mysqli_stmt_bind_param($stmt, ';
-            $comando .= "'" . implode('', $tipo). "'";
+            $comando .= "'" . implode('', $tipo) . "'";
             $comando .= ', $' . implode(', $', $campos_criterio);
             $comando .= ');';
 
@@ -129,13 +129,13 @@
         mysqli_stmt_execute($stmt);
 
         $retorno = (boolean) mysqli_stmt_affected_rows($stmt);
-        
+
         $_SESSION['errors'] = mysqli_stmt_error_list($stmt);
-        
+
         mysqli_stmt_close($stmt);
-        
-        desconecta ($conexao);
-        
+
+        desconecta($conexao);
+
         return $retorno;
     }
 
