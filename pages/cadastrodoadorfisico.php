@@ -33,7 +33,7 @@
                         $entidade = $retorno[0];
                     }
                 ?>
-                <form method="post" action="../core/doadorfisico_repositorio.php">
+                <form method="post" action="../core/doadorfisicocadastro_repositorio.php">
                     <input type="hidden" name="acao" value="<?php echo empty($id) ? 'insert' : 'update' ?>">
                     <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
                     <h2>Cadastro do doador físico</h2>

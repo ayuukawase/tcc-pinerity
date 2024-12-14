@@ -9,7 +9,7 @@
 </head>
 <body>
     <div class="wrapper">
-    <form method="post" action="../core/empresadistribuicao_repositorio.php">
+    <form method="post" action="../core/empresadistribuicaocadastro_repositorio.php">
     <input type="hidden" name="acao" value="login">
             <div>
                 <?php
@@ -34,7 +34,7 @@
                     }
                 ?>
 
-                <form method="post" action="../core/empresadistribuicao_repositorio.php">
+                <form method="post" action="../core/empresadistribuicaocadastro_repositorio.php">
                     <input type="hidden" name="acao" value="<?php echo empty($id) ? 'insert' : 'update' ?>">
                     <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
                     <h2>Cadastro da empresa de distribuição</h2>

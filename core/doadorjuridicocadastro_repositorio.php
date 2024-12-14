@@ -16,40 +16,48 @@
 
     //verificar no banco de dados se funcionou
     switch($acao){
-        case 'update':
-            $id = (int)$id;
-            $dados = [
-                'telefone'      => $telefone,
-                'cep'           => $cep,
-                'num'           => $num,
+        case 'insert':
+            $dadosjuridico = [
+                'cnpj'              => $cnpj,
+                'nome_fantasia'     => $nome_fantasia,
+                'nome_empresarial'  => $nome_empresarial,
             ];
 
-            $criterio = [
-                ['id', '=', $id]
+            insere(
+                'doadorjuridico',
+                $dadosjuridico
+            );
+
+
+            $dadosdoador = [
+                'email'             => $email,
+                'telefone'          => $telefone,
+                'cep'               => $cep,
+                'numero'            => $numero,
+                'senha'             => crypt($senha, $salt)
             ];
 
-            atualiza(
-                'doadorfisico',
-                $dados,
-                $criterio
+            insere(
+                'doador',
+                $dadosdoador
             );
 
             break;
 
         case 'login':
             $criterio = [
-                ['id', '=', $id],
+                ['cnpj', '=', $cnpj],
                 ['AND', 'ativo', '=', 1]
             ];
-            /*$retorno = buscar(
-                'usuario',
-                ['id', 'nome', 'email', 'senha', 'adm'],
+            $retorno = buscar(
+                'doadorjuridico',
+                ['id', 'nome', 'cnpj', 'senha'],
                 $criterio
-            );*/
+            );
 
             if(count($retorno)> 0){
                 if(crypt($senha,$salt) == $retorno[0]['senha']){
-                    $_SESSION['login']['doadorfisico'] = $retorno[0];
+                    $_SESSION['login']['doadorjuridico'] = $retorno[0];
                     if(!empty($_SESSION['url_retorno'])){
                         header('Location: '. $_SESSION['url_retorno']);
                         $_SESSION['url_retorno'] = '';
@@ -59,11 +67,7 @@
             }
 
             break;
-
-        case 'logout':
-            session_destroy();
-            break;
             
     }
-    header('Location: ../pages/paineldoador.php');
+    header('Location: ../pages/logindoadorjuridico.php');
 ?>

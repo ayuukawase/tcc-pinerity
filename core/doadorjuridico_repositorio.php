@@ -16,34 +16,6 @@
 
     //verificar no banco de dados se funcionou
     switch($acao){
-        case 'insert':
-            $dadosjuridico = [
-                'cnpj'              => $cnpj,
-                'nome_fantasia'     => $nome_fantasia,
-                'nome_empresarial'  => $nome_empresarial,
-            ];
-
-            insere(
-                'doadorjuridico',
-                $dadosjuridico
-            );
-
-
-            $dadosdoador = [
-                'email'             => $email,
-                'telefone'          => $telefone,
-                'cep'               => $cep,
-                'numero'            => $numero,
-                'senha'             => crypt($senha, $salt)
-            ];
-
-            insere(
-                'doador',
-                $dadosdoador
-            );
-
-            break;
-
         case 'update':
             $id = (int)$id;
             $dados = [
@@ -91,28 +63,7 @@
         case 'logout':
             session_destroy();
             break;
-
-        case 'status':
-            $id = (int)$id;
-            $valor = (int)$valor;
-
-            $dados = [
-                'ativo' => $valor
-            ];
-
-            $criterio = [
-                ['id', '=', $id]
-            ];
-
-            atualiza(
-                'doadorjuridico',
-                $dados,
-                $criterio
-            );
-
-            exit;
-            break;
             
     }
-    header('Location: ../pages/paineldoador.html');
+    header('Location: ../pages/paineldoador.php');
 ?>

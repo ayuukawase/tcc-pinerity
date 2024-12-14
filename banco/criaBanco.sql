@@ -86,8 +86,8 @@ CREATE TABLE doadorfisico
 CREATE TABLE doadorjuridico
 (
 	cnpj            	varchar(14) unique not null,
-    nomeEmpresarial 	varchar(100) not null,
-    nomeFantasia    	varchar(100) not null,
+    nome_empresarial 	varchar(100) not null,
+    nome_fantasia    	varchar(100) not null,
     primary key(cnpj)
 ) engine InnoDB;
 

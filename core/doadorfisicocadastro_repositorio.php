@@ -16,36 +16,44 @@
 
     //verificar no banco de dados se funcionou
     switch($acao){
-        case 'update':
-            $id = (int)$id;
-            $dados = [
-                'telefone'      => $telefone,
-                'cep'           => $cep,
-                'num'           => $num,
+        case 'insert':
+            $dadosfisico = [
+                'cpf'           => $cpf,
+                'nome'          => $nome,
+                'dt_nasc'       => $dt_nasc,
             ];
 
-            $criterio = [
-                ['id', '=', $id]
-            ];
-
-            atualiza(
+            insere(
                 'doadorfisico',
-                $dados,
-                $criterio
+                $dadosfisico
+            );
+
+            
+            $dadosdoador = [
+                'telefone'      => $telefone,
+                'email'         => $email,
+                'cep'           => $cep,
+                'numero'        => $numero,
+                'senha'         => crypt($senha, $salt)  
+            ];
+
+            insere(
+                'doador',
+                $dadosdoador
             );
 
             break;
-
+        
         case 'login':
             $criterio = [
                 ['id', '=', $id],
                 ['AND', 'ativo', '=', 1]
             ];
-            /*$retorno = buscar(
-                'usuario',
-                ['id', 'nome', 'email', 'senha', 'adm'],
+            $retorno = buscar(
+                'doadorfisico',
+                ['id', 'nome', 'cpf', 'senha'],
                 $criterio
-            );*/
+            );
 
             if(count($retorno)> 0){
                 if(crypt($senha,$salt) == $retorno[0]['senha']){
@@ -59,11 +67,7 @@
             }
 
             break;
-
-        case 'logout':
-            session_destroy();
-            break;
             
     }
-    header('Location: ../pages/paineldoador.php');
+    header('Location: ../pages/logindoadorfisico.php');
 ?>
