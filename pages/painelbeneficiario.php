@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -27,8 +30,11 @@
         <div class="saudacao">
           <div class="perfil">
             <img src="../img/testebeneficiario.jpeg" alt="Sua foto de perfil" />
-            <span>Olá,</span>
-            <p>Wassup</p>
+            <?php if(isset($_SESSION['login'])): ?>
+              <div class = "card-body text-right">
+                Olá, <?php echo $_SESSION['login']['beneficiario']['nome']?>!
+              </div>
+            <?php endif ?>
           </div>
           <div class="acoes">
             <button>Novo pedido</button>
@@ -43,7 +49,7 @@
         </div>
         <ul class="menu">
           <li class="selecionado">
-            <a href="#"><i class="bi bi-house"></i>Início</a>
+            <a href="painelbeneficiario"><i class="bi bi-house"></i>Início</a>
           </li>
           <li>
             <a href="#"><i class="bi bi-clock-history"></i>Histórico de pedidos de benefícios</a>
@@ -60,10 +66,10 @@
         </ul>
         <ul class="menu">
           <li>
-            <a href="#"><i class="bi bi-info-circle"></i>Ajuda</a>
+            <a href="sobre.html"><i class="bi bi-info-circle"></i>Ajuda</a>
           </li>
           <li>
-            <a href="deletarbeneficiario.php"><i class="bi bi-box-arrow-right"></i>Sair</a>
+            <a href="../core/beneficiario_repositorio.php?acao=logout"><i class="bi bi-box-arrow-right"></i>Sair</a>
           </li>
         </ul>
         <footer>

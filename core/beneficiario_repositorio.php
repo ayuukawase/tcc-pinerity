@@ -16,27 +16,6 @@
 
     //verificar no banco de dados se funcionou
     switch($acao){
-        case 'insert':
-            $dados = [
-                'nome'          => $nome,
-                'NIS'           => $NIS,
-                'cpf'           => $cpf,
-                'telefone'      => $telefone,
-                'email'         => $email,
-                'cep'           => $cep,
-                'numero'        => $numero,
-                'folha_resumo'  => $folha_resumo,
-                'n_integrantes' => $n_integrantes,
-                'senha'         => crypt($senha, $salt)
-            ];
-
-            insere(
-                'beneficiario',
-                $dados
-            );
-
-            break;
-        
         case 'update':
             $id = (int)$id;
             $dados = [
@@ -72,7 +51,7 @@
             ];
             $retorno = buscar(
                 'beneficiario',
-                ['id', 'nome', 'NIS'],
+                ['id', 'nome', 'NIS', 'senha'],
                 $criterio
             );
 
@@ -94,5 +73,5 @@
             break;
             
     }
-    header('Location: ../pages/painelbeneficiario.html');
+    header('Location: ../pages/painelbeneficiario.php');
 ?>

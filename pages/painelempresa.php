@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -27,8 +30,11 @@
         <div class="saudacao">
           <div class="perfil">
             <img src="../img/perfilteste.jpg" alt="Sua foto de perfil" />
-            <span>Olá,</span>
-            <p>Pochita</p>
+            <?php if(isset($_SESSION['login'])): ?>
+              <div class = "card-body text-right">
+                Olá, <?php echo $_SESSION['login']['empresadistribuicao']['nome_fantasia']?>!
+              </div>
+            <?php endif ?>
           </div>
           <div class="acoes">
             <button>Nova doação</button>
@@ -64,7 +70,7 @@
             <a href="#"><i class="bi bi-info-circle"></i>Ajuda</a>
           </li>
           <li>
-            <a href="core/beneficiario_repositorio.php?acao=logout"><i class="bi bi-box-arrow-right"></i>Sair</a>
+            <a href="../core/empresadistribuicao_repositorio.php?acao=logout"><i class="bi bi-box-arrow-right"></i>Sair</a>
           </li>
         </ul>
         <footer>

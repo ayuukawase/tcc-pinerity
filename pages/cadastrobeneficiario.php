@@ -31,7 +31,7 @@
                         $entidade = $retorno[0];
                     }
                 ?>
-                <form method="post" action="../core/beneficiario_repositorio.php">
+                <form method="post" action="../core/beneficiariocadastro_repositorio.php">
                     <input type="hidden" name="acao" value="<?php echo empty($id) ? 'insert' : 'update' ?>">
                     <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
                     <h2>Cadastro</h2>
@@ -63,7 +63,7 @@
                         <input class="form-control" type="number" require="required" id="numero" name="numero" value="<?php echo $entidade['numero'] ?? '' ?>">
                         <label for="numero">Número da casa/apartamento</label>
                     </div>
-                    <div class="input-field"><!--arrumar no banco-->
+                    <div class="input-field">
                         <input class="form-control" type="file" require="required" id="folha_resumo" name="folha_resumo" value="<?php echo $entidade['folha_resumo'] ?? '' ?>">
                         <label for="folha_resumo">Folha Resumo</label>
                     </div>

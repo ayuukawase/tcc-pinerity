@@ -15,8 +15,8 @@
     <div id="content">
       <header>
         <div class="busca">
-          <form action="">
-            <input type="text" placeholder="Pesquisar" />
+          <form action="" method="get">
+          <input type="search" name="busca" class="form-control mr-sm-2" placeholder="Busca" aria-label="Busca">
             <button type="submit" title="Buscar">
               <i class="bi bi-search"></i>
             </button>
@@ -88,54 +88,66 @@
       </aside>
       <main>
       <section class="anuncios">
-
         <div class="row" style="min-height: 500px;">
           <div class="col-md-10" style="padding-top: 50px;">
-            <h2>Usuário</h2>
-            <?php
-              require_once '../includes/funcoes.php';
-              require_once '../core/conexao_mysql.php';
-              require_once '../core/sql.php';
-              require_once '../core/mysql.php';
-        
-              foreach($_GET as $indice => $dado){
-                $$indice = limparDados($dado);
-              }
-
-              $criterio[] = ['beneficiario'];
-
-              $result = selecionar(
-                'beneficiario',
-                [
-                  'id',
-                  'nome',
-                  'NIS',
-                  'cpf'
-                ],
-                $criterio,
-                'nome ASC'
-              );
-            ?>
-            <table>
-              <thead>
-                <tr>
-                  <td>Id</td>
-                  <td>Nome</td>
-                  <td>NIS</td>
-                  <td>cpf</td>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td><?php echo $entidade['id']?></td>
-                  <td><?php echo $entidade['nome']?></td>
-                  <td><?php echo $entidade['NIS']?></td>
-                  <td><?php echo $entidade['cpf']?></td>
-                </tr>         
-              </tbody>
-            </table>
+            <h2>Meu perfil</h2>
+              <?php
+                require_once '../includes/funcoes.php';
+                require_once '../core/conexao_mysql.php';
+                require_once '../core/sql.php';
+                require_once '../core/mysql.php';
+                foreach ($_GET as $indice => $dado) {
+                    $$indice = limparDados($dado);
+                }
+                $criterio = ['id', '=', $id];
+                $result = buscar(
+                    'beneficiario',
+                    [
+                      'id',
+                      'nome',
+                      'NIS',
+                      'cpf',
+                      'telefone',
+                      'email',
+                      'cep',
+                      'numero',
+                      'folha_resumo',
+                      'n_integrantes' 
+                    ],
+                    $criterio,
+                    'nome ASC'
+                );
+              ?>
+              <table class="table table-bordered table-hover table-striped table-responsive{-sm|-md|-lg|-xl}">
+                  <thead>
+                    <tr>
+                      <td>Nome</td>
+                      <td>NIS</td>
+                      <td>CPF</td>
+                      <td>Telefone</td>
+                      <td>E-mail</td>
+                      <td>CEP</td>
+                      <td>Número da casa/apartamento</td>
+                      <td>Folha Resumo</td>
+                      <td>Número de pessoas na residência</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><?php echo $entidade['nome'] ?></td>
+                      <td><?php echo $entidade['NIS'] ?></td>
+                      <td><?php echo $entidade['cpf'] ?></td>
+                      <td><?php echo $entidade['telefone'] ?></td>
+                      <td><?php echo $entidade['email'] ?></td>
+                      <td><?php echo $entidade['cep'] ?></td>
+                      <td><?php echo $entidade['numero'] ?></td>
+                      <td><?php echo $entidade['folha_resumo'] ?></td>
+                      <td><?php echo $entidade['n_integrantes'] ?></td>
+                    </tr>
+                  </tbody>
+              </table>
             </div>
-        </div>
+          </div>
         </section>
       </main>
     </div>

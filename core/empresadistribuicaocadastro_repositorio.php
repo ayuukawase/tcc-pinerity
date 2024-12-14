@@ -15,38 +15,37 @@
     }
 
     //verificar no banco de dados se funcionou
-    switch($acao){ 
-        case 'update':
-            $id = (int)$id;
+    switch($acao){
+        case 'insert':
             $dados = [
-                'telefone'      => $telefone,
-                'cep'           => $cep,
-                'num'           => $num,
-                'descricaoitensestoque' => $descricaoitensestoque
+                'nome_fantasia'         => $nome_fantasia,
+                'nome_empresarial'      => $nome_empresarial,
+                'cnpj'                  => $cnpj,
+                'email'                 => $email,
+                'telefone'              => $telefone,
+                'cep'                   => $cep,
+                'numero'                => $numero,
+                'descricaoitensestoque' => $descricaoitensestoque,
+                'senha'                 => crypt($senha, $salt)
             ];
 
-            $criterio = [
-                ['id', '=', $id]
-            ];
-
-            atualiza(
+            insere(
                 'empresadistribuicao',
-                $dados,
-                $criterio
+                $dados
             );
 
             break;
-
+        
         case 'login':
             $criterio = [
                 ['id', '=', $id],
                 ['AND', 'ativo', '=', 1]
             ];
-            /*$retorno = buscar(
-                'usuario',
-                ['id', 'nome', 'email', 'senha', 'adm'],
+            $retorno = buscar(
+                'empresadistribuicao',
+                ['id', 'nome', 'CNPJ', 'senha'],
                 $criterio
-            );*/
+            );
 
             if(count($retorno)> 0){
                 if(crypt($senha,$salt) == $retorno[0]['senha']){
@@ -61,10 +60,6 @@
 
             break;
         
-        case 'logout':
-            session_destroy();
-            break;
-    
     }
-    header('Location: ../pages/painelempresa.php');
+    header('Location: ../pages/loginempresa.php');
 ?>

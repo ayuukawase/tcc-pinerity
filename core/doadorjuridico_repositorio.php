@@ -17,22 +17,19 @@
     //verificar no banco de dados se funcionou
     switch($acao){
         case 'insert':
-            $dados = [
+            $dadosjuridico = [
                 'cnpj'              => $cnpj,
+                'nome_fantasia'     => $nome_fantasia,
+                'nome_empresarial'  => $nome_empresarial,
             ];
 
             insere(
                 'doadorjuridico',
-                $dados
+                $dadosjuridico
             );
 
-            break;
 
-        case 'insertjuridico':
-            $dados = [
-                'nome_fantasia'     => $nome_fantasia,
-                'nome_empresarial'  => $nome_empresarial,
-                'cnpj'              => $cnpj,
+            $dadosdoador = [
                 'email'             => $email,
                 'telefone'          => $telefone,
                 'cep'               => $cep,
@@ -42,7 +39,7 @@
 
             insere(
                 'doador',
-                $dados
+                $dadosdoador
             );
 
             break;

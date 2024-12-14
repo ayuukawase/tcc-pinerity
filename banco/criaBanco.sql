@@ -78,8 +78,10 @@ CREATE TABLE beneficio_empresa
 CREATE TABLE doadorfisico
 (
     cpf             varchar(11) unique not null,
+    nome            varchar(50) not null,
+    dt_nasc         date not null,
     primary key(cpf)
-);
+) engine InnoDB;
 
 CREATE TABLE doadorjuridico
 (
@@ -87,7 +89,7 @@ CREATE TABLE doadorjuridico
     nomeEmpresarial 	varchar(100) not null,
     nomeFantasia    	varchar(100) not null,
     primary key(cnpj)
-);
+) engine InnoDB;
 
 CREATE TABLE doador
 (

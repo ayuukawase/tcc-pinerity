@@ -14,9 +14,9 @@
   deleta('beneficiario', $criterio);
 
   // Close the database connection
-  mysqli_close($conn);
+  mysqli_close($con);
 
   // Redirect the user to a confirmation page
-  header('Location: index.html');
+  header('Location: ../index.html');
   exit;
 ?>

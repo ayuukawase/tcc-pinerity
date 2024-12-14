@@ -16,6 +16,10 @@
         <input class="form-control" type="number" require="required" id="cnpj" name="cnpj">
         <label>Coloque com seu CNPJ</label>
       </div>
+      <div class="input-field">
+      <input class="form-control" type="password" require="required" id="senha" name="senha">
+      <label>Coloque sua senha</label>
+      </div>
       <div class="forget">
         <label for="remember">
           <input type="checkbox" id="remember">

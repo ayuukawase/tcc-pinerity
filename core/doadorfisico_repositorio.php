@@ -19,6 +19,8 @@
         case 'insert':
             $dadosfisico = [
                 'cpf'           => $cpf,
+                'nome'          => $nome,
+                'dt_nasc'       => $dt_nasc,
             ];
 
             insere(
@@ -28,8 +30,6 @@
 
             
             $dadosdoador = [
-                'nome'          => $nome,
-                'dt_nasc'       => $dt_nasc,
                 'telefone'      => $telefone,
                 'email'         => $email,
                 'cep'           => $cep,
@@ -43,8 +43,6 @@
             );
 
             break;
-
-       
         
         case 'update':
             $id = (int)$id;

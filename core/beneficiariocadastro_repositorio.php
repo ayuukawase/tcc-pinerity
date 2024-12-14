@@ -15,42 +15,41 @@
     }
 
     //verificar no banco de dados se funcionou
-    switch($acao){ 
-        case 'update':
-            $id = (int)$id;
+    switch($acao){
+        case 'insert':
             $dados = [
+                'nome'          => $nome,
+                'NIS'           => $NIS,
+                'cpf'           => $cpf,
                 'telefone'      => $telefone,
+                'email'         => $email,
                 'cep'           => $cep,
-                'num'           => $num,
-                'descricaoitensestoque' => $descricaoitensestoque
+                'numero'        => $numero,
+                'folha_resumo'  => $folha_resumo,
+                'n_integrantes' => $n_integrantes,
+                'senha'         => crypt($senha, $salt)
             ];
 
-            $criterio = [
-                ['id', '=', $id]
-            ];
-
-            atualiza(
-                'empresadistribuicao',
-                $dados,
-                $criterio
+            insere(
+                'beneficiario',
+                $dados
             );
 
             break;
-
+        
         case 'login':
             $criterio = [
-                ['id', '=', $id],
-                ['AND', 'ativo', '=', 1]
+                ['NIS', '=', $NIS]
             ];
-            /*$retorno = buscar(
-                'usuario',
-                ['id', 'nome', 'email', 'senha', 'adm'],
+            $retorno = buscar(
+                'beneficiario',
+                ['id', 'nome', 'NIS'],
                 $criterio
-            );*/
+            );
 
             if(count($retorno)> 0){
                 if(crypt($senha,$salt) == $retorno[0]['senha']){
-                    $_SESSION['login']['empresadistribuicao'] = $retorno[0];
+                    $_SESSION['login']['beneficiario'] = $retorno[0];
                     if(!empty($_SESSION['url_retorno'])){
                         header('Location: '. $_SESSION['url_retorno']);
                         $_SESSION['url_retorno'] = '';
@@ -58,13 +57,9 @@
                     }
                 }
             }
-
+            
             break;
-        
-        case 'logout':
-            session_destroy();
-            break;
-    
+                
     }
-    header('Location: ../pages/painelempresa.php');
+    header('Location: ../pages/loginbeneficiario.php');
 ?>

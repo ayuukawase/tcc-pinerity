@@ -22,7 +22,6 @@
                         <label for="pedido_id">Pedido Id</label>
                         <input class="form-control" type="text" require="required" id="pedido_id" name="pedido_id" value="<?php echo $entidade['pedido_id'] ?? '' ?>">
                     </div>                            
-                    </div>
                     <br>
                     <button type="submit">Salvar</button>
                 </form>
