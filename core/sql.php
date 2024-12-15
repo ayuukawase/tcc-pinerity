@@ -45,7 +45,7 @@
         return $instrucao;
     }
 
-    function select(string $entidade, array $campos, array $criterio = [], string $ordem = null) : string
+    /*function select(string $entidade, array $campos, array $criterio = [], string $ordem = null) : string
     {
         $instrucao = " SELECT " . implode(', ', $campos);
         $instrucao .= " FROM {$entidade}";
@@ -63,6 +63,21 @@
         }
 
         return $instrucao;
+    }*/
+    function select(string $entidade, array $campos, array $criterio  = [], string $ordem = null): string
+{
+    $instrucao = "SELECT " . implode(', ', $campos);
+    $instrucao .= " FROM {$entidade}";
+    if (!empty($criterio)) {
+        $instrucao .= ' WHERE ';
+        foreach ($criterio as $expressao) {
+            $instrucao .= ' ' . implode(' ', $expressao);
+        }
     }
+    if (!empty($ordem)) {
+        $instrucao .= " ORDER BY $ordem ";
+    }
+    return $instrucao;
+}
     
 ?>

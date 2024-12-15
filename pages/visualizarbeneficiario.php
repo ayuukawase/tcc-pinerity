@@ -99,10 +99,18 @@
                 require_once '../core/conexao_mysql.php';
                 require_once '../core/sql.php';
                 require_once '../core/mysql.php';
+
                 foreach ($_GET as $indice => $dado) {
-                    $$indice = limparDados($dado);
-                }
-                $criterio = ['id', '=', $id];
+                  $$indice = limparDados($dado);
+              }
+
+                if(isset($_SESSION['login'])):
+                  $id = (int)$_SESSION['login']['beneficiario']['id'];
+                
+                $criterio = [
+                  ['id', '=', $id]
+                ];
+                
                 $result = buscar(
                     'beneficiario',
                     [
@@ -115,11 +123,12 @@
                       'cep',
                       'numero',
                       'folha_resumo',
-                      'n_integrantes' 
+                      'n_integrantes'
                     ],
                     $criterio,
                     'nome ASC'
                 );
+                
               ?>
               <table class="table table-bordered table-hover table-striped table-responsive{-sm|-md|-lg|-xl}">
                   <thead>
@@ -136,6 +145,9 @@
                     </tr>
                   </thead>
                   <tbody>
+                  <?php
+                        foreach ($result as $entidade);
+                        ?>
                     <tr>
                       <td><?php echo $entidade['nome'] ?></td>
                       <td><?php echo $entidade['NIS'] ?></td>
@@ -149,6 +161,7 @@
                     </tr>
                   </tbody>
               </table>
+              <?php endif ?>
             </div>
           </div>
         </section>
