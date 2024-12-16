@@ -38,14 +38,14 @@
 
         case 'login':
             $criterio = [
-                ['id', '=', $id],
+                ['cpf', '=', $cpf],
                 ['AND', 'ativo', '=', 1]
             ];
-            /*$retorno = buscar(
-                'usuario',
-                ['id', 'nome', 'email', 'senha', 'adm'],
+            $retorno = buscar(
+                'doador',
+                ['id', 'nome', 'cpf', 'email', 'senha'],
                 $criterio
-            );*/
+            );
 
             if(count($retorno)> 0){
                 if(crypt($senha,$salt) == $retorno[0]['senha']){
