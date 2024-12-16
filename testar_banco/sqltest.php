@@ -1,16 +1,16 @@
 <?php
     require_once '../core/sql.php';
 
-    $id = 1;
-    $nome = 'Nicoli';
-    $NIS = '12345678910';
-    $cpf = '51330461894';
-    $telefone = '(18) 98809-6264';
-    $email = 'bianewlife@gmail.com';
+    $id = 2;
+    $nome = 'Bia';
+    $NIS = '1212121212121';
+    $cpf = '89589589556';
+    $telefone = '(18) 99999-9999';
+    $email = 'bia@mail.com';
     $cep = '12345-065';
-    $numero = '1393';
-    $folha_resumo = '1';
-    $n_integrantes = '13';
+    $numero = '13';
+    $folha_resumo = '../img/capapinerity.png';
+    $n_integrantes = '3';
     $senha = '1393';
     $dados = [
         'nome'          => $nome,

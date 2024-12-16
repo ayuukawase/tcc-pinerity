@@ -16,10 +16,10 @@ session_start();
   </head>
   <body>
     <div id="content">
-      <header>
+    <header>
         <div class="busca">
-          <form action="" method="get">
-          <input type="search" name="busca" class="form-control mr-sm-2" placeholder="Busca" aria-label="Busca">
+          <form action="">
+            <input type="text" placeholder="Pesquisar" />
             <button type="submit" title="Buscar">
               <i class="bi bi-search"></i>
             </button>
@@ -29,16 +29,17 @@ session_start();
         <br>
         <div class="saudacao">
           <div class="perfil">
-            <img src="../img/testebeneficiario.jpeg" alt="Sua foto de perfil" />
+            <img src="../img/fotousuario.png" alt="Sua foto de perfil" />
             <?php if(isset($_SESSION['login'])): ?>
-              <div class = "card-body text-right">
-                Olá, <?php echo $_SESSION['login']['beneficiario']['nome']?>!
+              <div class = "card-body text-right"><br>
+                Olá, <br> <?php echo $_SESSION['login']['empresadistribuicao']['nome_fantasia']?>!
               </div>
             <?php endif ?>
           </div>
           <div class="acoes">
-            <button>Novo pedido</button>
+            <button>Nova doação</button>
             <button>Enviar</button>
+            <button>Compartilhar</button>
           </div>
         </div>
       </header>
@@ -49,27 +50,27 @@ session_start();
         </div>
         <ul class="menu">
           <li class="selecionado">
-            <a href="#"><i class="bi bi-house"></i>Início</a>
+            <a href="painelbeneficiario"><i class="bi bi-house"></i>Início</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-clock-history"></i>Histórico de pedidos de benefícios</a>
+            <a href="#"><i class="bi bi-clock-history"></i>Recebimento e entrega de cestas</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-eye"></i>Visualizar perfil</a>
+            <a href="visualizarempresa.php"><i class="bi bi-eye"></i>Visualizar perfil</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-pencil-square"></i>Atualizar perfil</a>
+            <a href="atualizarempresa.php"><i class="bi bi-pencil-square"></i>Atualizar perfil</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-x-lg"></i>Deletar perfil</a>
+            <a href="deletarempresa.php"><i class="bi bi-x-lg"></i>Deletar perfil</a>
           </li>
         </ul>
         <ul class="menu">
           <li>
-            <a href="#"><i class="bi bi-info-circle"></i>Ajuda</a>
+            <a href="sobre.html"><i class="bi bi-info-circle"></i>Ajuda</a>
           </li>
           <li>
-            <a href="../core/beneficiario_repositorio.php?acao=logout"><i class="bi bi-box-arrow-right"></i>Sair</a>
+            <a href="../core/empresadistribuicaocadastro_repositorio.php?acao=logout"><i class="bi bi-box-arrow-right"></i>Sair</a>
           </li>
         </ul>
         <footer>
@@ -80,8 +81,7 @@ session_start();
               target="_blank"
               rel="noopener noreferrer"
               title="Instagram"
-              ><i class="bi bi-instagram"></i
-            ></a> 
+              ><i class="bi bi-instagram"></i></a> 
             <a
               href="https://www.linkedin.com/in/pinerity/"
               target="_blank"
@@ -104,14 +104,14 @@ session_start();
                   require_once '../core/mysql.php';
 
                   if(isset($_SESSION['login'])){
-                      $id = (int)$_SESSION['login']['beneficiario']['id'];
+                      $id = (int)$_SESSION['login']['empresadistribuicao']['id'];
 
                       $criterio = [
                           ['id', '=', $id]
                       ];
                       $retorno = buscar(
-                          'beneficiario',
-                          ['id', 'nome', 'NIS', 'cpf', 'telefone', 'email', 'cep', 'numero', 'folha_resumo', 'n_integrantes'],
+                          'empresadistribuicao',
+                          [ 'id', 'nome_fantasia', 'nome_empresarial', 'cnpj', 'email', 'telefone', 'cep', 'numero', 'descricaoitensestoque'],
                           $criterio
                       );
 

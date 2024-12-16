@@ -59,6 +59,22 @@
             }
 
             break;
+
+            case 'delete':
+                $id = (int)$id;
+                $criterio = [
+                    ['id', '=', $id]
+                ];
+            
+                deleta(
+                    'empresadistribuicao',
+                    $criterio
+                );
+                break;
+
+            case 'logout':
+                session_destroy();
+                break;
         
     }
     header('Location: ../pages/loginempresa.php');

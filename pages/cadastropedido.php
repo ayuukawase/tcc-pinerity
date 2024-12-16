@@ -10,8 +10,8 @@
 <body>
     <div class="wrapper">
             <div>
-                <form method="post" action="../core/beneficio_repositorio.php">
-                    <input type="hidden" name="acao" value="insert">
+                <form method="post" action="../core/pedido_repositorio.php">
+                <input type="hidden" name="acao" value="<?php echo empty($id) ? 'insert' : 'update'; ?>">
                     <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
                     <h2>Fazer pedido de cesta básica</h2>
                     <div class="input-field">

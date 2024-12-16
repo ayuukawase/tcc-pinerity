@@ -43,7 +43,7 @@
             ];
             $retorno = buscar(
                 'beneficiario',
-                ['id', 'nome', 'NIS'],
+                [ 'id', 'nome', 'NIS', 'cpf', 'telefone', 'email', 'cep', 'numero', 'folha_resumo', 'n_integrantes'],
                 $criterio
             );
 
@@ -61,19 +61,7 @@
             break;
 
             case 'delete':
-                $id = isset($_POST['id']) ? $_POST['id'] : null; 
-                if ($id) 
-                { 
-                    $criterio = [ ['id', '=', $id] ]; 
-                    deleta('beneficiario', $criterio); 
-                } 
-                else 
-                { 
-                    echo 'ID não fornecido.'; 
-                } 
-                break;
-                /*$id = $_GET['id'];
-                
+                $id = (int)$id;
                 $criterio = [
                     ['id', '=', $id]
                 ];
@@ -81,7 +69,7 @@
                 deleta(
                     'beneficiario',
                     $criterio
-                );*/
+                );
                 break;
     
 

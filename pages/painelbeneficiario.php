@@ -29,16 +29,16 @@ session_start();
         <br>
         <div class="saudacao">
           <div class="perfil">
-            <img src="../img/testebeneficiario.jpeg" alt="Sua foto de perfil" />
+            <img src="../img/fotousuario.png" alt="Sua foto de perfil" />
             <?php if(isset($_SESSION['login'])): ?>
-              <div class = "card-body text-right">
-                Olá, <?php echo $_SESSION['login']['beneficiario']['nome']?>!
+              <div class = "card-body text-right"><br>
+                Olá, <br> <?php echo $_SESSION['login']['beneficiario']['nome']?>!
               </div>
             <?php endif ?>
           </div>
           <div class="acoes">
-            <button>Novo pedido</button>
-            <button>Enviar</button>
+            <a href="cadastropedido.php"><button>Novo pedido</button></a>
+            <button>Compartilhar</button>
           </div>
         </div>
       </header>
@@ -61,12 +61,7 @@ session_start();
             <a href="atualizarbeneficiario.php"><i class="bi bi-pencil-square"></i>Atualizar perfil</a>
           </li>
           <li>
-<<<<<<< HEAD
-            <a href="../core/beneficiario_repositorio.php?acao=delete&id=<?php echo $entidade['id'] ?>"><i class="bi bi-x-lg"></i>Deletar perfil</a>
-=======
-          <a href="../core/beneficiario_repositorio.php?acao=delete"><i class="bi bi-x-lg"></i>Deletar perfil</a>
-            <!--<a href="../core/deletarbeneficiario.php?id=' . $row['id'] . '"><i class="bi bi-x-lg"></i>Deletar perfil</a>-->
->>>>>>> b93257a37b4970a9c99964f35199be6950eb9d3d
+            <a href="deletarbeneficiario.php"><i class="bi bi-x-lg"></i>Deletar perfil</a>
           </li>
         </ul>
         <ul class="menu">

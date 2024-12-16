@@ -15,27 +15,16 @@ CREATE TABLE empresadistribuicao
     nome_fantasia               varchar (50) not null,
     cep                         varchar (9) not null,
     numero                      varchar (10) not null,
-    telefone                    varchar (11) not null,
+    telefone                    varchar (15) not null,
     email                       varchar (50) not null,
     descricaoitensestoque       varchar (500) not null,
     senha                       varchar(50),
     primary key(id)
 );
 
-CREATE TABLE beneficio
-(
-    id              INT AUTO_INCREMENT,
-    qtd_cestas      INT,
-    pedido_id       INT not null,
-    PRIMARY KEY(id),
-    KEY fk_beneficio_pedido_idx (pedido_id)
-    
-);
-
 CREATE TABLE beneficiario
 (
     id              INT auto_increment not null,
-    id_beneficio    INT null,
     NIS             varchar(11) not null,
     nome            varchar(50) not null,
     folha_resumo    Blob not null,
@@ -44,11 +33,10 @@ CREATE TABLE beneficiario
     cep             varchar(9) not null,
     n_integrantes   INT check(n_integrantes > 0),
     cpf             varchar(11) not null,
-    telefone        varchar(11) not null, 
+    telefone        varchar(15) not null, 
     email           varchar(50) not null,
     senha           varchar(50),
-    primary key(id),
-    foreign key(id_beneficio) references beneficio(id)	
+    primary key(id)
 ) ENGINE InnoDB;
 
 CREATE TABLE pedido
@@ -61,6 +49,18 @@ CREATE TABLE pedido
     primary key (id),
 	foreign key(id_distribuidora) references empresadistribuicao(id),
     foreign key(beneficiario_id) references beneficiario(id)
+);
+
+CREATE TABLE beneficio
+(
+    id              INT AUTO_INCREMENT,
+    qtd_cestas      INT,
+    id_pedido       INT not null,
+    id_beneficiario INT not null,
+    PRIMARY KEY(id),
+    foreign key(id_pedido) references pedido(id),
+    foreign key(id_beneficiario) references beneficiario(id)
+    
 );
 
 CREATE TABLE beneficio_empresa
@@ -96,7 +96,7 @@ CREATE TABLE doador
     id              INT auto_increment not null,
 	cpf             varchar(11) unique ,
 	cnpj            varchar(14) unique ,
-    telefone        varchar(11) not null,
+    telefone        varchar(15) not null,
     numero          varchar (10) not null,
     cep             varchar (9) not null,
     email           varchar (50) not null,
@@ -124,15 +124,4 @@ CREATE TABLE cesta_doador
     primary key (id_cesta,id_doador),
     FOREIGN KEY (id_cesta) REFERENCES cestabasica(id),
     FOREIGN KEY (id_doador) REFERENCES doador(id)
-);
-CREATE TABLE usuario
-(
-    id              INT NOT NULL AUTO_INCREMENT,
-    nome            varchar(50) NOT NULL,
-    email           varchar(255) NOT NULL,
-    senha           varchar(50) NOT NULL,
-    data_criacao    datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    ativo           tinyint NOT NULL DEFAULT '0',
-    adm             tinyint NOT NULL DEFAULT '0',
-    PRIMARY KEY(id)
 );

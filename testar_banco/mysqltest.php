@@ -26,6 +26,12 @@
     {
         $dados = ['nome' => $nome, 'email' => $email];
         $criterio = [['id', '=', '$id']];
-        atualiza('usuario', $dados, $criterio);
+        atualiza('beneficiario', $dados, $criterio);
+    }
+
+    function delete_teste($id) : void 
+    {
+        $criterio = [['id', '=', '$id']];
+        atualiza('beneficiario', $criterio);
     }
 ?>

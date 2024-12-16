@@ -16,7 +16,7 @@ session_start();
   </head>
   <body>
     <div id="content">
-      <header>
+    <header>
         <div class="busca">
           <form action="">
             <input type="text" placeholder="Pesquisar" />
@@ -29,10 +29,10 @@ session_start();
         <br>
         <div class="saudacao">
           <div class="perfil">
-            <img src="../img/perfilteste.jpg" alt="Sua foto de perfil" />
+            <img src="../img/fotousuario.png" alt="Sua foto de perfil" />
             <?php if(isset($_SESSION['login'])): ?>
-              <div class = "card-body text-right">
-                Olá, <?php echo $_SESSION['login']['empresadistribuicao']['nome_fantasia']?>!
+              <div class = "card-body text-right"><br>
+                Olá, <br> <?php echo $_SESSION['login']['empresadistribuicao']['nome_fantasia']?>!
               </div>
             <?php endif ?>
           </div>
@@ -50,27 +50,27 @@ session_start();
         </div>
         <ul class="menu">
           <li class="selecionado">
-            <a href="#"><i class="bi bi-house"></i>Início</a>
+            <a href="painelbeneficiario"><i class="bi bi-house"></i>Início</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-box2"></i>Recebimento e entrega de cestas</a>
+            <a href="#"><i class="bi bi-clock-history"></i>Recebimento e entrega de cestas</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-eye"></i>Visualizar perfil</a>
+            <a href="visualizarempresa.php"><i class="bi bi-eye"></i>Visualizar perfil</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-pencil-square"></i>Atualizar perfil</a>
+            <a href="atualizarempresa.php"><i class="bi bi-pencil-square"></i>Atualizar perfil</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-x-lg"></i>Deletar perfil</a>
+            <a href="deletarempresa.php"><i class="bi bi-x-lg"></i>Deletar perfil</a>
           </li>
         </ul>
         <ul class="menu">
           <li>
-            <a href="#"><i class="bi bi-info-circle"></i>Ajuda</a>
+            <a href="sobre.html"><i class="bi bi-info-circle"></i>Ajuda</a>
           </li>
           <li>
-            <a href="../core/empresadistribuicao_repositorio.php?acao=logout"><i class="bi bi-box-arrow-right"></i>Sair</a>
+            <a href="../core/empresadistribuicaocadastro_repositorio.php?acao=logout"><i class="bi bi-box-arrow-right"></i>Sair</a>
           </li>
         </ul>
         <footer>

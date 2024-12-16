@@ -15,14 +15,6 @@ session_start();
 
   </head>
   <body>
-  <?php
-    if (!isset($_SESSION['login'])) 
-    { 
-      header('Location: login.php'); 
-      exit(); 
-    } 
-    $beneficiario = $_SESSION['login']['beneficiario']; 
-    ?>
     <div id="content">
       <header>
         <div class="busca">
@@ -124,14 +116,10 @@ session_start();
                       $entidade = $retorno[0];
                   }
               ?>
-              <form method="post" action="../core/beneficiario_repositorio.php?acao=update">
-                  <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
-                  <h2>Atualizar</h2>
-                  <div class="input-field">
-                    <label for="telefone">Telefone</label>
-                    <input class="form-control" type="tel" require="required" id="telefone" name="telefone" pattern="(\([0-9]{2}\))\s([0-9]{5})-([0-9]{4})" title="Digite um telefone no formato: (xx) xxxxx-xxxx" value="<?php echo $entidade['telefone'] ?? '' ?>">
-                  </div>
-                  <button type="submit">Atualizar</button>
+              <form method="POST" action="../core/beneficiariocadastro_repositorio.php?acao=delete" onsubmit="return confirm('Você tem certeza que quer deletar sua conta?');">
+                  <input type="hidden" name="id" value="<?php echo $entidade['id'] ?>">
+                  <h2>Deletar</h2>
+                  <button type="submit" value="delete">Deletar meu perfil</button>
               </form>
           </div>
         </section>
