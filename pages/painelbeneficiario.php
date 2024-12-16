@@ -49,7 +49,7 @@ session_start();
         </div>
         <ul class="menu">
           <li class="selecionado">
-            <a href="painelbeneficiario"><i class="bi bi-house"></i>Início</a>
+            <a href="painelbeneficiario.php"><i class="bi bi-house"></i>Início</a>
           </li>
           <li>
             <a href="#"><i class="bi bi-clock-history"></i>Histórico de pedidos de benefícios</a>
@@ -75,20 +75,12 @@ session_start();
         <footer>
           <p id="texto-footer">Pinerity</p>
           <div class="links">
-            <a
-              href="https://www.instagram.com/pinerity.oficial/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Instagram"
-              ><i class="bi bi-instagram"></i
-            ></a> 
-            <a
-              href="https://www.linkedin.com/in/pinerity/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="LinkedIn"
-              ><i class="bi bi-linkedin"></i
-            ></a>
+            <a href="https://www.instagram.com/pinerity.oficial/" target="_blank" rel="noopener noreferrer" title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a> 
+            <a href="https://www.linkedin.com/in/pinerity/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
           </div>
         </footer>
       </aside>

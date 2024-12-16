@@ -28,9 +28,9 @@ session_start();
         </div>
         <br>
         <div class="saudacao">
-          <div class="perfil">
+        <div class="perfil">
             <img src="../img/fotousuario.png" alt="Sua foto de perfil" />
-            <?php if(isset($_SESSION['login'])): ?>
+            <?php if(isset($_SESSION['login'])): ?> 
               <div class = "card-body text-right"><br>
                 Olá, <br> <?php echo $_SESSION['login']['empresadistribuicao']['nome_fantasia']?>!
               </div>
@@ -76,19 +76,12 @@ session_start();
         <footer>
           <p id="texto-footer">Pinerity</p>
           <div class="links">
-            <a
-              href="https://www.instagram.com/pinerity.oficial/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Instagram"
-              ><i class="bi bi-instagram"></i></a> 
-            <a
-              href="https://www.linkedin.com/in/pinerity/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="LinkedIn"
-              ><i class="bi bi-linkedin"></i
-            ></a>
+            <a href="https://www.instagram.com/pinerity.oficial/" target="_blank" rel="noopener noreferrer" title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a> 
+            <a href="https://www.linkedin.com/in/pinerity/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
           </div>
         </footer>
       </aside>

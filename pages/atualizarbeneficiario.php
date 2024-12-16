@@ -24,10 +24,10 @@ session_start();
     $beneficiario = $_SESSION['login']['beneficiario']; 
     ?>
     <div id="content">
-      <header>
+    <header>
         <div class="busca">
-          <form action="" method="get">
-          <input type="search" name="busca" class="form-control mr-sm-2" placeholder="Busca" aria-label="Busca">
+          <form action="">
+            <input type="text" placeholder="Pesquisar" />
             <button type="submit" title="Buscar">
               <i class="bi bi-search"></i>
             </button>
@@ -37,16 +37,16 @@ session_start();
         <br>
         <div class="saudacao">
           <div class="perfil">
-            <img src="../img/testebeneficiario.jpeg" alt="Sua foto de perfil" />
+            <img src="../img/fotousuario.png" alt="Sua foto de perfil" />
             <?php if(isset($_SESSION['login'])): ?>
-              <div class = "card-body text-right">
-                Olá, <?php echo $_SESSION['login']['beneficiario']['nome']?>!
+              <div class = "card-body text-right"><br>
+                Olá, <br> <?php echo $_SESSION['login']['beneficiario']['nome']?>!
               </div>
             <?php endif ?>
           </div>
           <div class="acoes">
-            <button>Novo pedido</button>
-            <button>Enviar</button>
+            <a href="cadastropedido.php"><button>Novo pedido</button></a>
+            <button>Compartilhar</button>
           </div>
         </div>
       </header>
@@ -57,82 +57,76 @@ session_start();
         </div>
         <ul class="menu">
           <li class="selecionado">
-            <a href="#"><i class="bi bi-house"></i>Início</a>
+            <a href="painelbeneficiario.php"><i class="bi bi-house"></i>Início</a>
           </li>
           <li>
             <a href="#"><i class="bi bi-clock-history"></i>Histórico de pedidos de benefícios</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-eye"></i>Visualizar perfil</a>
+            <a href="visualizarbeneficiario.php"><i class="bi bi-eye"></i>Visualizar perfil</a>
           </li>
           <li>
             <a href="atualizarbeneficiario.php"><i class="bi bi-pencil-square"></i>Atualizar perfil</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-x-lg"></i>Deletar perfil</a>
+            <a href="deletarbeneficiario.php"><i class="bi bi-x-lg"></i>Deletar perfil</a>
           </li>
         </ul>
         <ul class="menu">
           <li>
-            <a href="#"><i class="bi bi-info-circle"></i>Ajuda</a>
+            <a href="sobre.html"><i class="bi bi-info-circle"></i>Ajuda</a>
           </li>
           <li>
-            <a href="../core/beneficiario_repositorio.php?acao=logout"><i class="bi bi-box-arrow-right"></i>Sair</a>
+            <a href="../core/beneficiariocadastro_repositorio.php?acao=logout"><i class="bi bi-box-arrow-right"></i>Sair</a>
           </li>
         </ul>
         <footer>
           <p id="texto-footer">Pinerity</p>
           <div class="links">
-            <a
-              href="https://www.instagram.com/pinerity.oficial/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Instagram"
-              ><i class="bi bi-instagram"></i
-            ></a> 
-            <a
-              href="https://www.linkedin.com/in/pinerity/"
-              target="_blank"
-              rel="noopener noreferrer"
-              title="LinkedIn"
-              ><i class="bi bi-linkedin"></i
-            ></a>
+            <a href="https://www.instagram.com/pinerity.oficial/" target="_blank" rel="noopener noreferrer" title="Instagram">
+              <i class="bi bi-instagram"></i>
+            </a> 
+            <a href="https://www.linkedin.com/in/pinerity/" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+              <i class="bi bi-linkedin"></i>
+            </a>
           </div>
         </footer>
       </aside>
       <main>
-      <section class="anuncios">
-        <div>
-              <?php
-                  require_once '../includes/funcoes.php';
-                  require_once '../core/conexao_mysql.php';
-                  require_once '../core/sql.php';
-                  require_once '../core/mysql.php';
+        <section class="anuncios">
+          <div>
+            <?php
+              require_once '../includes/funcoes.php';
+              require_once '../core/conexao_mysql.php';
+              require_once '../core/sql.php';
+              require_once '../core/mysql.php';
 
-                  if(isset($_SESSION['login'])){
-                      $id = (int)$_SESSION['login']['beneficiario']['id'];
+              if(isset($_SESSION['login'])){
+                $id = (int)$_SESSION['login']['beneficiario']['id'];
 
-                      $criterio = [
-                          ['id', '=', $id]
-                      ];
-                      $retorno = buscar(
-                          'beneficiario',
-                          ['id', 'nome', 'NIS', 'cpf', 'telefone', 'email', 'cep', 'numero', 'folha_resumo', 'n_integrantes'],
-                          $criterio
-                      );
+                $criterio = [
+                  ['id', '=', $id]
+                ];
 
-                      $entidade = $retorno[0];
-                  }
-              ?>
-              <form method="post" action="../core/beneficiario_repositorio.php?acao=update">
-                  <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
-                  <h2>Atualizar</h2>
-                  <div class="input-field">
-                    <label for="telefone">Telefone</label>
-                    <input class="form-control" type="tel" require="required" id="telefone" name="telefone" pattern="(\([0-9]{2}\))\s([0-9]{5})-([0-9]{4})" title="Digite um telefone no formato: (xx) xxxxx-xxxx" value="<?php echo $entidade['telefone'] ?? '' ?>">
-                  </div>
-                  <button type="submit">Atualizar</button>
-              </form>
+                $retorno = buscar(
+                  'beneficiario',
+                  ['id', 'nome', 'NIS', 'cpf', 'telefone', 'email', 'cep', 'numero', 'folha_resumo', 'n_integrantes'],
+                  $criterio
+                );
+
+                $entidade = $retorno[0];
+              }
+            ?>
+          
+            <form method="post" action="../core/beneficiario_repositorio.php?acao=update">
+              <input type="hidden" name="id" value="<?php echo $entidade['id'] ?? '' ?>">
+              <h2>Atualizar</h2>
+              <div class="input-field">
+                <label for="telefone">Telefone</label>
+                <input class="form-control" type="tel" require="required" id="telefone" name="telefone" pattern="(\([0-9]{2}\))\s([0-9]{5})-([0-9]{4})" title="Digite um telefone no formato: (xx) xxxxx-xxxx" value="<?php echo $entidade['telefone'] ?? '' ?>">
+              </div>
+              <button type="submit">Atualizar</button>
+            </form>
           </div>
         </section>
       </main>
