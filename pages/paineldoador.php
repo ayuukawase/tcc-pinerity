@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>    
 <!DOCTYPE html>
 <html lang="pt-BR">
   <head>
@@ -27,14 +30,17 @@
         <div class="saudacao">
           <div class="perfil">
             <img src="../img/perfilteste.jpg" alt="Sua foto de perfil" />
-            <span>Olá,</span>
-            <p>Pochita</p>
+            <?php if(isset($_SESSION['login'])): ?>
+              <div class = "card-body text-right"><br>
+                Olá, <br> <?php echo $_SESSION['login']['doador']['nome']?>!
+              </div>
+            <?php endif ?>
           </div>
           <div class="acoes">
-            <button>Nova doação</button>
-            <button>Recomendar site</button>
+            <a href="cadastropedido.php"><button>Novo pedido</button></a>
+            <button>Compartilhar</button>
           </div>
-        </div>
+        </div>  
       </header>
       <aside>
         <div class="logo">
@@ -43,16 +49,16 @@
         </div>
         <ul class="menu">
           <li class="selecionado">
-            <a href="#"><i class="bi bi-house"></i>Início</a>
+            <a href="paineldoador"><i class="bi bi-house"></i>Início</a>
           </li>
           <li>
             <a href="#"><i class="bi bi-box2"></i>Histórico de doações</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-eye"></i>Visualizar perfil</a>
+            <a href="visualizardoador.php"><i class="bi bi-eye"></i>Visualizar perfil</a>
           </li>
           <li>
-            <a href="#"><i class="bi bi-pencil-square"></i>Atualizar perfil</a>
+            <a href="atualizardoador"><i class="bi bi-pencil-square"></i>Atualizar perfil</a>
           </li>
           <li>
             <a href="#"><i class="bi bi-x-lg"></i>Deletar perfil</a>

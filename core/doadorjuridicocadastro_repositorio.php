@@ -67,6 +67,10 @@
             }
 
             break;
+
+        case 'logout':
+            session_destroy();
+            break;
             
     }
     header('Location: ../pages/logindoadorjuridico.php');

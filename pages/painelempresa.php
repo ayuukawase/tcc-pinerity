@@ -8,7 +8,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#06b6d4" />
-    <title>Painel do doador</title>
+    <title>Painel da empresa</title>
     <link rel="icon" alt="icon" href="../img/menulogo.png">
     <!-- CSS -->
     <link rel="stylesheet" href="../css/painel.css" />
@@ -28,9 +28,9 @@ session_start();
         </div>
         <br>
         <div class="saudacao">
-          <div class="perfil">
+        <div class="perfil">
             <img src="../img/fotousuario.png" alt="Sua foto de perfil" />
-            <?php if(isset($_SESSION['login'])): ?>
+            <?php if(isset($_SESSION['login'])): ?> 
               <div class = "card-body text-right"><br>
                 Olá, <br> <?php echo $_SESSION['login']['empresadistribuicao']['nome_fantasia']?>!
               </div>

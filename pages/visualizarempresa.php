@@ -8,7 +8,7 @@ session_start();
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#06b6d4" />
-    <title>Painel do beneficiário</title>
+    <title>Painel da empresa</title>
     <link rel="icon" alt="icon" href="../img/menulogo.png">
     <!-- CSS -->
     <link rel="stylesheet" href="../css/painel.css" />
@@ -50,7 +50,7 @@ session_start();
         </div>
         <ul class="menu">
           <li class="selecionado">
-            <a href="painelbeneficiario"><i class="bi bi-house"></i>Início</a>
+            <a href="painelbeneficiario.php"><i class="bi bi-house"></i>Início</a>
           </li>
           <li>
             <a href="#"><i class="bi bi-clock-history"></i>Recebimento e entrega de cestas</a>
@@ -121,29 +121,26 @@ session_start();
               <table class="table table-bordered table-hover table-striped table-responsive{-sm|-md|-lg|-xl}">
                   <thead>
                     <tr>
-                      <td>Nome</td>
-                      <td>NIS</td>
-                      <td>CPF</td>
-                      <td>Telefone</td>
+                      <td>Nome fantasia</td>
+                      <td>Nome empresarial</td>
+                      <td>CNPJ</td>
                       <td>E-mail</td>
+                      <td>Telefone</td>
                       <td>CEP</td>
                       <td>Número da casa/apartamento</td>
-                      <td>Folha Resumo</td>
-                      <td>Número de pessoas na residência</td>
+                      <td>Descrição dos itens do estoque</td>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                    <td><?php echo $entidade['nome'] ?></td>
-                      <td><?php echo $entidade['NIS'] ?></td>
-                      <td><?php echo $entidade['cpf'] ?></td>
-                      <td><?php echo $entidade['telefone'] ?></td>
+                    <td><?php echo $entidade['nome_fantasia'] ?></td>
+                      <td><?php echo $entidade['nome_empresarial'] ?></td>
+                      <td><?php echo $entidade['cnpj'] ?></td>
                       <td><?php echo $entidade['email'] ?></td>
+                      <td><?php echo $entidade['telefone'] ?></td>
                       <td><?php echo $entidade['cep'] ?></td>
                       <td><?php echo $entidade['numero'] ?></td>
-                      <td><?php echo $entidade['folha_resumo'] ?></td>
-                      <td><?php echo $entidade['n_integrantes'] ?></td>
-                    </tr>
+                      <td><?php echo $entidade['descricaoitensestoque'] ?></td>                    </tr>
                   </tbody>
               </table>
             </div>

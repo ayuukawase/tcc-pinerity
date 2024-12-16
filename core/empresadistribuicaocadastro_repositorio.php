@@ -36,29 +36,29 @@
 
             break;
         
-        case 'login':
-            $criterio = [
-                ['id', '=', $id],
-                ['AND', 'ativo', '=', 1]
-            ];
-            $retorno = buscar(
-                'empresadistribuicao',
-                ['id', 'nome', 'CNPJ', 'senha'],
-                $criterio
-            );
-
-            if(count($retorno)> 0){
-                if(crypt($senha,$salt) == $retorno[0]['senha']){
-                    $_SESSION['login']['empresadistribuicao'] = $retorno[0];
-                    if(!empty($_SESSION['url_retorno'])){
-                        header('Location: '. $_SESSION['url_retorno']);
-                        $_SESSION['url_retorno'] = '';
-                        exit;
+            case 'login':
+                $criterio = [
+                    ['cnpj', '=', $cnpj],
+                ];
+                
+                $retorno = buscar(
+                    'empresadistribuicao',
+                    ['id', 'nome_fantasia', 'nome_empresarial', 'cnpj', 'email', 'telefone', 'cep', 'numero', 'descricaoitensestoque'],
+                    $criterio
+                );
+    
+                if(count($retorno)> 0){
+                    if(crypt($senha,$salt) == $retorno[0]['senha']){
+                        $_SESSION['login']['empresadistribuicao'] = $retorno[0];
+                        if(!empty($_SESSION['url_retorno'])){
+                            header('Location: '. $_SESSION['url_retorno']);
+                            $_SESSION['url_retorno'] = '';
+                            exit;
+                        }
                     }
                 }
-            }
-
-            break;
+    
+                break;
 
             case 'delete':
                 $id = (int)$id;

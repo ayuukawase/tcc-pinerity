@@ -21,7 +21,7 @@
             $dados = [
                 'telefone'      => $telefone,
                 'cep'           => $cep,
-                'num'           => $num,
+                'numero'        => $numero,
                 'descricaoitensestoque' => $descricaoitensestoque
             ];
 
@@ -39,14 +39,14 @@
 
         case 'login':
             $criterio = [
-                ['id', '=', $id],
-                ['AND', 'ativo', '=', 1]
+                ['cnpj', '=', $cnpj],
             ];
-            /*$retorno = buscar(
-                'usuario',
-                ['id', 'nome', 'email', 'senha', 'adm'],
+            
+            $retorno = buscar(
+                'empresadistribuicao',
+                ['id', 'nome_fantasia', 'cnpj', 'senha'],
                 $criterio
-            );*/
+            );
 
             if(count($retorno)> 0){
                 if(crypt($senha,$salt) == $retorno[0]['senha']){

@@ -59,10 +59,6 @@
             }
 
             break;
-
-        case 'logout':
-            session_destroy();
-            break;
             
     }
     header('Location: ../pages/paineldoador.php');
