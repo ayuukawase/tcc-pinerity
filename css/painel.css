@@ -367,7 +367,7 @@ body {
 
 body {
 	margin: 0;
-	background: linear-gradient(45deg, #32CD32, #4f9566);
+	background: linear-gradient(45deg, #ace291, #52a952);
 	font-family: sans-serif;
 	font-weight: 100;
 }
@@ -390,7 +390,7 @@ th,
 td {
 	padding: 15px;
 	background-color: rgba(255,255,255,0.2);
-	color: #fff;
+	color: #000000;
 }
 
 th {
