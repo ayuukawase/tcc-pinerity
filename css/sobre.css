@@ -358,14 +358,14 @@ h1 {
   border-radius: 5px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
-.recipe-info {
+.conteudo-info {
   max-width: 70%;
 }
-.recipe-title {
+.category-title {
   font-size: 1.2em;
   color: #333;
 }
-.recipe-description {
+.conteudo-description {
   color: #666;
   font-size: 0.9em;
 }
